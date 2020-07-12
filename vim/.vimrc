@@ -56,6 +56,8 @@ Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'smallwat3r/efficient', { 'commit': 'b895b0c393345a8657b3d8477d6a14132ada64b3' }
 Plug 'dense-analysis/ale'
 Plug 'JamshedVesuna/vim-markdown-preview'
+" nord colorscheme
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 let g:polyglot_disabled = ['latex']
@@ -218,8 +220,9 @@ nnoremap K :ALEHover<cr>
 " end ale config
 
 " colorscheme rubric
-colorscheme onehalfdark
-let g:airline_theme='onehalfdark'
+" colorscheme onehalfdark
+colorscheme nord
+let g:airline_theme='nord'
 let g:airline#extensions#ale#enabled = 1
 
 " use github syntax and style
