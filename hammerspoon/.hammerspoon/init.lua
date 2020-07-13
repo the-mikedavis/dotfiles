@@ -164,6 +164,7 @@ hotKeys = {
     { { "ctrl" }, "2", function() openForSpace("Firefox Developer Edition", "New Window") end },
     { { "ctrl" }, "3", function() openForSpace("Slack", "New Window") end },
     { { "ctrl" }, "4", function() openForSpace("Discord", "New Window") end },
+    { { "ctrl" }, "6", function() openForSpace("Spark", "New Window") end },
     -- { { "alt" }, "q", function() hs.eventtap.keyStrokes(utf8.char(772)) end },
     -- { { "alt" }, "w", function() hs.eventtap.keyStrokes(utf8.char(769)) end },
     -- { { "alt" }, "f", function() hs.eventtap.keyStrokes(utf8.char(780)) end },
