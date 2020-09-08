@@ -51,7 +51,7 @@ funcsave ve
 
 function gerge --description 'take in a github pr merge locally'
   set branch (git rev-parse --abbrev-ref HEAD)
-  git checkout master
+  git checkout main
   git pull
   git branch -d $branch
   git eggplant # prune origin stuff

@@ -64,3 +64,5 @@ set fish_pager_color_secondary $nord1
 function fish_mode_prompt
   # noop - disables
 end
+
+eval (gdircolors -c ~/.dir_colors/nord)
