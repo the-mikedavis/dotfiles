@@ -1,0 +1,4 @@
+*.swp
+*.swo
+.projections.json
+*.elixir_ls/
