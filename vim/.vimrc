@@ -36,7 +36,7 @@ Plug 'tpope/vim-projectionist'
 " PDF viewer
 Plug 'makerj/vim-pdf'
 " Latex compiler
-Plug 'lervag/vimtex'
+" Plug 'lervag/vimtex'
 " Elixir Formatter
 "Plug 'mhinz/vim-mix-format'
 " decent theme
