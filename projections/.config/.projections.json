@@ -1,0 +1,52 @@
+{
+  "lib/*.ex": {
+    "alternate": "test/{}_test.exs",
+    "type": "lib",
+    "template": [
+      "defmodule {camelcase|capitalize|dot} do",
+      "  @moduledoc \"\"\"",
+      "  \"\"\"",
+      "end"
+    ]
+  },
+  "test/*_test.exs": {
+    "alternate": "lib/{}.ex",
+    "type": "test",
+    "template": [
+      "defmodule {camelcase|capitalize|dot}Test do",
+      "  use ExUnit.Case, async: true",
+      "",
+      "  alias {camelcase|capitalize|dot}",
+      "end"
+    ]
+  },
+  "lib/**/controllers/*_controller.ex": {
+    "type": "controller",
+    "alternate": "test/{dirname}/controllers/{basename}_controller_test.exs",
+    "template": [
+      "defmodule {dirname|camelcase|capitalize}.{basename|camelcase|capitalize}Controller do",
+      "  use {dirname|camelcase|capitalize}, :controller",
+      "end"
+    ]
+  },
+  "test/**/controllers/*_controller_test.exs": {
+    "alternate": "lib/{dirname}/controllers/{basename}_controller.ex",
+    "type": "test",
+    "template": [
+      "defmodule {dirname|camelcase|capitalize}.{basename|camelcase|capitalize}ControllerTest do",
+      "  use {dirname|camelcase|capitalize}.ConnCase, async: true",
+      "end"
+    ]
+  },
+  "mix.exs": {
+    "type": "mix",
+    "alternate": "mix.lock"
+  },
+  "mix.lock": {
+    "type": "lock",
+    "alternate": "mix.lock"
+  },
+  "README.md": {
+    "type": "readme"
+  }
+}
