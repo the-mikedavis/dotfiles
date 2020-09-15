@@ -101,11 +101,13 @@ bindsym $mod+Shift+l move right
 bindsym $mod+Shift+h move left
 
 # focus windows
-bindsym Ctrl+1 [class="Alacritty"] focus
-bindsym Ctrl+2 [class="firefox"] focus
-bindsym Ctrl+3 [class="Slack"] focus
-bindsym Ctrl+4 [class="Discord"] focus
-bindsym Ctrl+5 [class="Spotify"] focus
+# see https://bbs.archlinux.org/viewtopic.php?id=135241
+set $mousemove "sh -c 'eval `xdotool getactivewindow getwindowgeometry --shell`; xdotool mousemove $((X+WIDTH/2)) $((Y+HEIGHT/2))'"
+bindsym Ctrl+1 [class="Alacritty"] focus; exec $mousemove
+bindsym Ctrl+2 [class="firefox"] focus; exec $mousemove
+bindsym Ctrl+3 [class="Slack"] focus; exec $mousemove
+bindsym Ctrl+4 [class="Discord"] focus; exec $mousemove
+bindsym Ctrl+5 [class="Spotify"] focus; exec $mousemove
 
 # alternatively, you can use the cursor keys:
 # bindsym $mod+Shift+Left move left
