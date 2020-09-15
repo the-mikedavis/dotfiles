@@ -1,7 +1,7 @@
 [user]
   name = Michael Davis
   email = mcarsondavis@gmail.com
-  signingkey = 8234FD930AFFE846
+  signingkey = AFB04D1960833A58
 
 [filter "lfs"]
   process = git-lfs filter-process
@@ -59,3 +59,5 @@
   gpgsign = true
 [gpg]
   program = gpg
+[pull]
+  rebase = false
