@@ -573,7 +573,8 @@ key_bindings:
 colors:
   # Default colors
   primary:
-    background: '#1d1f21'
+    # background: '#1d1f21'
+    background: '#121212'
     foreground: '#c5c8c6'
 
   # Normal colors
