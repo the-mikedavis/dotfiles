@@ -1,3 +1,5 @@
+let g:polyglot_disabled = ['latex']
+
 " ensure plug is installed
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -46,7 +48,7 @@ Plug 'makerj/vim-pdf'
 " scribble syntax highlighting
 "Plug 'nickng/vim-scribble'
 " colorscheme pack
-Plug 'flazz/vim-colorschemes'
+" Plug 'flazz/vim-colorschemes'
 " my colorscheme
 Plug 'the-mikedavis/firebird'
 Plug 'mcchrish/nnn.vim'
@@ -58,16 +60,15 @@ Plug 'dense-analysis/ale'
 Plug 'JamshedVesuna/vim-markdown-preview'
 " nord colorscheme
 Plug 'arcticicestudio/nord-vim'
+" Plug 'co1ncidence/mountaineer'
+" Plug 'co1ncidence/gunmetal'
+Plug 'w0ng/vim-hybrid'
+Plug 'mboughaba/i3config.vim'
 call plug#end()
 
-let g:polyglot_disabled = ['latex']
 let g:libertine_Sunset = 1
 
 syntax enable
-" from my local file in `.colors`
-"colorscheme firebird
-"colorscheme onedark
-"colorscheme libertine
 
 "   Clear highlighting on escape in normal mode
 nnoremap <esc> :noh<return><esc>
@@ -219,10 +220,11 @@ nnoremap K :ALEHover<cr>
 
 " end ale config
 
-" colorscheme rubric
 " colorscheme onehalfdark
-colorscheme nord
-let g:airline_theme='nord'
+" colorscheme nord
+" set background=dark
+colorscheme efficient
+let g:airline_theme='hybrid'
 let g:airline#extensions#ale#enabled = 1
 
 " use github syntax and style
