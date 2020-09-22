@@ -235,3 +235,8 @@ let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_toggle=0
 " remove the rendered file after vim is closed
 let vim_markdown_preview_temp_file=1
+
+" Wayland Clipboard Support
+xnoremap "+y y:call system("wl-copy", @")<cr>
+nnoremap "+p :let @"=substitute(system("wl-paste --no-newline"), '<C-v><C-m>', '', 'g')<cr>p
+nnoremap "*p :let @"=substitute(system("wl-paste --no-newline --primary"), '<C-v><C-m>', '', 'g')<cr>p
