@@ -55,7 +55,11 @@ Plug 'mcchrish/nnn.vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'smallwat3r/efficient', { 'commit': 'b895b0c393345a8657b3d8477d6a14132ada64b3' }
+
+" Plug 'smallwat3r/efficient', { 'commit': 'b895b0c393345a8657b3d8477d6a14132ada64b3' }
+"
+Plug 'the-mikedavis/vim-efficient'
+
 Plug 'dense-analysis/ale'
 Plug 'JamshedVesuna/vim-markdown-preview'
 " nord colorscheme
