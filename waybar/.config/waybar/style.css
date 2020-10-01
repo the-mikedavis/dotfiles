@@ -1,0 +1,100 @@
+@define-color background #282828;
+@define-color foreground #ebdbb2;
+@define-color black      #222222;
+@define-color yellow     #fabd2f;
+@define-color red        #fb4934;
+@define-color green      #b8bb26;
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: Input, "Font Awesome 5 Free";
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: @background;
+  color: @foreground;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  background: transparent;
+  color: @foreground;
+  border-top: 3px solid @background;
+  border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused {
+  border-bottom: 3px solid @green;
+}
+
+#workspaces button.urgent {
+  border-bottom: 3px solid @yellow;
+}
+
+#mode {
+  background-color: @black;
+  border-top: 3px solid @black;
+  border-bottom: 3px solid @red;
+}
+
+#custom-usbguard,
+#custom-decrypted,
+#custom-updates,
+#custom-mail,
+#custom-vpn.off,
+#battery.warning,
+#memory.warning,
+#cpu.warning,
+#custom-dnd.on,
+#custom-tablet.on {
+  border-bottom: 3px solid @yellow;
+}
+
+#custom-systemd,
+#battery.critical,
+#memory.critical,
+#cpu.critical,
+#custom-yubikey,
+#custom-recording {
+  border-bottom: 3px solid @red;
+}
+
+#battery.charging {
+  border-bottom: 3px solid @green;
+}
+
+#mode,
+#pulseaudio,
+#custom-usbguard,
+#custom-yubikey,
+#custom-decrypted,
+#custom-systemd,
+#custom-updates,
+#custom-mail,
+#network,
+#cpu,
+#memory,
+#backlight,
+#battery,
+#clock {
+  padding: 0 6px;
+  margin: 0 6px;
+}
+
+#custom-vpn,
+#custom-dnd,
+#custom-tablet,
+#custom-recording {
+  padding: 0;
+  margin: 0 6px;
+}
+
+#tray {
+  margin-left: -1000000px;
+}
+
