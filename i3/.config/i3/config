@@ -33,7 +33,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Control+c kill
@@ -76,7 +76,7 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart du
 # bindsym Print exec --no-startup-id i3-scrot
 # bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 # bindsym $mod+Shift+p --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Shift+p --release exec --no-startup-id "escrotum -s '~/Pictures/%Y-%m-%d-%H%M%S_$wx$h_escrotum.png'"
+bindsym $mod+Shift+p --release exec --no-startup-id "escrotum -s '~/Pictures/%Y-%m-%d-%H%M%S_$wx$h_scrot.png'"
 # bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
@@ -103,10 +103,10 @@ bindsym $mod+Shift+h move left
 # focus windows
 # see https://bbs.archlinux.org/viewtopic.php?id=135241
 set $mousemove "sh -c 'eval `xdotool getactivewindow getwindowgeometry --shell`; xdotool mousemove $((X+WIDTH/2)) $((Y+HEIGHT/2))'"
-bindsym Ctrl+1 [class="Alacritty"] focus; exec $mousemove
+bindsym Ctrl+1 [class="kitty"] focus; exec $mousemove
 bindsym Ctrl+2 [class="firefox"] focus; exec $mousemove
 bindsym Ctrl+3 [class="Slack"] focus; exec $mousemove
-bindsym Ctrl+4 [class="Discord"] focus; exec $mousemove
+bindsym Ctrl+4 [class="discord"] focus; exec $mousemove
 bindsym Ctrl+5 [class="Spotify"] focus; exec $mousemove
 
 # alternatively, you can use the cursor keys:
