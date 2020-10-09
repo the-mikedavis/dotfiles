@@ -2,7 +2,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 # vim: filetype=i3config
 
-exec xrandr --output HDMI-A-1 --rotate right
+exec xrandr --output DisplayPort-0 --off --output DisplayPort-1 --mode 3840x2160 --pos 2160x667 --rotate normal --output HDMI-A-0 --off --output HDMI-A-1 --mode 3840x2160 --pos 0x0 --rotate left --output DVI-D-0 --off
 # set the typematic delay to 200ms (default 650ms) and rate to 25Hz (default)
 exec xset r rate 200 25
 
@@ -52,10 +52,10 @@ bindsym $mod+b exec firefox
 ################################################################################################
 
 exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+# bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
-#bindsym $mod+Ctrl+m exec pavucontrol
+bindsym $mod+Ctrl+m exec pavucontrol-qt
 
 ################################################################################################
 
@@ -76,6 +76,7 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart du
 # bindsym Print exec --no-startup-id i3-scrot
 # bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 # bindsym $mod+Shift+p --release exec --no-startup-id i3-scrot -s
+bindsym $mod+Ctrl+p --release exec --no-startup-id "pcmanfm ~/Pictures"
 bindsym $mod+Shift+p --release exec --no-startup-id "escrotum -s '~/Pictures/%Y-%m-%d-%H%M%S_$wx$h_scrot.png'"
 # bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
