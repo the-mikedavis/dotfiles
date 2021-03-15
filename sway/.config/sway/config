@@ -33,7 +33,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Control+c kill
@@ -103,12 +103,14 @@ bindsym $mod+Shift+h move left
 # focus windows
 # see https://bbs.archlinux.org/viewtopic.php?id=135241
 # set $mousemove "/home/michael/.config/fish/w-focus-middle.fish"
+# sway has a built-in for it!
 mouse_warping container
-bindsym Ctrl+1 [app_id="Alacritty"] focus
+# swaymsg -t get_tree can help find the app_ids (wayland) and class-s (x)
+bindsym Ctrl+1 [app_id="kitty"] focus
 bindsym Ctrl+2 [app_id="firefox"] focus
 bindsym Ctrl+3 [class="Slack"] focus
 bindsym Ctrl+4 [class="discord"] focus
-bindsym Ctrl+5 [class="Spotify"] focus
+bindsym Ctrl+5 [app_id="Chromium"] focus
 
 # alternatively, you can use the cursor keys:
 # bindsym $mod+Shift+Left move left
@@ -317,7 +319,7 @@ exec --no-startup-id ydotoold
 
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id ntfd
 
 # Color palette used for the terminal ( ~/.Xresources file )
@@ -381,6 +383,10 @@ set $bar_hl_color #C6643D
 #        urgent_workspace   #16a085 #FDF6E3        #E5201D
 #    }
 #}
+
+bar {
+  swaybar_command waybar
+}
 
 # hide/unhide i3status bar
 # bindsym $mod+m bar mode toggle
@@ -465,11 +471,11 @@ input "type:keyboard" {
 
 output DP-2 {
   pos 0 0
-  bg /home/michael/.backgrounds/mando-minimal.jpg fill
+  bg /home/michael/.backgrounds/highway.jpg fill
 }
 
 output HDMI-A-2 {
-  pos 3840 0 
+  pos 3840 -875
   transform 90
   bg /home/michael/.backgrounds/red-mountain.jpg fill
 }
