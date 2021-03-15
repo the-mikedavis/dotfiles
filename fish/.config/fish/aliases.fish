@@ -1,5 +1,5 @@
-alias v="vim"
-funcsave v
+# alias v="vim"
+# funcsave v
 alias c="cd"
 funcsave c
 alias e="exa"
