@@ -1,100 +1,74 @@
-@define-color background #282828;
-@define-color foreground #ebdbb2;
-@define-color black      #222222;
-@define-color yellow     #fabd2f;
-@define-color red        #fb4934;
-@define-color green      #b8bb26;
-
 * {
-  border: none;
-  border-radius: 0;
-  font-family: Input, "Font Awesome 5 Free";
-  font-size: 13px;
-  min-height: 0;
+	font-size: 20px;
+	font-family: monospace;
 }
 
 window#waybar {
-  background: @background;
-  color: @foreground;
-  transition-property: background-color;
-  transition-duration: 0.5s;
+	background: #292b2e;
+	color: #fdf6e3;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+	color: #1a1a1a;
+}
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+	color: #292b2e;
+	background: #1a1a1a;
+}
+
+#workspaces,
+#clock.1,
+#clock.2,
+#clock.3,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk,
+#tray {
+	background: #1a1a1a;
 }
 
 #workspaces button {
-  padding: 0 10px;
-  background: transparent;
-  color: @foreground;
-  border-top: 3px solid @background;
-  border-bottom: 3px solid transparent;
+	padding: 0 2px;
+	color: #fdf6e3;
 }
-
 #workspaces button.focused {
-  border-bottom: 3px solid @green;
+	color: #268bd2;
+}
+#workspaces button:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+}
+#workspaces button:hover {
+	background: #1a1a1a;
+	border: #1a1a1a;
+	padding: 0 3px;
 }
 
-#workspaces button.urgent {
-  border-bottom: 3px solid @yellow;
+#pulseaudio {
+	color: #268bd2;
+}
+#memory {
+	color: #2aa198;
+}
+#cpu {
+	color: #6c71c4;
+}
+#battery {
+	color: #859900;
+}
+#disk {
+	color: #b58900;
 }
 
-#mode {
-  background-color: @black;
-  border-top: 3px solid @black;
-  border-bottom: 3px solid @red;
-}
-
-#custom-usbguard,
-#custom-decrypted,
-#custom-updates,
-#custom-mail,
-#custom-vpn.off,
-#battery.warning,
-#memory.warning,
-#cpu.warning,
-#custom-dnd.on,
-#custom-tablet.on {
-  border-bottom: 3px solid @yellow;
-}
-
-#custom-systemd,
-#battery.critical,
-#memory.critical,
-#cpu.critical,
-#custom-yubikey,
-#custom-recording {
-  border-bottom: 3px solid @red;
-}
-
-#battery.charging {
-  border-bottom: 3px solid @green;
-}
-
-#mode,
+#clock,
 #pulseaudio,
-#custom-usbguard,
-#custom-yubikey,
-#custom-decrypted,
-#custom-systemd,
-#custom-updates,
-#custom-mail,
-#network,
-#cpu,
 #memory,
-#backlight,
+#cpu,
 #battery,
-#clock {
-  padding: 0 6px;
-  margin: 0 6px;
+#disk {
+	padding: 0 10px;
 }
-
-#custom-vpn,
-#custom-dnd,
-#custom-tablet,
-#custom-recording {
-  padding: 0;
-  margin: 0 6px;
-}
-
-#tray {
-  margin-left: -1000000px;
-}
-

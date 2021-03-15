@@ -1,150 +1,121 @@
 {
-    "layer": "top",
-    "height": 25,
-    "modules-left": [
-        "sway/workspaces",
-        "sway/mode"
-    ],
-    "modules-right": [
-        "custom/progress",
-        "custom/usbguard",
-        "custom/yubikey",
-        "custom/decrypted",
-        "custom/systemd",
-        "custom/updates",
-        "custom/mail",
-        "custom/recording",
-        "custom/dnd",
-        "pulseaudio",
-        "network",
-        "custom/vpn",
-        "cpu",
-        "memory",
-        "custom/tablet",
-        "backlight",
-        "battery",
-        "clock",
-        "tray"
-    ],
+	"layer": "top",
+	"position": "top",
 
-    "custom/progress": {
-        "exec": "waybar-progress",
-        "return-type": "json",
-        "interval": 1
-    },
-    "custom/usbguard": {
-        "exec": "waybar-usbguard",
-        "return-type": "json",
-        "on-click": "waybar-usbguard allow",
-        "on-click-right": "waybar-usbguard reject"
-    },
-    "custom/yubikey": {
-        "exec": "waybar-yubikey",
-        "return-type": "json"
-    },
-    "custom/decrypted": {
-        "exec": "waybar-decrypted",
-        "return-type": "json"
-    },
-    "custom/systemd": {
-        "exec": "waybar-systemd",
-        "return-type": "json",
-        "interval": 10
-    },
-    "custom/updates": {
-        "exec": "waybar-updates show",
-        "return-type": "json",
-        "signal": 1,
-        "on-click-right": "waybar-updates refresh",
-        "interval": "once"
-    },
-    "custom/mail": {
-        "exec": "waybar-mail",
-        "return-type": "json"
-    },
-    "custom/vpn": {
-        "exec": "waybar-vpn",
-        "return-type": "json"
-    },
-    "custom/dnd": {
-        "exec": "waybar-dnd",
-        "return-type": "json",
-        "signal": 2,
-        "interval": "once",
-        "on-click": "waybar-dnd toggle"
-    },
-    "custom/recording": {
-        "exec": "waybar-recording",
-        "return-type": "json",
-        "signal": 3,
-        "interval": "once"
-    },
-    "custom/tablet": {
-        "exec": "waybar-tablet",
-        "return-type": "json",
-        "signal": 4,
-        "interval": "once",
-        "on-click": "waybar-tablet toggle"
-    },
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": " {:%a, %d %b    %H:%M}"
-    },
-    "cpu": {
-        "format": " {usage}%",
-        "states": {
-            "warning": 70,
-            "critical": 90
-        }
-    },
-    "memory": {
-        "format": " {}%",
-        "states": {
-            "warning": 70,
-            "critical": 90
-        }
-    },
-    "backlight": {
-        "format": "{icon} {percent}%",
-        "format-icons": [""]
-    },
-    "battery": {
-        "bat": "BAT0",
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "network": {
-        "interval": 2,
-        "interface": "wlan0",
-        "format-wifi": " {essid}",
-        "format-ethernet": " {ifname}",
-        "format-linked": " {ifname}",
-        "format-disconnected": "  ",
-        "tooltip-format": "{ifname}: {ipaddr}/{cidr}\n {bandwidthDownBits}\n {bandwidthUpBits}"
-    },
-    "pulseaudio": {
-        "format": "{icon} {volume}%   {format_source}",
-        "format-bluetooth": "{icon} {volume}%   {format_source}",
-        "format-bluetooth-muted": " {icon}   {format_source}",
-        "format-muted": "   {format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    }
+	"modules-left": [
+		"sway/workspaces",
+		"custom/right-arrow-dark"
+	],
+	"modules-center": [
+		"custom/left-arrow-dark",
+		"clock#1",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"clock#2",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"clock#3",
+		"custom/right-arrow-dark"
+	],
+	"modules-right": [
+		"custom/left-arrow-dark",
+		"pulseaudio",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"memory",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"cpu",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"battery",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"disk",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"tray"
+	],
+
+	"custom/left-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"format": "{name}"
+	},
+
+	"clock#1": {
+		"format": "{:%a}",
+		"tooltip": false
+	},
+	"clock#2": {
+		"format": "{:%H:%M}",
+		"tooltip": false
+	},
+	"clock#3": {
+		"format": "{:%m-%d}",
+		"tooltip": false
+	},
+
+	"pulseaudio": {
+		"format": "{icon} {volume:2}%",
+		"format-bluetooth": "{icon}  {volume}%",
+		"format-muted": "MUTE",
+		"format-icons": {
+			"headphones": "",
+			"default": [
+				"",
+				""
+			]
+		},
+		"scroll-step": 5,
+		"on-click": "pamixer -t",
+		"on-click-right": "pavucontrol"
+	},
+	"memory": {
+		"interval": 5,
+		"format": "Mem {}%"
+	},
+	"cpu": {
+		"interval": 5,
+		"format": "CPU {usage:2}%"
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon} {capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"disk": {
+		"interval": 5,
+		"format": "Disk {percentage_used:2}%",
+		"path": "/"
+	},
+	"tray": {
+		"icon-size": 20
+	}
 }
-
