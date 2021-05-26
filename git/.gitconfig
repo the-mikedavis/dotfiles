@@ -26,6 +26,7 @@
   pl = pull
   pull = pull --tags
   d = diff
+  f = fetch
   subdate = submodule update --init --recursive
   submaster = submodule foreach git checkout master
   subpull = submodule foreach git pull
