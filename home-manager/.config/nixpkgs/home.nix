@@ -680,4 +680,6 @@ map shift+right next_tab
     #defaultCacheTtl = 1800;
     enableSshSupport = true;
   };
+
+  nixpkgs.config.allowUnfree = true;
 }
