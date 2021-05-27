@@ -599,8 +599,18 @@ input \"1452:613:Apple_Inc._Magic_Trackpad_2\" {
 input \"type:keyboard\" {
   xkb_options compose:lalt,caps:none
   xkb_layout \"us\"
-  xkb_variant \"dvp\"
+  #xkb_variant \"dvp\"
   repeat_delay 200
+}
+
+input \"5426:623:Razer_Razer_Blade_Keyboard\" {
+  xkb_options compose:lalt,caps:escape
+  xkb_layout \"us\"
+  xkb_variant \"dvp\"
+}
+
+output eDP-1 {
+  pos 0 0
 }
 
 #output DP-2 {
