@@ -122,10 +122,10 @@ plug \"lePerdu/kakboard\" %{
     ignores = [ "*.swp" "*.swo" ".projections.json" "*.elixir_ls/" ];
     userName = "Michael Davis";
     userEmail = "mcarsondavis@gmail.com";
-    #signing = {
-    #  key = "";
-    #  signByDefault = true;
-    #};
+    signing = {
+      key = "25D3AFE4BA2A0C49";
+      signByDefault = true;
+    };
   };
 
   wayland.windowManager.sway = {
