@@ -35,6 +35,8 @@
     traceroute
     nmap
     ipcalc
+    discord
+    slack
   ];
 
   programs.kakoune = {
