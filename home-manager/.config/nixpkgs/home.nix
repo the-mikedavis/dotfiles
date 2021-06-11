@@ -24,6 +24,7 @@
 
   home.packages = with pkgs; [
     curl
+    exa
     neofetch
     swaylock
     swayidle
@@ -37,6 +38,8 @@
     ipcalc
     discord
     slack
+    stow
+    jetbrains-mono
   ];
 
   programs.kakoune = {
@@ -123,7 +126,15 @@ plug \"lePerdu/kakboard\" %{
       pub = "!git push -u origin $(git branch-name)";
       lt = "!git tag --sort=version:refname | tail -n 1";
     };
-    extraConfig.core.editor = "kak";
+    extraConfig = {
+      core.editor = "kak";
+      hub.protocol = "ssh";
+      pull.rebase = "false";
+      init.defaultBranch = "main";
+      push.followTags = "true";
+      push.default = "simple";
+      tag.gpgSign = "true";
+    };
     ignores = [ "*.swp" "*.swo" ".projections.json" "*.elixir_ls/" ];
     userName = "Michael Davis";
     userEmail = "mcarsondavis@gmail.com";
@@ -156,6 +167,15 @@ hide_edge_borders none
 bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
+
+# brightness
+bindsym XF86MonBrightnessDown exec \"brightnessctl set 2%-\"
+bindsym XF86MonBrightnessUp exec \"brightnessctl set +2%\"
+
+# volume
+bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ +1%'
+bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -1%'
+bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -590,10 +610,14 @@ mode \"$mode_gaps_outer\" {
     bindsym Escape mode \"default\"
 }
 
-input \"1452:613:Apple_Inc._Magic_Trackpad_2\" {
+input type:touchpad {
   tap enabled
   natural_scroll enabled
   # pointer_accel 0.5
+}
+
+input \"1267:12454:ELAN0406:00_04F3:30A6_Touchpad\" {
+  tap disabled
 }
 
 input \"type:keyboard\" {
@@ -633,9 +657,8 @@ map shift+left previous_tab
 map shift+right next_tab
     ";
     font = {
-      name = "JetBrains Mono";
-      package = pkgs.jetbrains-mono;
-      #size = 10;
+      name = "JetBrains Mono Light";
+      # size = 10;
     };
     settings = {
       disable_ligatures = "never";
@@ -682,4 +705,12 @@ map shift+right next_tab
   };
 
   nixpkgs.config.allowUnfree = true;
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "gruvbox-dark";
+      package = pkgs.gruvbox-dark-gtk;
+    };
+  };
 }
