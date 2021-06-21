@@ -45,12 +45,7 @@
     curl
     exa
     neofetch
-    swaylock
-    swayidle
-    wl-clipboard
     docker-compose
-    grim
-    wf-recorder
     dnsutils
     traceroute
     nmap
@@ -60,7 +55,7 @@
     stow
     jetbrains-mono
     xdg-utils
-    wdisplays
+    xdotool
   ];
 
   programs.kakoune = {
