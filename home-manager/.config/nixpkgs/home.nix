@@ -32,6 +32,7 @@
       c = "cd";
       e = "exa";
       g = "git";
+      dc = "docker-compose";
     };
   };
 
