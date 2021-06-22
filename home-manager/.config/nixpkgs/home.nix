@@ -88,6 +88,7 @@ in
     wdisplays
     wofi
     bc
+    chromium
   ];
 
   programs.kakoune = {
@@ -1706,7 +1707,10 @@ map shift+right next_tab
     enableSshSupport = true;
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    chromium.enableWideVine = true;
+  };
 
   gtk = {
     enable = true;
