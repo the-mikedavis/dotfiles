@@ -213,6 +213,7 @@ plug \"lePerdu/kakboard\" %{
     enable = true;
     wrapperFeatures.gtk = true;
     config.bars = [];
+    config.modes = {};
     extraConfig = "
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -469,6 +470,24 @@ bindsym $mod+Shift+r reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 # bindsym $mod+Shift+r restart
+
+bindsym $mod+r mode \"resize\"
+mode \"resize\" {
+  # These bindings trigger as soon as you enter the resize mode
+  bindsym j move down 20 px
+  bindsym k move up 20 px
+  bindsym l move right 20 px
+  bindsym h move left 20 px
+
+  bindsym Shift+j resize grow height 10 px or 10 ppt
+  bindsym Shift+k resize shrink height 10 px or 10 ppt
+  bindsym Shift+l resize grow width 10 px or 10 ppt
+  bindsym Shift+h resize shrink width 10 px or 10 ppt
+
+  # exit resize mode: Enter or Escape
+  bindsym Return mode \"default\"
+  bindsym Escape mode \"default\"
+}
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec \"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'\"
