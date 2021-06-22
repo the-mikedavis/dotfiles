@@ -1,5 +1,12 @@
 { config, pkgs, ... }:
-
+let
+  nixos-logo-gruvbox-wallpaper = pkgs.fetchFromGitHub {
+    owner = "lunik1";
+    repo = "nixos-logo-gruvbox-wallpaper";
+    rev = "c94a15202a1498e6d828dde570e6f24b6f4f922b";
+    sha256 = "12any5ns0cimjdf7f8qi8xsygnrpagkas3zhvwhag8264xg8ljmj";
+  };
+in
 {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -666,13 +673,13 @@ output eDP-1 {
 
 output DP-2 {
   pos 0 0
-#  bg /home/michael/.backgrounds/highway.jpg fill
+  bg ${nixos-logo-gruvbox-wallpaper}/png/gruvbox-dark-rainbow.png fill
 }
 
 output HDMI-A-2 {
   pos 3840 -875
   transform 90
-#  bg /home/michael/.backgrounds/red-mountain.jpg fill
+  bg ${nixos-logo-gruvbox-wallpaper}/png/gruvbox-dark-rainbow.png fill
 }
     ";
   };
