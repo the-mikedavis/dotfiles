@@ -91,6 +91,17 @@ in
     chromium
   ];
 
+  programs.ssh = {
+    enable = true;
+    matchBlocks = {
+      eros = {
+        host = "e";
+        hostname = "104.236.53.119";
+        user = "root";
+      };
+    };
+  };
+
   programs.kakoune = {
     enable = true;
     config = {
