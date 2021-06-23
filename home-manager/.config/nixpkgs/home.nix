@@ -1733,7 +1733,7 @@ map shift+right next_tab
 
   services.gpg-agent = {
     enable = true;
-    #defaultCacheTtl = 1800;
+    defaultCacheTtl = 7200;
     enableSshSupport = true;
   };
 
