@@ -700,6 +700,7 @@ input \"5426:623:Razer_Razer_Blade_Keyboard\" {
 
 output eDP-1 {
   pos 0 0
+  bg ${nixos-logo-gruvbox-wallpaper}/png/gruvbox-dark-rainbow.png fill
 }
 
 output DP-2 {
