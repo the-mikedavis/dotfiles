@@ -86,6 +86,7 @@ in
     swayidle
     wl-clipboard
     grim
+    slurp
     wf-recorder
     wdisplays
     wofi
