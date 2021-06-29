@@ -68,9 +68,11 @@ in
   programs.command-not-found.enable = true;
 
   home.packages = with pkgs; [
+    tree
     curl
     neofetch
     docker-compose
+    docker-sync
     dnsutils
     traceroute
     nmap
@@ -111,6 +113,7 @@ in
       numberLines.enable = true;
       wrapLines.enable = true;
       showWhitespace.enable = true;
+      ui.assistant = "cat";
       hooks = [
         {
           name = "WinCreate";
@@ -131,8 +134,6 @@ evaluate-commands %sh{
   printf \"%s\\n\" \"source '$plugins/plug.kak/rc/plug.kak'\"
 }
 plug \"andreyorst/plug.kak\" noload
-
-#require-module kitty
 
 alias global g git
 
