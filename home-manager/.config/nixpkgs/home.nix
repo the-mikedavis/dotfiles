@@ -1,10 +1,17 @@
 { config, pkgs, ... }:
 let
+  unstable = import <nixos-unstable> { };
+
   nixos-logo-gruvbox-wallpaper = pkgs.fetchFromGitHub {
     owner = "lunik1";
     repo = "nixos-logo-gruvbox-wallpaper";
     rev = "c94a15202a1498e6d828dde570e6f24b6f4f922b";
     sha256 = "12any5ns0cimjdf7f8qi8xsygnrpagkas3zhvwhag8264xg8ljmj";
+  };
+
+  kak-erlang = pkgs.fetchurl {
+    url = "https://gist.githubusercontent.com/the-mikedavis/84859fa3d84a1b71a20b97b8a8ffa3f7/raw/dab74e661a54f0d480eefb89f9c0fb03d772c07b/erlang.kak";
+    sha256 = "14ib67zhi2147wlrzvv3vq3b5f2abrghbqqjsnxp4h74fawl0f5w";
   };
 in
 {
@@ -92,6 +99,8 @@ in
     wofi
     bc
     chromium
+    unstable.helix
+    file
   ];
 
   programs.ssh = {
@@ -104,6 +113,8 @@ in
       };
     };
   };
+
+  xdg.configFile."kak/erlang.kak".source = kak-erlang;
 
   programs.kakoune = {
     enable = true;
@@ -154,6 +165,8 @@ def -params 1 extend-line-up %{
 
 map global normal x ':extend-line-down %val{count}<ret>'
 map global normal X ':extend-line-up %val{count}<ret>'
+
+source ~/.config/kak/erlang.kak
 
 plug \"occivink/kakoune-sudo-write\"
 
