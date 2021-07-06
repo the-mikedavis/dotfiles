@@ -101,7 +101,11 @@ in
     chromium
     unstable.helix
     file
+    aspell
+    aspellDicts.en
   ];
+
+  home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
 
   programs.ssh = {
     enable = true;
