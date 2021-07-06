@@ -114,8 +114,6 @@ in
     };
   };
 
-  xdg.configFile."kak/erlang.kak".source = kak-erlang;
-
   programs.kakoune = {
     enable = true;
     config = {
@@ -166,7 +164,7 @@ def -params 1 extend-line-up %{
 map global normal x ':extend-line-down %val{count}<ret>'
 map global normal X ':extend-line-up %val{count}<ret>'
 
-source ~/.config/kak/erlang.kak
+source ${kak-erlang}
 
 plug \"occivink/kakoune-sudo-write\"
 
