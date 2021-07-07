@@ -103,6 +103,7 @@ in
     file
     aspell
     aspellDicts.en
+    git-crypt
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
