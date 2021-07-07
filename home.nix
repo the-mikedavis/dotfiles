@@ -3,6 +3,7 @@ let
   # unstable = import <nixos-unstable> { };
   dirs = {
     defaults = ./defaults;
+    colorschemes = ./colorschemes;
   };
 
   configs = {
@@ -89,6 +90,8 @@ in
   programs.kakoune = {
     enable = true;
   } // configs.kakoune;
+
+  xdg.configFile."kak/colors/grv.kak".source = (dirs.colorschemes + /kakoune/grv.kak);
 
   programs.git = {
     enable = true;

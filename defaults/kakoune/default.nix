@@ -8,7 +8,7 @@ in
 {
   config = {
     autoReload = "yes";
-    colorScheme = "gruvbox";
+    colorScheme = "grv";
     indentWidth = 2;
     numberLines.enable = true;
     wrapLines.enable = true;
