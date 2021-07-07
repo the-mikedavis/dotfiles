@@ -17,7 +17,7 @@
     next_tag = ''
     set -l current_tag_match (git tag --sort=version:refname | tail -n 1 | string match -r 'v(\d+)')
     set -l current_version_number (echo $current_tag_match[2])
-    set -l next_version_number (echo $current_version_number + 1 | bc)
+    set -l next_version_number (echo "$current_version_number + 1" | ${pkgs.bc}/bin/bc)
     git tag -s -a "v$next_version_number" -m $argv
     '';
   };

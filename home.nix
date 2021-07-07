@@ -73,7 +73,6 @@ in
     wf-recorder
     wdisplays
     wofi
-    bc
     chromium
     file
     aspell
