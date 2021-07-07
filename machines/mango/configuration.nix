@@ -1,17 +1,19 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 let
   dirs = {
     defaults = ../../defaults;
   };
+  configs = {
+    dnscrypt-proxy2 = import (dirs.defaults + /dnscrypt-proxy2);
+  };
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    # note the absolute path: since this file is maintained in as a symlink,
+    # the paths are relative to the location in the git repo, not to
+    # /etc/nixos where it is linked
+    [
       /etc/nixos/hardware-configuration.nix
     ];
 
@@ -34,28 +36,10 @@ in
     interfaces.wlo1.useDHCP = true;
 
     nameservers = [ "127.0.0.1" "::1" ];
-    hosts = import (dirs.defaults + /hosts/default.nix);
+    hosts = import (dirs.defaults + /hosts);
   };
 
-  services.dnscrypt-proxy2 = {
-    enable = true;
-    settings = {
-      ipv6_servers = true;
-      require_dnssec = true;
-
-      sources.public-resolvers = {
-        urls = [
-          "https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md"
-          "https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md"
-        ];
-        cache_file = "/var/lib/dnscrypt-proxy2/public-resolvers.md";
-        minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3";
-      };
-
-      # You can choose a specific set of servers from https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
-      # server_names = [ ... ];
-    };
-  };
+  services.dnscrypt-proxy2 = configs.dnscrypt-proxy2;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
