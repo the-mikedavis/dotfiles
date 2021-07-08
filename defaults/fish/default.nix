@@ -20,6 +20,8 @@
     set -l next_version_number (echo "$current_version_number + 1" | ${pkgs.bc}/bin/bc)
     git tag -s -a "v$next_version_number" -m $argv
     '';
+    # run kakoune as a daemon with session name passed as $argv[1]
+    kakd = "setsid kak -d -s $argv[1] &";
   };
   shellAliases = {
     c = "cd";
