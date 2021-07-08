@@ -71,6 +71,14 @@ in
 
   programs.fish.enable = true;
 
+  # enable xdg portals and pipewire for screensharing
+  services.pipewire.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [ xdg-desktop-portal-wlr xdg-desktop-portal-gtk ];
+    gtkUsePortal = true;
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.michael = {
     isNormalUser = true;

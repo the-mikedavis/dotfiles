@@ -13,7 +13,7 @@ let
     git = import (dirs.defaults + /git);
     sway = import (dirs.defaults + /sway) { inherit pkgs; };
     kitty = import (dirs.defaults + /kitty);
-    firefox = import (dirs.defaults + /firefox);
+    firefox = import (dirs.defaults + /firefox) { inherit pkgs; };
     gpg = import (dirs.defaults + /gpg);
     gtk = import (dirs.defaults + /gtk) { inherit pkgs; };
   };

@@ -1,4 +1,8 @@
+{ pkgs }:
 {
+  package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
+    forceWayland = true;
+  };
   profiles = {
     default = {
       id = 0;
