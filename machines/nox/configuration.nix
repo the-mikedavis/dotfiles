@@ -4,6 +4,11 @@
 
 { config, pkgs, ... }:
 
+let
+  dirs = {
+    defaults = ../../defaults;
+  };
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -30,6 +35,7 @@
     # replicates the default behaviour.
     useDHCP = false;
     interfaces.enp2s0.useDHCP = true;
+    hosts = import (dirs.defaults + /hosts);
   };
 
   # DNS over TLS
