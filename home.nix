@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  # unstable = import <nixos-unstable> { };
+  unstable = import <nixos-unstable> { };
   dirs = {
     defaults = ./defaults;
     colorschemes = ./colorschemes;
@@ -79,6 +79,8 @@ in
     aspell
     aspellDicts.en
     git-crypt
+    fzf
+    # unstable.helix
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
