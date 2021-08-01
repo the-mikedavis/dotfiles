@@ -18,57 +18,67 @@ in
       {
         name = "WinCreate";
         option = "[^*]*";
-        commands = "
-        add-highlighter window/ column 81 default,rgb:404040
-        add-highlighter global/ regex \\h+$ 0:Error
-        ";
+        commands = ''
+          add-highlighter window/ column 81 default,rgb:404040
+          add-highlighter global/ regex \h+$ 0:Error
+        '';
       }
     ];
   };
-  extraConfig = "
-evaluate-commands %sh{
-  plugins=\"$kak_config/plugins\"
-  mkdir -p \"$plugins\"
-  [ ! -e \"$plugins/plug.kak\" ] && \
-    git clone -q https://github.com/andreyorst/plug.kak.git \"$plugins/plug.kak\"
-  printf \"%s\\n\" \"source '$plugins/plug.kak/rc/plug.kak'\"
-}
-plug \"andreyorst/plug.kak\" noload
+  extraConfig = ''
+    evaluate-commands %sh{
+      plugins="$kak_config/plugins"
+      mkdir -p "$plugins"
+      [ ! -e "$plugins/plug.kak" ] && \
+        git clone -q https://github.com/andreyorst/plug.kak.git "$plugins/plug.kak"
+      printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
+    }
+    plug "andreyorst/plug.kak" noload
 
-alias global g git
+    alias global g git
 
-# make x extend the selection down, X extend up
-def -params 1 extend-line-down %{
-  exec \"<a-:>%arg{1}X\"
-}
+    # make x extend the selection down, X extend up
+    def -params 1 extend-line-down %{
+      exec "<a-:>%arg{1}X"
+    }
 
-def -params 1 extend-line-up %{
-  exec \"<a-:><a-;>%arg{1}K<a-;>\"
-  try %{
-    exec -draft ';<a-K>\\n<ret>'
-    exec X
-  }
-  exec '<a-;><a-X>'
-}
+    def -params 1 extend-line-up %{
+      exec "<a-:><a-;>%arg{1}K<a-;>"
+      try %{
+        exec -draft ';<a-K>\n<ret>'
+        exec X
+      }
+      exec '<a-;><a-X>'
+    }
 
-map global normal x ':extend-line-down %val{count}<ret>'
-map global normal X ':extend-line-up %val{count}<ret>'
+    map global normal x ':extend-line-down %val{count}<ret>'
+    map global normal X ':extend-line-up %val{count}<ret>'
 
-source ${kak-erlang}
+    source ${kak-erlang}
 
-plug \"occivink/kakoune-sudo-write\"
+    plug "occivink/kakoune-sudo-write"
+    plug "delapouite/kakoune-buffers"
+    plug "andreyorst/fzf.kak"
 
-plug \"delapouite/kakoune-buffers\" %{
-    map global normal \\' ': enter-buffers-mode<ret>' -docstring 'buffers'
-    map global normal <a-'> ': enter-user-mode -lock buffers<ret>' -docstring 'buffers (lock)'
-}
+    # load fzf finding functions into the user mode (activated with space)
+    hook global ModuleLoaded fzf %{
+      map global user -docstring "fuzzyfind file" 'f' '<esc>: require-module fzf-file; fzf-file<ret>'
+      map global user -docstring "fuzzyfind buffer" 'b' '<esc>: require-module fzf-buffer; fzf-buffer<ret>'
+    }
 
-plug \"andreyorst/fzf.kak\" %{
-  map global user f ': fzf-mode<ret>'
-}
+    # otherwise custom user-mode keymappings
+    map global user <space> <space> -docstring 'remove all selections except main'
+    map global user -docstring "delete buffer" 'd' ': delete-buffer<ret>'
+    map global user -docstring "next buffer" 'n' ': buffer-next<ret>'
+    map global user -docstring "prev buffer" 'p' ': buffer-next<ret>'
+    map global user -docstring "list buffers" 'i' ': info-buffers<ret>'
 
-plug \"lePerdu/kakboard\" %{
-    hook global WinCreate .* %{ kakboard-enable }
-}
-  ";
+    plug "lePerdu/kakboard" %{
+        hook global WinCreate .* %{ kakboard-enable }
+    }
+
+    # switch to space as a leader key
+    map global normal <space> , -docstring 'leader'
+    require-module fzf
+  '';
 }
