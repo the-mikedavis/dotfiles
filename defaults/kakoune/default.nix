@@ -58,12 +58,13 @@ in
 
     plug "occivink/kakoune-sudo-write"
     plug "delapouite/kakoune-buffers"
-    plug "andreyorst/fzf.kak"
 
-    # load fzf finding functions into the user mode (activated with space)
-    hook global ModuleLoaded fzf %{
-      map global user -docstring "fuzzyfind file" 'f' '<esc>: require-module fzf-file; fzf-file<ret>'
+    plug "andreyorst/fzf.kak" config %{
+    } defer fzf %{
+      map global user -docstring "fuzzyfind file in vcs" 'f' '<esc>: require-module fzf-vcs; fzf-vcs<ret>'
+      map global user -docstring "fuzzyfind file" 'F' '<esc>: require-module fzf-file; fzf-file<ret>'
       map global user -docstring "fuzzyfind buffer" 'b' '<esc>: require-module fzf-buffer; fzf-buffer<ret>'
+      map global user -docstring "interactive grep" 'g' '<esc>: require-module fzf-grep; fzf-grep<ret>'
     }
 
     # otherwise custom user-mode keymappings
@@ -72,6 +73,8 @@ in
     map global user -docstring "next buffer" 'n' ': buffer-next<ret>'
     map global user -docstring "prev buffer" 'p' ': buffer-next<ret>'
     map global user -docstring "list buffers" 'l' ': info-buffers<ret>'
+    map global user -docstring "fzf-mode" 'z' ': fzf-mode<ret>'
+    map global user -docstring "mkdir -p" 'm' ': mkdir-p<space>'
 
     plug "lePerdu/kakboard" %{
         hook global WinCreate .* %{ kakboard-enable }
@@ -79,6 +82,11 @@ in
 
     # switch to space as a leader key
     map global normal <space> , -docstring 'leader'
+
+    define-command mkdir-p -params 1 %{ nop %sh{
+      mkdir -p "$1"
+    }}
+
     require-module fzf
   '';
 }

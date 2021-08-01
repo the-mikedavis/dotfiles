@@ -16,6 +16,7 @@ let
     firefox = import (dirs.defaults + /firefox) { inherit pkgs; };
     gpg = import (dirs.defaults + /gpg);
     gtk = import (dirs.defaults + /gtk) { inherit pkgs; };
+    fzf = import (dirs.defaults + /fzf);
   };
 in
 {
@@ -79,7 +80,6 @@ in
     aspell
     aspellDicts.en
     git-crypt
-    fzf
     # unstable.helix
   ];
 
@@ -126,6 +126,10 @@ in
   gtk = {
     enable = true;
   } // configs.gtk;
+
+  programs.fzf = {
+    enable = true;
+  } // configs.fzf;
 
   nixpkgs.config = {
     allowUnfree = true;
