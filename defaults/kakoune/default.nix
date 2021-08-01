@@ -71,7 +71,7 @@ in
     map global user -docstring "delete buffer" 'd' ': delete-buffer<ret>'
     map global user -docstring "next buffer" 'n' ': buffer-next<ret>'
     map global user -docstring "prev buffer" 'p' ': buffer-next<ret>'
-    map global user -docstring "list buffers" 'i' ': info-buffers<ret>'
+    map global user -docstring "list buffers" 'l' ': info-buffers<ret>'
 
     plug "lePerdu/kakboard" %{
         hook global WinCreate .* %{ kakboard-enable }
