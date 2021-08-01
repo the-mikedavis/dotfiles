@@ -63,6 +63,10 @@ plug \"delapouite/kakoune-buffers\" %{
     map global normal <a-'> ': enter-user-mode -lock buffers<ret>' -docstring 'buffers (lock)'
 }
 
+plug \"andreyorst/fzf.kak\" %{
+  map global user f ': fzf-mode<ret>'
+}
+
 plug \"lePerdu/kakboard\" %{
     hook global WinCreate .* %{ kakboard-enable }
 }
