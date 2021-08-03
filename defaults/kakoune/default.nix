@@ -70,6 +70,7 @@ in
     # otherwise custom user-mode keymappings
     map global user <space> <space> -docstring 'remove all selections except main'
     map global user -docstring "delete buffer" 'd' ': delete-buffer<ret>'
+    map global user -docstring "delete all buffers" 'D' ': delete-buffers<ret>'
     map global user -docstring "next buffer" 'n' ': buffer-next<ret>'
     map global user -docstring "prev buffer" 'p' ': buffer-next<ret>'
     map global user -docstring "list buffers" 'l' ': info-buffers<ret>'
