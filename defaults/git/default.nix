@@ -27,7 +27,13 @@
     push.default = "simple";
     tag.gpgSign = "true";
   };
-  ignores = [ "*.swp" "*.swo" ".projections.json" "*.elixir_ls/" ];
+  ignores = [
+    "*.swp"
+    "*.swo"
+    ".projections.json"
+    "*.elixir_ls/"
+    "nohup.out"
+  ];
   userName = "Michael Davis";
   userEmail = "mcarsondavis@gmail.com";
   signing = {
