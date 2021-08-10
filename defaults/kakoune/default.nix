@@ -88,6 +88,14 @@ in
     map global user -docstring "fzf-mode" 'z' ': fzf-mode<ret>'
     map global user -docstring "mkdir -p" 'm' ': mkdir-p<space>'
     map global user -docstring "select all instances" 'a' '*%s<ret>'
+    map global user -docstring "git status" 's' ': git status<ret>'
+
+    # custom git bindings in a user-mode
+    declare-user-mode git
+    map global git -docstring "status" 's' ': git status<ret>'
+    map global git -docstring "commit" 'c' ': git commit<ret>'
+    map global git -docstring "add" 'a' ': git add<space>'
+    map global normal -docstring "enter git mode" '+' ': enter-user-mode git<ret>'
 
     # switch to space as a leader key
     map global normal <space> , -docstring 'leader'
