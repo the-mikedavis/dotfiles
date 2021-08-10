@@ -55,9 +55,20 @@ in
     map global normal X ':extend-line-up %val{count}<ret>'
 
     source ${kak-erlang}
+    # source ~/.config/kak/coerce.kak
+
+    map global normal + ': coerce-mode<ret>' -docstring 'coercion mode'
 
     plug "occivink/kakoune-sudo-write"
     plug "delapouite/kakoune-buffers"
+
+    plug "lePerdu/kakboard" %{
+        hook global WinCreate .* %{ kakboard-enable }
+    }
+
+    plug "the-mikedavis/coerce.kak" %{
+      map global user -docstring "coerce mode" 'c' ': coerce-mode<ret>'
+    }
 
     plug "andreyorst/fzf.kak" config %{
     } defer fzf %{
@@ -76,17 +87,12 @@ in
     map global user -docstring "list buffers" 'l' ': info-buffers<ret>'
     map global user -docstring "fzf-mode" 'z' ': fzf-mode<ret>'
     map global user -docstring "mkdir -p" 'm' ': mkdir-p<space>'
-
-    plug "lePerdu/kakboard" %{
-        hook global WinCreate .* %{ kakboard-enable }
-    }
+    map global user -docstring "select all instances" 'a' '*%s<ret>'
 
     # switch to space as a leader key
     map global normal <space> , -docstring 'leader'
 
-    define-command mkdir-p -params 1 %{ nop %sh{
-      mkdir -p "$1"
-    }}
+    define-command mkdir-p -params 1 %{ nop %sh{ mkdir -p "$1" }}
 
     require-module fzf
   '';
