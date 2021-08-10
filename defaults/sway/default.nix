@@ -9,8 +9,12 @@ let
 in
 {
   wrapperFeatures.gtk = true;
-  config.bars = [];
-  config.modes = {};
+  config = {
+    bars = [];
+    modes = {};
+    keybindings = {};
+    modifier = "Mod4";
+  };
   # YARD looking for a better way to do this
   extraConfig = "
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
@@ -484,7 +488,8 @@ input \"1267:12454:ELAN0406:00_04F3:30A6_Touchpad\" {
 }
 
 input \"type:keyboard\" {
-  xkb_options compose:lalt,caps:none
+  #xkb_options compose:lalt,caps:none
+  xkb_options caps:none
   xkb_layout \"us\"
   #xkb_variant \"dvp\"
   repeat_delay 200
