@@ -70,6 +70,31 @@ in
       map global user -docstring "coerce mode" 'c' ': coerce-mode<ret>'
     }
 
+    plug "the-mikedavis/buffercraft.kak" %{
+      hook global BufCreate .*[.]ex %{
+        set-option buffer buffercraft_kind "lib"
+        set-option buffer buffercraft_pattern "lib/(.*)\.ex"
+        set-option buffer buffercraft_alternate "test/{{ matches[1] }}_test.exs"
+        set-option buffer buffercraft_template \
+    'defmodule {{ matches[1] | pascalcase | dot }} do
+      @moduledoc """
+      """
+    end'
+      }
+
+      hook global BufCreate .*_test[.]exs %{
+        set-option buffer buffercraft_kind "test"
+        set-option buffer buffercraft_pattern "test/(.*)_test\.exs"
+        set-option buffer buffercraft_alternate "lib/{{ matches[1] }}.ex"
+        set-option buffer buffercraft_template \
+    'defmodule {{ matches[1] | pascalcase | dot }}Test do
+      use ExUnit.Case, async: true
+
+      alias {{ matches[1] | pascalcase | dot }}
+    end'
+      }
+    }
+
     plug "andreyorst/fzf.kak" config %{
     } defer fzf %{
       map global user -docstring "fuzzyfind file in vcs" 'f' '<esc>: require-module fzf-vcs; fzf-vcs<ret>'
@@ -83,24 +108,42 @@ in
     map global user -docstring "delete buffer" 'd' ': delete-buffer<ret>'
     map global user -docstring "delete all buffers" 'D' ': delete-buffers<ret>'
     map global user -docstring "next buffer" 'n' ': buffer-next<ret>'
-    map global user -docstring "prev buffer" 'p' ': buffer-next<ret>'
+    map global user -docstring "prev buffer" 'p' ': buffer-previous<ret>'
     map global user -docstring "list buffers" 'l' ': info-buffers<ret>'
     map global user -docstring "fzf-mode" 'z' ': fzf-mode<ret>'
-    map global user -docstring "mkdir -p" 'm' ': mkdir-p<space>'
+    map global user -docstring "mkdir -p (for current buffer)" 'm' ': buffer-mkdir-p<ret>'
+    map global user -docstring "mkdir -p (prompt)" 'M' ': mkdir-p<space>'
     map global user -docstring "select all instances" 'a' '*%s<ret>'
-    map global user -docstring "git status" 's' ': git status<ret>'
+    map global user -docstring "edit from current directory" 'e' ': edit-from-current-directory<ret>'
 
     # custom git bindings in a user-mode
     declare-user-mode git
     map global git -docstring "status" 's' ': git status<ret>'
     map global git -docstring "commit" 'c' ': git commit<ret>'
+    map global git -docstring "commit --all" 'C' ': git commit -a<ret>'
     map global git -docstring "add" 'a' ': git add<space>'
+    map global git -docstring "diff" 'd' ': git diff<ret>'
     map global normal -docstring "enter git mode" '+' ': enter-user-mode git<ret>'
 
     # switch to space as a leader key
     map global normal <space> , -docstring 'leader'
 
-    define-command mkdir-p -params 1 %{ nop %sh{ mkdir -p "$1" }}
+    define-command -params 1 -file-completion mkdir-p %{ nop %sh{ mkdir -p "$1" }}
+
+    define-command -params 1..2 -file-completion rm %{ nop %sh{ rm $1 $2 }}
+
+    define-command -docstring "make directory for the current buffer" \
+    buffer-mkdir-p %{ nop %sh{ mkdir -p "$(dirname "$kak_buffile")" }}
+
+    define-command -docstring "edit a file from the current file's directory" \
+    edit-from-current-directory %{ evaluate-commands %sh{
+      printf "execute-keys '<esc>: edit %s/'" $(dirname "$kak_buffile")
+    }}
+
+    # use c++ syntax highlighting for c-sharp files
+    hook global BufCreate .*\.(cs)$ %{
+      set-option buffer filetype cpp
+    }
 
     require-module fzf
   '';
