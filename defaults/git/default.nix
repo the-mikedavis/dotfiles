@@ -6,6 +6,7 @@
     sha = "rev-parse HEAD";
     st = "status";
     b = "branch";
+    sw = "switch";
     ci = "commit";
     cia = "commit -a";
     co = "checkout";
