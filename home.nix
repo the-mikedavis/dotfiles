@@ -80,6 +80,7 @@ in
     aspell
     aspellDicts.en
     git-crypt
+    subsurface
     # unstable.helix
   ];
 
