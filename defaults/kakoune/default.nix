@@ -96,11 +96,11 @@ in
     }
 
     plug "andreyorst/fzf.kak" config %{
-    } defer fzf %{
+    } demand fzf %{
       map global user -docstring "fuzzyfind file" 'f' '<esc>: require-module fzf-file; fzf-file<ret>'
       map global user -docstring "fuzzyfind buffer" 'b' '<esc>: require-module fzf-buffer; fzf-buffer<ret>'
       map global user -docstring "interactive grep" 'g' '<esc>: require-module fzf-grep; fzf-grep<ret>'
-
+    } demand fzf-file %{
       set-option global fzf_file_command 'rg'
     }
 
@@ -145,7 +145,5 @@ in
     hook global BufCreate .*\.(cs)$ %{
       set-option buffer filetype cpp
     }
-
-    require-module fzf
   '';
 }
