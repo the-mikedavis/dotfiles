@@ -81,6 +81,7 @@ in
     aspellDicts.en
     git-crypt
     subsurface
+    ripgrep
     # unstable.helix
   ];
 

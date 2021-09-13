@@ -97,10 +97,11 @@ in
 
     plug "andreyorst/fzf.kak" config %{
     } defer fzf %{
-      map global user -docstring "fuzzyfind file in vcs" 'f' '<esc>: require-module fzf-vcs; fzf-vcs<ret>'
-      map global user -docstring "fuzzyfind file" 'F' '<esc>: require-module fzf-file; fzf-file<ret>'
+      map global user -docstring "fuzzyfind file" 'f' '<esc>: require-module fzf-file; fzf-file<ret>'
       map global user -docstring "fuzzyfind buffer" 'b' '<esc>: require-module fzf-buffer; fzf-buffer<ret>'
       map global user -docstring "interactive grep" 'g' '<esc>: require-module fzf-grep; fzf-grep<ret>'
+
+      set-option global fzf_file_command 'rg'
     }
 
     # otherwise custom user-mode keymappings
