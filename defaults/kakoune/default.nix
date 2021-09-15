@@ -20,7 +20,7 @@ in
         option = "[^*]*";
         commands = ''
           add-highlighter window/ column 81 default,rgb:404040
-          add-highlighter global/ regex \h+$ 0:Error
+          add-highlighter window/ regex \h+$ 0:Error
         '';
       }
     ];
