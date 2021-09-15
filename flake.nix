@@ -24,7 +24,11 @@
         home-manager.users.michael = import ./home.nix;
       }
       agenix.nixosModules.age
-      { environment.systemPackages = [ agenix.defaultPackage.x86_64-linux ]; }
+      {
+        environment.systemPackages = [
+          agenix.defaultPackage.x86_64-linux
+        ];
+      }
     ];
   in {
     nixosConfigurations = {

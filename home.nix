@@ -1,6 +1,5 @@
 { pkgs, ... }:
 let
-  unstable = import <nixos-unstable> { };
   dirs = {
     defaults = ./defaults;
     colorschemes = ./colorschemes;
@@ -84,10 +83,14 @@ in
     ripgrep
     imv
     bat
+    killall
+    _1password
     # unstable.helix
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
+
+  programs.qutebrowser.enable = true;
 
   programs.ssh = {
     enable = true;

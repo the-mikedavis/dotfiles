@@ -64,7 +64,8 @@ bindsym $mod+d exec wofi --show drun --allow-images
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
-bindsym $mod+b exec \"GDK_BACKEND=wayland firefox\"
+# bindsym $mod+b exec \"GDK_BACKEND=wayland firefox\"
+bindsym $mod+b exec \"qutebrowser\"
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -131,6 +132,7 @@ bindsym Ctrl+2 [app_id=\"firefox\"] focus
 bindsym Ctrl+3 [class=\"Slack\"] focus
 bindsym Ctrl+4 [class=\"discord\"] focus
 bindsym Ctrl+5 [app_id=\"Chromium\"] focus
+bindsym Ctrl+6 [app_id=\"qutebrowser\"] focus
 
 # alternatively, you can use the cursor keys:
 # bindsym $mod+Shift+Left move left
