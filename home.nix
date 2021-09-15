@@ -133,9 +133,4 @@ in
   programs.fzf = {
     enable = true;
   } // configs.fzf;
-
-  nixpkgs.config = {
-    allowUnfree = true;
-    chromium.enableWideVine = true;
-  };
 }
