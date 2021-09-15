@@ -83,6 +83,7 @@ in
     subsurface
     ripgrep
     imv
+    bat
     # unstable.helix
   ];
 

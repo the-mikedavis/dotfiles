@@ -102,6 +102,9 @@ in
       map global user -docstring "interactive grep" 'g' '<esc>: require-module fzf-grep; fzf-grep<ret>'
     } demand fzf-file %{
       set-option global fzf_file_command 'rg'
+      set-option global fzf_highlight_command 'bat'
+    } demand fzf-grep %{
+      set-option global fzf_grep_command 'rg'
     }
 
     # otherwise custom user-mode keymappings
