@@ -11,20 +11,24 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nixpkgs, unstable, home-manager, ... }: {
+  outputs = inputs@{ self, nixpkgs, unstable, home-manager, ... }:
+  let
+    home-manager-modules = [
+      home-manager.nixosModules.home-manager
+      {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.users.michael = import ./home.nix;
+      }
+    ];
+  in {
     nixosConfigurations = {
       mango = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           { nixpkgs.config.allowUnfree = true; }
           ./machines/mango/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.michael = import ./home.nix;
-          }
-        ];
+        ] ++ home-manager-modules;
       };
 
       nox = nixpkgs.lib.nixosSystem {
@@ -32,13 +36,7 @@
         modules = [
           { nixpkgs.config.allowUnfree = true; }
           ./machines/nox/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.michael = import ./home.nix;
-          }
-        ];
+        ] ++ home-manager-modules;
       };
     };
   };
