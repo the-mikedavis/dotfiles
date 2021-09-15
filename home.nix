@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 let
   unstable = import <nixos-unstable> { };
   dirs = {
@@ -82,6 +82,7 @@ in
     git-crypt
     subsurface
     ripgrep
+    imv
     # unstable.helix
   ];
 
