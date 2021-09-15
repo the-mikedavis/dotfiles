@@ -62,4 +62,6 @@
     enable = true;
     wrapperFeatures.gtk = true;
   };
+
+  environment.variables.EDITOR = "kak";
 }
