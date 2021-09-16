@@ -45,8 +45,11 @@
   ];
 
   fonts.fonts = with pkgs; [
+    jetbrains-mono
     font-awesome
   ];
+
+  programs.qt5ct.enable = true;
 
   programs.gnupg.agent = {
     enable = true;
