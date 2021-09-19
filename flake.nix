@@ -15,7 +15,9 @@
 
   outputs = inputs@{ self, nixpkgs, unstable, home-manager, agenix, ... }:
   let
+    system = "x86_64-linux";
     nixconfig = { nixpkgs.config.allowUnfree = true; };
+    pkgs-unstable = import unstable { config.allowUnfree = true; system = system; };
     common-modules = [
       home-manager.nixosModules.home-manager
       {
@@ -26,14 +28,15 @@
       agenix.nixosModules.age
       {
         environment.systemPackages = [
-          agenix.defaultPackage.x86_64-linux
+          agenix.defaultPackage.${system}
+          pkgs-unstable._1password-gui
         ];
       }
     ];
   in {
     nixosConfigurations = {
       mango = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        system = system;
         modules = [
           nixconfig
           ./machines/mango/configuration.nix
@@ -41,7 +44,7 @@
       };
 
       nox = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        system = system;
         modules = [
           nixconfig
           ./machines/nox/configuration.nix

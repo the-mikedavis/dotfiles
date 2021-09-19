@@ -128,11 +128,11 @@ bindsym $mod+Shift+h move left
 mouse_warping container
 # swaymsg -t get_tree can help find the app_ids (wayland) and class-s (x)
 bindsym Ctrl+1 [app_id=\"kitty\"] focus
-bindsym Ctrl+2 [app_id=\"firefox\"] focus
+bindsym Ctrl+2 [app_id=\"qutebrowser\"] focus
 bindsym Ctrl+3 [class=\"Slack\"] focus
 bindsym Ctrl+4 [class=\"discord\"] focus
 bindsym Ctrl+5 [app_id=\"Chromium\"] focus
-bindsym Ctrl+6 [app_id=\"qutebrowser\"] focus
+bindsym Ctrl+6 [class=\"1Password\"] focus
 
 # alternatively, you can use the cursor keys:
 # bindsym $mod+Shift+Left move left
