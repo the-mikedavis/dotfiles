@@ -42,6 +42,8 @@
   environment.systemPackages = with pkgs; [
     kakoune
     pavucontrol
+    cryptsetup
+    ncdu
   ];
 
   fonts.fonts = with pkgs; [
