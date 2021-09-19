@@ -9,11 +9,9 @@
 
     home-manager.url = "github:nix-community/home-manager/release-21.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    agenix.url = "github:ryantm/agenix";
   };
 
-  outputs = inputs@{ self, nixpkgs, unstable, home-manager, agenix, ... }:
+  outputs = inputs@{ self, nixpkgs, unstable, home-manager, ... }:
   let
     system = "x86_64-linux";
     nixconfig = { nixpkgs.config.allowUnfree = true; };
@@ -25,13 +23,12 @@
         home-manager.useUserPackages = true;
         home-manager.users.michael = import ./home.nix;
       }
-      agenix.nixosModules.age
       {
         environment.systemPackages = [
-          agenix.defaultPackage.${system}
           pkgs-unstable._1password-gui
         ];
       }
+      ./modules/common.nix
     ];
   in {
     nixosConfigurations = {

@@ -9,7 +9,6 @@ in
   imports =
     [
       ./hardware-configuration.nix
-      ../../modules/common.nix
     ];
 
   # fix the infinite locking loop
