@@ -9,9 +9,11 @@
 
     home-manager.url = "github:nix-community/home-manager/release-21.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    impermanence.url = "github:nix-community/impermanence/master";
   };
 
-  outputs = inputs@{ self, nixpkgs, unstable, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, unstable, home-manager, impermanence, ... }:
   let
     system = "x86_64-linux";
     nixconfig = { nixpkgs.config.allowUnfree = true; };
@@ -23,6 +25,7 @@
         home-manager.useUserPackages = true;
         home-manager.users.michael = import ./home.nix;
       }
+      impermanence.nixosModules.impermanence
       {
         environment.systemPackages = [
           pkgs-unstable._1password-gui
