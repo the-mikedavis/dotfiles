@@ -1,5 +1,9 @@
 { pkgs, ... }:
 
+let
+  dirs = { defaults = ../defaults; };
+  passwd = import (dirs.defaults + /passwd);
+in
 {
   # add flakes support
   nix = {
@@ -33,10 +37,12 @@
     gtkUsePortal = true;
   };
 
+  users.users.root.initialHashedPassword = passwd.root;
   users.users.michael = {
     isNormalUser = true;
     shell = pkgs.fish;
     extraGroups = [ "wheel" "wireshark" "docker" ];
+    initialHashedPassword = passwd.michael;
   };
 
   environment.systemPackages = with pkgs; [
