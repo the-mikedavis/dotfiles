@@ -4,7 +4,7 @@
     map shift+right next_tab
   '';
   font = {
-    name = "JetBrains Mono Light";
+    name = "JetBrains Mono";
     # size = 10;
   };
   settings = {
