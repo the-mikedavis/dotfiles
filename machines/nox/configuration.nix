@@ -46,6 +46,7 @@ in
       "/etc/NetworkManager/system-connections"
       "/var/lib/docker"
       "/home/michael"
+      "/var/log"
     ];
     files = [
       "/etc/machine-id"
