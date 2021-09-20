@@ -16,7 +16,11 @@
   outputs = inputs@{ self, nixpkgs, unstable, home-manager, impermanence, ... }:
   let
     system = "x86_64-linux";
-    nixconfig = { nixpkgs.config.allowUnfree = true; };
+    nixconfig = { nixpkgs.config = {
+      allowUnfree = true;
+      chromium.enableWideVine = true;
+    };};
+
     pkgs-unstable = import unstable { config.allowUnfree = true; system = system; };
     common-modules = [
       home-manager.nixosModules.home-manager
