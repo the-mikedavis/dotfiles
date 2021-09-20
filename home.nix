@@ -85,6 +85,7 @@ in
     bat
     killall
     _1password
+    nixpkgs-fmt
     # unstable.helix
   ];
 

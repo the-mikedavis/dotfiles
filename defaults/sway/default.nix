@@ -10,9 +10,9 @@ in
 {
   wrapperFeatures.gtk = true;
   config = {
-    bars = [];
-    modes = {};
-    keybindings = {};
+    bars = [ ];
+    modes = { };
+    keybindings = { };
     modifier = "Mod4";
   };
   # YARD looking for a better way to do this
@@ -383,8 +383,8 @@ set $bar_hl_color #C6643D
 #    position bottom
 
 ### please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-##	tray_output primary
-##	tray_output eDP1
+##  tray_output primary
+##  tray_output eDP1
 
 #    bindsym button4 nop
 #    bindsym button5 nop

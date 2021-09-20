@@ -2,7 +2,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
@@ -11,13 +12,15 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "none";
+    {
+      device = "none";
       fsType = "tmpfs";
       options = [ "defaults" "size=2G" "mode=755" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/409B-C246";
+    {
+      device = "/dev/disk/by-uuid/409B-C246";
       fsType = "vfat";
     };
 
@@ -29,7 +32,8 @@
   };
 
   fileSystems."/nix" =
-    { device = "/dev/vg/root";
+    {
+      device = "/dev/vg/root";
       fsType = "ext4";
     };
 

@@ -15,10 +15,10 @@
     nfic = "git clone git@github.com:NFIBrokerage/$argv";
     latestcommitmessage = "git log -1 --format=%s";
     next_tag = ''
-    set -l current_tag_match (git tag --sort=version:refname | tail -n 1 | string match -r 'v(\d+)')
-    set -l current_version_number (echo $current_tag_match[2])
-    set -l next_version_number (echo "$current_version_number + 1" | ${pkgs.bc}/bin/bc)
-    git tag -s -a "v$next_version_number" -m $argv
+      set -l current_tag_match (git tag --sort=version:refname | tail -n 1 | string match -r 'v(\d+)')
+      set -l current_version_number (echo $current_tag_match[2])
+      set -l next_version_number (echo "$current_version_number + 1" | ${pkgs.bc}/bin/bc)
+      git tag -s -a "v$next_version_number" -m $argv
     '';
     # run kakoune as a daemon with session name passed as $argv[1]
     kakd = "setsid kak -d -s $argv[1] &";
