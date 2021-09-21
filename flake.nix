@@ -11,9 +11,11 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     impermanence.url = "github:nix-community/impermanence/master";
+
+    kak-buffercraft.url = "github:the-mikedavis/buffercraft.kak/v0.0.1";
   };
 
-  outputs = inputs@{ self, nixpkgs, unstable, home-manager, impermanence, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, impermanence, ... }:
     let
       system = "x86_64-linux";
       nixconfig = {
@@ -23,7 +25,7 @@
         };
       };
 
-      pkgs-unstable = import unstable { config.allowUnfree = true; system = system; };
+      pkgs-unstable = import inputs.unstable { config.allowUnfree = true; system = system; };
       common-modules = [
         home-manager.nixosModules.home-manager
         {
@@ -35,6 +37,7 @@
         {
           environment.systemPackages = [
             pkgs-unstable._1password-gui
+            inputs.kak-buffercraft.defaultPackage.${system}
           ];
         }
         ./modules/common.nix

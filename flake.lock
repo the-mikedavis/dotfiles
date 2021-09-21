@@ -1,5 +1,36 @@
 {
   "nodes": {
+    "devshell": {
+      "locked": {
+        "lastModified": 1625086391,
+        "narHash": "sha256-IpNPv1v8s4L3CoxhwcgZIitGpcrnNgnj09X7TA0QV3k=",
+        "owner": "numtide",
+        "repo": "devshell",
+        "rev": "4b5ac7cf7d9a1cc60b965bb51b59922f2210cbc7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "devshell",
+        "type": "github"
+      }
+    },
+    "flakeCompat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1627913399,
+        "narHash": "sha256-hY8g6H2KFL8ownSiFeMOjwPC8P0ueXpCVEbxgda3pko=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "12c64ca55c1014cdc1b16ed5a804aa8576601ff2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -37,7 +68,67 @@
         "type": "github"
       }
     },
+    "kak-buffercraft": {
+      "inputs": {
+        "flakeCompat": "flakeCompat",
+        "nixCargoIntegration": "nixCargoIntegration",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1629388009,
+        "narHash": "sha256-v12o0QHFMB7EwuV7vlKelF9tv+rOWyIOUXCYLgiBKUs=",
+        "owner": "the-mikedavis",
+        "repo": "buffercraft.kak",
+        "rev": "5dfc49636a974a6c186ba4a0a8960c0ec568adfd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "the-mikedavis",
+        "ref": "v0.0.1",
+        "repo": "buffercraft.kak",
+        "type": "github"
+      }
+    },
+    "nixCargoIntegration": {
+      "inputs": {
+        "devshell": "devshell",
+        "nixpkgs": [
+          "kak-buffercraft",
+          "nixpkgs"
+        ],
+        "rustOverlay": "rustOverlay"
+      },
+      "locked": {
+        "lastModified": 1628662176,
+        "narHash": "sha256-cuEm8MgHyWtAqbJzDKgtmTwEjfArUHBHPEspsaU6iio=",
+        "owner": "yusdacra",
+        "repo": "nix-cargo-integration",
+        "rev": "58cd7770aae14f3dff6a7a2d67a71da0ce60d1a4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yusdacra",
+        "repo": "nix-cargo-integration",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
+      "locked": {
+        "lastModified": 1628605906,
+        "narHash": "sha256-XqCCPDIIG4zMPJ/V757FgzGM2zypcRb1BY7u/DqHKX0=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "fe01052444c1d66ed6ef76df2af798c9769e9e79",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1631706269,
         "narHash": "sha256-KVaS+GC3gz/G5qL09ZUnq4gpQR38C+AWuXJ1ftirgK0=",
@@ -57,8 +148,25 @@
       "inputs": {
         "home-manager": "home-manager",
         "impermanence": "impermanence",
-        "nixpkgs": "nixpkgs",
+        "kak-buffercraft": "kak-buffercraft",
+        "nixpkgs": "nixpkgs_2",
         "unstable": "unstable"
+      }
+    },
+    "rustOverlay": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1628561758,
+        "narHash": "sha256-+ASYECMaG/i4+JrsuRnld1Wqa2z68Em5OrhhQ1QeZWU=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "69144a541cb4b27b37f248b4914290ac5e1b9184",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
       }
     },
     "unstable": {
