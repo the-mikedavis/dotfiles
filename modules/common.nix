@@ -37,6 +37,24 @@ in
     gtkUsePortal = true;
   };
 
+  environment.persistence."/nix/persist" = {
+    directories = [
+      "/etc/nixos"
+      "/etc/NetworkManager/system-connections"
+      "/var/lib/docker"
+      "/home/michael"
+      "/var/log"
+    ];
+    files = [
+      "/etc/machine-id"
+      "/etc/ssh/ssh_host_rsa_key"
+      "/etc/ssh/ssh_host_rsa_key.pub"
+      "/etc/ssh/ssh_host_ed25519_key"
+      "/etc/ssh/ssh_host_ed25519_key.pub"
+    ];
+  };
+
+  users.mutableUsers = false;
   users.users.root.initialHashedPassword = passwd.root;
   users.users.michael = {
     isNormalUser = true;

@@ -14,20 +14,32 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  boot.initrd.luks.devices.main = {
+    name = "main";
+    device = "/dev/disk/by-uuid/6deb9d79-4be8-40db-a61c-41112b29892a";
+    preLVM = true;
+    allowDiscards = true;
+  };
+
   fileSystems."/" =
-    {
-      device = "/dev/disk/by-uuid/6e1b1cec-42cd-4c84-93fc-d22ad0807b2b";
-      fsType = "ext4";
+    { device = "none";
+      fsType = "tmpfs";
+      options = [ "defaults" "size=2G" "mode=755" ];
     };
 
   fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/1A79-D52B";
+    { device = "/dev/disk/by-uuid/EA11-942D";
       fsType = "vfat";
     };
 
+  fileSystems."/nix" =
+    { device = "/dev/vg/root";
+      fsType = "ext4";
+    };
+
   swapDevices =
-    [{ device = "/dev/disk/by-uuid/1d4a2d2b-5731-4cc5-8e99-3d04cba3f5ad"; }];
+    [ { device = "/dev/vg/swap"; }
+    ];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   # high-resolution display
