@@ -8,7 +8,7 @@ My dotfiles, as managed by Nix, now with 100% more
 1. clone this repo somewhere on the machine
 1. `sudo nixos-rebuild switch --flake path/to/this/repo#machinename`
 
-Note that you must have one of my GPG private keys to decrypt secrets.
+Note that you must have one of my PGP private keys to decrypt secrets.
 
 ## Repo structure
 
