@@ -93,4 +93,8 @@ in
   };
 
   environment.variables.EDITOR = "kak";
+
+  security.sudo.extraConfig = ''
+    Defaults lecture = never
+  '';
 }
