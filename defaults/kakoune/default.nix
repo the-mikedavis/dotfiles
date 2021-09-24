@@ -35,6 +35,9 @@ in
     }
     plug "andreyorst/plug.kak" noload
 
+    # tune down the start-up info thingy
+    set-option global startup_info_version 20210923
+
     alias global g git
 
     # make x extend the selection down, X extend up
