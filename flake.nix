@@ -37,6 +37,7 @@
         {
           environment.systemPackages = [
             pkgs-unstable._1password-gui
+            pkgs-unstable.discord
             inputs.kak-buffercraft.defaultPackage.${system}
           ];
         }

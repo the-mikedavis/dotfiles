@@ -61,7 +61,6 @@ in
     traceroute
     nmap
     ipcalc
-    discord
     slack
     stow
     jetbrains-mono
