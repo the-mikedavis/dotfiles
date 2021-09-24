@@ -114,6 +114,11 @@ in
   xdg.configFile."waybar/config".source = (dirs.defaults + /waybar/config.json);
   xdg.configFile."waybar/style.css".source = (dirs.defaults + /waybar/style.css);
 
+  xdg.configFile."electron-flags.conf".text = ''
+    --enable-features=UseOzonePlatform
+    --ozone-platform=wayland
+  '';
+
   wayland.windowManager.sway = {
     enable = true;
   } // configs.sway;

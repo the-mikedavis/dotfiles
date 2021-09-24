@@ -38,6 +38,7 @@
           environment.systemPackages = [
             pkgs-unstable._1password-gui
             pkgs-unstable.discord
+            pkgs-unstable.spotify
             inputs.kak-buffercraft.defaultPackage.${system}
           ];
         }
