@@ -21,11 +21,8 @@ in
     interfaces.eno2.useDHCP = true;
     interfaces.wlo1.useDHCP = true;
 
-    nameservers = [ "127.0.0.1" "::1" ];
     hosts = import (dirs.defaults + /hosts);
   };
-
-  services.dnscrypt-proxy2 = configs.dnscrypt-proxy2;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
