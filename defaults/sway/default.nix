@@ -64,8 +64,8 @@ bindsym $mod+d exec wofi --show drun --allow-images
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
-# bindsym $mod+b exec \"GDK_BACKEND=wayland firefox\"
-bindsym $mod+b exec \"qutebrowser\"
+bindsym $mod+b exec \"GDK_BACKEND=wayland firefox\"
+# bindsym $mod+b exec \"qutebrowser\"
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -128,7 +128,8 @@ bindsym $mod+Shift+h move left
 mouse_warping container
 # swaymsg -t get_tree can help find the app_ids (wayland) and class-s (x)
 bindsym Ctrl+1 [app_id=\"kitty\"] focus
-bindsym Ctrl+2 [app_id=\"qutebrowser\"] focus
+# bindsym Ctrl+2 [app_id=\"qutebrowser\"] focus
+bindsym Ctrl+2 [app_id=\"firefox\"] focus
 bindsym Ctrl+3 [class=\"Slack\"] focus
 bindsym Ctrl+4 [class=\"discord\"] focus
 bindsym Ctrl+5 [app_id=\"Chromium\"] focus
