@@ -15,6 +15,8 @@
         "gfx.webrender.enabled" = true;
         "layout.css.backdrop-filter.enabled" = true;
         "svg.context-properties.content.enabled" = true;
+        "browser.shell.checkDefaultBrowser" = false;
+        "browser.urlbar.autocomplete.enabled" = false;
       };
       # NOTE this is the blurredfox theme of
       # https://github.com/manilarome/blurredfox
