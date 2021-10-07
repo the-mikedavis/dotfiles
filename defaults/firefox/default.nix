@@ -2,7 +2,6 @@
 {
   package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
     forceWayland = true;
-    cfg.enableTridactylNative = true;
   };
   profiles = {
     default = {
