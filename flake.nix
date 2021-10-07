@@ -39,7 +39,6 @@
             pkgs-unstable._1password-gui
             pkgs-unstable.discord
             pkgs-unstable.spotify
-            pkgs-unstable.helix
             inputs.kak-buffercraft.defaultPackage.${system}
           ];
         }
