@@ -12,7 +12,7 @@ in
     indentWidth = 2;
     numberLines.enable = true;
     wrapLines.enable = true;
-    showWhitespace.enable = true;
+    # showWhitespace.enable = true;
     ui.assistant = "cat";
     hooks = [
       {
