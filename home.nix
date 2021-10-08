@@ -85,6 +85,7 @@ in
     killall
     _1password
     nixpkgs-fmt
+    elixir_ls
     # unstable.helix
   ];
 
