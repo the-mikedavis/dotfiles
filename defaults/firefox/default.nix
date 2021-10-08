@@ -16,7 +16,11 @@
         "layout.css.backdrop-filter.enabled" = true;
         "svg.context-properties.content.enabled" = true;
         "browser.shell.checkDefaultBrowser" = false;
-        "browser.urlbar.autocomplete.enabled" = false;
+        "browser.urlbar.suggest.quicksuggest" = false;
+        "browser.urlbar.suggest.searches" = false;
+        "browser.urlbar.suggest.topsites" = false;
+        "browser.urlbar.autoFill" = false;
+        "browser.urlbar.quicksuggest.enabled" = false;
       };
       # NOTE this is the blurredfox theme of
       # https://github.com/manilarome/blurredfox
