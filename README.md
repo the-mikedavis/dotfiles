@@ -54,6 +54,9 @@ if you're interested in using flakes to manage all configuration.
     * this forces me to explicitly control what data I want stored in
       non-volatile memory, which helps give confidence that my configuration
       is fully described by nix and is reproducible across machines
+    * this also reveals some annoyances like browsers asking to be defaults,
+      and forces you to go find the configuration switch to turn off annoying
+      behavior
 * Non-volatile memory (including swap spaces) are luks-encrypted
     * generally I don't encrypt `/boot`, however
     * I recommend [this gist](https://gist.github.com/martijnvermaat/76f2e24d0239470dd71050358b4d5134)
