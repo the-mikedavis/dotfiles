@@ -1,10 +1,4 @@
 { pkgs }:
-let
-  user-chrome = pkgs.fetchurl {
-    url = "https://gist.githubusercontent.com/GrantCuster/fb8631e711b8595084f7a551c6fb44ee/raw/73e9ebd70fa1afea36d5b4965aa8dc3ffbc0d2dd/userChrome.css";
-    sha256 = "1a5wap0dngryqa7mwcwxprn2x5qb3avhy601lzbs873z70ghga3x";
-  };
-in
 {
   package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
     forceWayland = true;
@@ -29,7 +23,7 @@ in
         "browser.urlbar.quicksuggest.enabled" = false;
       };
       
-      userChrome = builtins.readFile user-chrome;
+      userChrome = builtins.readFile ./userChrome.css;
     };
   };
 }
