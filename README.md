@@ -1,4 +1,4 @@
-# My Dot-files
+# Dotfiles
 
 My dotfiles, as managed by Nix, now with 100% more
 [flakes](https://nixos.wiki/wiki/Flakes).
