@@ -1,4 +1,4 @@
-# dotfilesv2
+# My Dot-files
 
 My dotfiles, as managed by Nix, now with 100% more
 [flakes](https://nixos.wiki/wiki/Flakes).
@@ -47,6 +47,11 @@ if you're interested in using flakes to manage all configuration.
       you do `dddd` or `2dd` and there's no selection involved. being able
       to see the selection before operating feels better than just doing the
       operation, imo)
+    * I've been using kakoune for a while now but I'm starting to transition
+      to [`helix`](https://github.com/helix-editor/helix) because it uses
+      tree-sitter grammars, and it seems unlikely the kakoune project will
+      want to refactor their entire syntax highlighting pipeline any time
+      soon.
 * I have my root device setup to use `tmpfs`
     * see [this great guide](https://elis.nu/blog/2020/05/nixos-tmpfs-as-root/)
     * also see [the impermanence project](https://github.com/nix-community/impermanence)
