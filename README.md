@@ -3,6 +3,8 @@
 My dotfiles, as managed by Nix, now with 100% more
 [flakes](https://nixos.wiki/wiki/Flakes).
 
+![mango desktop](assets/mango.png)
+
 ## Setup
 
 1. clone this repo somewhere on the machine
