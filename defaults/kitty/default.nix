@@ -17,6 +17,7 @@
     bell_on_tab = "no";
     term = "xterm-kitty";
     allow_remote_control = "yes";
+    background_opacity = "0.98";
     background = "#282828";
     foreground = "#ebdbb2";
     cursor = "#928374";

@@ -13,18 +13,17 @@ in
     bars = [ ];
     modes = { };
     keybindings = { };
+    # Mod1=<Alt>, Mod4=<Super>
     modifier = "Mod4";
   };
   # YARD looking for a better way to do this
   extraConfig = "
-# Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
-
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 1
+default_border pixel 5
 # for_window [class=\".*\"] border pixel 0
 default_floating_border normal
 
@@ -33,7 +32,7 @@ hide_edge_borders none
 
 # change borders
 bindsym $mod+u border none
-bindsym $mod+y border pixel 1
+bindsym $mod+y border pixel 5
 bindsym $mod+n border normal
 
 # brightness
