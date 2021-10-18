@@ -4,6 +4,15 @@
 
 	"modules-left": [
 		"sway/workspaces",
+		"custom/right-arrow-dark",
+    "custom/right-arrow-light",
+    "clock#4",
+		"custom/right-arrow-dark",
+    "custom/right-arrow-light",
+    "clock#5",
+		"custom/right-arrow-dark",
+    "custom/right-arrow-light",
+    "clock#6",
 		"custom/right-arrow-dark"
 	],
 	"modules-center": [
@@ -71,6 +80,19 @@
 		"format": "{:%m-%d}",
 		"tooltip": false
 	},
+
+  "clock#4": {
+    "format": "UTC {:%H:%M}",
+    "timezone": "Etc/UTC"
+  },
+  "clock#5": {
+    "format": "JP {:%H:%M}",
+    "timezone": "Asia/Tokyo"
+  },
+  "clock#6": {
+    "format": "NYC {:%H:%M}",
+    "timezone": "America/New_York"
+  },
 
 	"pulseaudio": {
 		"format": "{icon} {volume:2}%",
