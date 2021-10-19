@@ -85,7 +85,6 @@ in
     killall
     _1password
     nixpkgs-fmt
-    # unstable.helix
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
