@@ -1,3 +1,4 @@
 /defaults/hosts/* filter=git-crypt diff=git-crypt
 /defaults/ssh/* filter=git-crypt diff=git-crypt
 /defaults/passwd/* filter=git-crypt diff=git-crypt
+/defaults/tokens/* filter=git-crypt diff=git-crypt

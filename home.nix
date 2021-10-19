@@ -17,6 +17,8 @@ let
     gtk = import (dirs.defaults + /gtk) { inherit pkgs; };
     fzf = import (dirs.defaults + /fzf);
   };
+  
+  github-notifications-token = (import (dirs.defaults + /tokens)).github-notifications;
 in
 {
   # Let Home Manager install and manage itself.
@@ -112,6 +114,10 @@ in
   # is wrong
   xdg.configFile."waybar/config".source = (dirs.defaults + /waybar/config.json);
   xdg.configFile."waybar/style.css".source = (dirs.defaults + /waybar/style.css);
+  xdg.configFile."waybar/github.sh".source = pkgs.writeShellScript "github.sh" ''
+    count=`${pkgs.curl}/bin/curl --no-progress-meter -u the-mikedavis:${github-notifications-token} https://api.github.com/notifications | ${pkgs.jq}/bin/jq '. | length'`
+    echo '{"text":'$count',"tooltip":"$tooltip","class":"$class"}'
+  '';
 
   xdg.configFile."electron-flags.conf".text = ''
     --enable-features=UseOzonePlatform

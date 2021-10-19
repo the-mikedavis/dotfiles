@@ -6,6 +6,9 @@
 		"sway/workspaces",
 		"custom/right-arrow-dark",
     "custom/right-arrow-light",
+    "custom/github",
+		"custom/right-arrow-dark",
+    "custom/right-arrow-light",
     "clock#4",
 		"custom/right-arrow-dark",
     "custom/right-arrow-light",
@@ -62,6 +65,14 @@
 		"format": "",
 		"tooltip": false
 	},
+
+  "custom/github": {
+    "format": " {}",
+    "return-type": "json",
+    "interval": 60,
+    "exec": "$HOME/.config/waybar/github.sh",
+    "tooltip": false
+  },
 
 	"sway/workspaces": {
 		"disable-scroll": true,

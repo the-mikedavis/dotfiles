@@ -19,6 +19,7 @@ window#waybar {
 }
 
 #workspaces,
+#custom-github,
 #clock,
 #pulseaudio,
 #memory,
@@ -62,6 +63,7 @@ window#waybar {
   color: #b58900;
 }
 
+#custom-github,
 #clock,
 #pulseaudio,
 #memory,
