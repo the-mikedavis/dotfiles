@@ -22,7 +22,7 @@
         "browser.urlbar.autoFill" = false;
         "browser.urlbar.quicksuggest.enabled" = false;
       };
-      
+
       userChrome = builtins.readFile ./userChrome.css;
     };
   };

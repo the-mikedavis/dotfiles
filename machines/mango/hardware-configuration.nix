@@ -22,24 +22,26 @@
   };
 
   fileSystems."/" =
-    { device = "none";
+    {
+      device = "none";
       fsType = "tmpfs";
       options = [ "defaults" "size=2G" "mode=755" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/EA11-942D";
+    {
+      device = "/dev/disk/by-uuid/EA11-942D";
       fsType = "vfat";
     };
 
   fileSystems."/nix" =
-    { device = "/dev/vg/root";
+    {
+      device = "/dev/vg/root";
       fsType = "ext4";
     };
 
   swapDevices =
-    [ { device = "/dev/vg/swap"; }
-    ];
+    [{ device = "/dev/vg/swap"; }];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   # high-resolution display
