@@ -88,6 +88,7 @@ in
     _1password
     nixpkgs-fmt
     rust-analyzer
+    qutebrowser
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
