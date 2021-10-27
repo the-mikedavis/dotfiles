@@ -133,6 +133,7 @@ bindsym Ctrl+3 [class=\"Slack\"] focus
 bindsym Ctrl+4 [class=\"discord\"] focus
 bindsym Ctrl+5 [app_id=\"chromium-browser\"] focus
 bindsym Ctrl+6 [class=\"1Password\"] focus
+bindsym Ctrl+8 [class=\"Element\"] focus
 
 # alternatively, you can use the cursor keys:
 # bindsym $mod+Shift+Left move left
