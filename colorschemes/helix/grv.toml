@@ -1,5 +1,5 @@
-# Author : Jakub Bartodziej <kubabartodziej@gmail.com>
-# The theme uses the gruvbox dark palette with standard contrast: github.com/morhetz/gruvbox
+# fork of https://github.com/helix-editor/helix/blob/1066b081ddb06a5370371ca139dc8e9b992c1242/runtime/themes/gruvbox.toml
+# based on gruvbox (github:morhetz/gruvbox), but customized to how I want the colors balanced
 
 "attribute" = "aqua1"
 "comment" = { fg = "gray1", modifiers = ["italic"]  }
