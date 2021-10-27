@@ -1,0 +1,91 @@
+# Author : Jakub Bartodziej <kubabartodziej@gmail.com>
+# The theme uses the gruvbox dark palette with standard contrast: github.com/morhetz/gruvbox
+
+"attribute" = "aqua1"
+"comment" = { fg = "gray1", modifiers = ["italic"]  }
+"constant.builtin" = { fg = "purple1", modifiers = ["bold"] }
+"constant" = { fg = "purple1" }
+"constructor" = { fg = "purple1", modifiers = ["bold"] }
+"escape" = { fg = "fg2", modifiers = ["bold"] }
+"function.builtin" = "yellow1"
+"function" = "fg1"
+"function.macro" = "aqua1"
+"keyword.directive" = "red0"
+"keyword" = { fg = "red1" }
+"label" = "aqua1"
+"module" = "aqua1"
+"namespace" = "aqua1"
+"number" = "purple1"
+"operator" = "blue1"
+"property" = "blue1"
+"punctuation.delimiter" = "fg3"
+"punctuation" = "fg3"
+"special" = "purple0"
+"string" = "green1"
+"string.special.symbol" = "yellow1"
+"text" = "fg2"
+"text.literal" = "fg4"
+"text.title" = { fg = "blue0", modifiers = ["bold"] }
+"text.strong" = { fg = "fg2", modifiers = ["bold"] }
+"text.emphasis" = { fg = "fg2", modifiers = ["italic"] }
+"text.uri" = { fg = "blue1", modifiers = ["underlined"] }
+"text.reference" = "purple1"
+"type" = { fg = "green1" }
+"variable.builtin" = "orange1"
+"variable" = { fg = "fg0", modifiers = ["italic"] }
+"variable.parameter" = "fg2"
+"variable.property" = "aqua1"
+
+"warning" = { fg = "orange1", bg = "bg1" }
+"error" = { fg = "red1", bg = "bg1" }
+"info" = { fg = "aqua1", bg = "bg1" }
+"hint" = { fg = "blue1", bg = "bg1" }
+
+"ui.background" = { bg = "bg0" }
+"ui.linenr" = { fg = "bg4" }
+"ui.linenr.selected" = { fg = "yellow1" }
+"ui.statusline" = { fg = "fg1", bg = "bg2" }
+"ui.statusline.inactive" = { fg = "fg4", bg = "bg1" }
+"ui.popup" = { bg = "bg1" }
+"ui.window" = { bg = "bg1" }
+"ui.help" = { bg = "bg1", fg = "fg1" }
+"ui.text" = { fg = "fg1" }
+"ui.text.focus" = { fg = "fg1" }
+"ui.selection" = { bg = "bg3", modifiers = ["reversed"] }
+"ui.cursor.primary" = { modifiers = ["reversed"] }
+"ui.cursor.match" = { modifiers = ["reversed"] }
+"ui.menu" = { fg = "fg1", bg = "bg2" }
+"ui.menu.selected" = { fg = "bg2", bg = "blue1", modifiers = ["bold"] }
+
+"diagnostic" = { modifiers = ["underlined"] }
+
+[palette]
+bg0 = "#282828" # main background
+bg1 = "#3c3836"
+bg2 = "#504945"
+bg3 = "#665c54"
+bg4 = "#7c6f64"
+
+fg0 = "#fbf1c7"
+fg1 = "#ebdbb2" # main foreground
+fg2 = "#d5c4a1"
+fg3 = "#bdae93"
+fg4 = "#a89984" # gray0
+
+gray0 = "#a89984"
+gray1 = "#928374"
+
+red0 = "#cc241d" # neutral
+red1 = "#fb4934" # bright
+green0 = "#98971a"
+green1 = "#b8bb26"
+yellow0 = "#d79921"
+yellow1 = "#fabd2f"
+blue0 = "#458588"
+blue1 = "#83a598"
+purple0 = "#b16286"
+purple1 = "#d3869b"
+aqua0 = "#689d6a"
+aqua1 = "#8ec07c"
+orange0 = "#d65d0e"
+orange1 = "#fe8019"

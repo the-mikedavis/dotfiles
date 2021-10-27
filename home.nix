@@ -121,6 +121,18 @@ in
     echo '{"text":'$count',"tooltip":"$tooltip","class":"$class"}'
   '';
 
+  xdg.configFile."helix/config.toml".text = ''
+    theme = "grv"
+
+    [editor]
+    auto-pairs = false
+
+    # [lsp]
+    # display-messages = true
+  '';
+
+  xdg.configFile."helix/themes/grv.toml".source = (dirs.colorschemes + /helix/grv.toml);
+
   xdg.configFile."electron-flags.conf".text = ''
     --enable-features=UseOzonePlatform
     --ozone-platform=wayland
