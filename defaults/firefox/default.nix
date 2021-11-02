@@ -21,6 +21,8 @@
         "browser.urlbar.suggest.topsites" = false;
         "browser.urlbar.autoFill" = false;
         "browser.urlbar.quicksuggest.enabled" = false;
+        "security.insecure_password.ui.enabled" = false;
+        "security.insecure_field_warning.contextual.enabled" = false;
       };
 
       userChrome = builtins.readFile ./userChrome.css;
