@@ -131,7 +131,8 @@ bindsym Ctrl+1 [app_id=\"kitty\"] focus
 bindsym Ctrl+2 [app_id=\"firefox\"] focus
 bindsym Ctrl+3 [class=\"Slack\"] focus
 bindsym Ctrl+4 [class=\"discord\"] focus
-bindsym Ctrl+5 [app_id=\"chromium-browser\"] focus
+# bindsym Ctrl+5 [app_id=\"chromium-browser\"] focus
+bindsym Ctrl+5 [app_id=\"Chromium-browser\"] focus
 bindsym Ctrl+6 [class=\"1Password\"] focus
 bindsym Ctrl+8 [class=\"Element\"] focus
 
