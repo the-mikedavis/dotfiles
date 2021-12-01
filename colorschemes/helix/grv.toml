@@ -34,7 +34,7 @@
 "variable.builtin" = "orange1"
 "variable" = { fg = "fg0", modifiers = ["italic"] }
 "variable.parameter" = "fg2"
-"variable.property" = "aqua1"
+"variable.other.member" = "aqua1"
 
 "warning" = { fg = "orange1", bg = "bg1" }
 "error" = { fg = "red1", bg = "bg1" }
