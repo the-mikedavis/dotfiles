@@ -29,8 +29,9 @@
     l = "exa --long --all --links --git";
     g = "git";
     dc = "docker-compose";
+    lg = "lazygit";
   };
-  promptInit = ''
+  interactiveShellInit = ''
     ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
   '';
 }
