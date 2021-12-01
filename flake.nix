@@ -4,10 +4,10 @@
   nixConfig.extra-experimental-features = "nix-command flakes ca-references";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-21.05";
+    nixpkgs.url = "github:nixos/nixpkgs/release-21.11";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    home-manager.url = "github:nix-community/home-manager/release-21.05";
+    home-manager.url = "github:nix-community/home-manager/release-21.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     impermanence.url = "github:nix-community/impermanence/master";
@@ -31,7 +31,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.michael = import ./home.nix;
+          home-manager.users.michael = import ./home.nix pkgs-unstable;
         }
         impermanence.nixosModules.impermanence
         {
@@ -41,6 +41,7 @@
             pkgs-unstable.spotify
             (pkgs-unstable.tree-sitter.override { webUISupport = true; })
             pkgs-unstable.element-desktop
+            pkgs-unstable.wireshark
             inputs.kak-buffercraft.defaultPackage.${system}
           ];
         }
