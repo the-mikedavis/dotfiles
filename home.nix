@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+unstable: { pkgs, ... }:
 let
   dirs = {
     defaults = ./defaults;
@@ -31,8 +31,10 @@ in
 
   programs.gh = {
     enable = true;
-    editor = "kak";
-    gitProtocol = "ssh";
+    settings = {
+      editor = "kak";
+      git_protocol = "ssh";
+    };
   };
 
   # Home Manager needs a bit of information about you and the
@@ -88,6 +90,9 @@ in
     _1password
     nixpkgs-fmt
     rust-analyzer
+    lazygit
+    lazydocker
+    nix-prefetch-github
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
@@ -102,9 +107,12 @@ in
     enable = true;
   } // configs.kakoune;
 
+  programs.emacs.enable = true;
+
   xdg.configFile."kak/colors/grv.kak".source = (dirs.colorschemes + /kakoune/grv.kak);
 
   programs.git = {
+    package = unstable.git;
     enable = true;
   } // configs.git;
 
@@ -125,6 +133,12 @@ in
 
     [editor]
     auto-pairs = false
+
+    [keys.normal]
+    "A-k" = "expand_selection"
+    "A-j" = "select_first_child"
+    "A-l" = "select_next_sibling"
+    "A-h" = "select_prev_sibling"
 
     # [lsp]
     # display-messages = true
