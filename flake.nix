@@ -1,7 +1,7 @@
 {
   description = "@the-mikedavis' machine configurations";
 
-  nixConfig.extra-experimental-features = "nix-command flakes ca-references";
+  nixConfig.extra-experimental-features = "nix-command flakes";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-21.11";
