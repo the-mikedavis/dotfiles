@@ -30,6 +30,7 @@
     g = "git";
     dc = "docker-compose";
     lg = "lazygit";
+    nd = "nix develop --command fish";
   };
   interactiveShellInit = ''
     ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
