@@ -72,7 +72,7 @@
       "inputs": {
         "flakeCompat": "flakeCompat",
         "nixCargoIntegration": "nixCargoIntegration",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
         "lastModified": 1629388009,
@@ -92,10 +92,7 @@
     "nixCargoIntegration": {
       "inputs": {
         "devshell": "devshell",
-        "nixpkgs": [
-          "kak-buffercraft",
-          "nixpkgs"
-        ],
+        "nixpkgs": "nixpkgs",
         "rustOverlay": "rustOverlay"
       },
       "locked": {
@@ -114,6 +111,22 @@
     },
     "nixpkgs": {
       "locked": {
+        "lastModified": 1638376152,
+        "narHash": "sha256-ucgLpVqhFnClH7YRUHBHnmiOd82RZdFR3XJt36ks5fE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "6daa4a5c045d40e6eae60a3b6e427e8700f1c07f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
         "lastModified": 1628605906,
         "narHash": "sha256-XqCCPDIIG4zMPJ/V757FgzGM2zypcRb1BY7u/DqHKX0=",
         "owner": "nixos",
@@ -128,7 +141,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
+    "nixpkgs_3": {
       "locked": {
         "lastModified": 1638390542,
         "narHash": "sha256-cduer1WGTc8ZL5l3hoZi47UtTR+lojg9iaxl9v0euC8=",
@@ -149,7 +162,7 @@
         "home-manager": "home-manager",
         "impermanence": "impermanence",
         "kak-buffercraft": "kak-buffercraft",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs_3",
         "unstable": "unstable"
       }
     },
