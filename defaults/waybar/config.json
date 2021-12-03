@@ -16,6 +16,9 @@
 		"custom/right-arrow-dark",
     "custom/right-arrow-light",
     "clock#6",
+		"custom/right-arrow-dark",
+    "custom/right-arrow-light",
+    "clock#7",
 		"custom/right-arrow-dark"
 	],
 	"modules-center": [
@@ -103,6 +106,10 @@
   "clock#6": {
     "format": "NYC {:%H:%M}",
     "timezone": "America/New_York"
+  },
+  "clock#7": {
+    "format": "CET {:%H:%M}",
+    "timezone": "CET"
   },
 
 	"pulseaudio": {
