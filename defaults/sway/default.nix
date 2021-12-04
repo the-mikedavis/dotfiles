@@ -30,6 +30,11 @@ default_floating_border normal
 # Hide borders
 hide_edge_borders none
 
+# setup clipman for clipboard history
+exec wl-paste -t text --watch clipman store
+exec wl-paste -p -t text --watch clipman store -P --histpath=\"~/.local/share/clipman-primary.json\"
+bindsym $mod+z exec clipman pick -t wofi
+
 # change borders
 bindsym $mod+u border none
 bindsym $mod+y border pixel 5
@@ -59,9 +64,6 @@ bindsym $mod+Control+c kill
 
 # start program launcher
 bindsym $mod+d exec wofi --show drun --allow-images
-
-# launch categorized menu
-bindsym $mod+z exec --no-startup-id morc_menu
 
 bindsym $mod+b exec \"GDK_BACKEND=wayland firefox\"
 # bindsym $mod+b exec \"qutebrowser\"

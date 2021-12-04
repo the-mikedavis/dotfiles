@@ -93,6 +93,7 @@ in
     lazygit
     lazydocker
     nix-prefetch-github
+    clipman
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
