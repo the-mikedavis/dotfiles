@@ -129,6 +129,9 @@ in
     count=`${pkgs.curl}/bin/curl --no-progress-meter -u the-mikedavis:${github-notifications-token} https://api.github.com/notifications | ${pkgs.jq}/bin/jq '. | length'`
     echo '{"text":'$count',"tooltip":"$tooltip","class":"$class"}'
   '';
+  # wofi styling and config
+  xdg.configFile."wofi/config".source = (dirs.defaults + /wofi/config);
+  xdg.configFile."wofi/style.css".source = (dirs.defaults + /wofi/style.css);
 
   xdg.configFile."helix/config.toml".text = ''
     theme = "grv"

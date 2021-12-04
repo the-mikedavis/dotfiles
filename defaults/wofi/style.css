@@ -1,0 +1,40 @@
+/* see https://github.com/verttj/SwayyHome/blob/bf4a99c555c764602770dab9db705c620360e6c0/11:11/config/wofi/style.css */
+
+window {
+  margin: 5px;
+  background-color: #282828;
+  color: #fff;
+  border-radius: 10px;
+}
+
+#input {
+  margin: 5px;
+  background: none;
+  border: none;
+  color: #fff;
+}
+
+#entry:selected {
+  border-radius: 5px;
+  border: none;
+}
+
+#text:selected {
+  color: #d5c4a1;
+}
+
+#inner-box {
+  margin: 5px;
+}
+
+#outer-box {
+  margin: 5px;
+}
+
+#scroll {
+  margin: 5px;
+}
+
+#text {
+  margin: 5px;
+}
