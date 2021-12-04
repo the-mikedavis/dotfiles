@@ -94,6 +94,7 @@ in
     lazydocker
     nix-prefetch-github
     clipman
+    gnome3.adwaita-icon-theme
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
