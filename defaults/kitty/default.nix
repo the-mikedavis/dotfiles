@@ -18,6 +18,7 @@
     term = "xterm-kitty";
     allow_remote_control = "yes";
     background_opacity = "0.98";
+    # colors
     background = "#282828";
     foreground = "#ebdbb2";
     cursor = "#928374";
@@ -39,5 +40,8 @@
     color14 = "#8ec07c";
     color7 = "#a89984";
     color15 = "#928374";
+  };
+  keybindings = {
+    "ctrl+c" = "copy_and_clear_or_interrupt";
   };
 }
