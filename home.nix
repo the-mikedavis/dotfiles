@@ -90,7 +90,6 @@ in
     _1password
     nixpkgs-fmt
     rust-analyzer
-    lazygit
     lazydocker
     nix-prefetch-github
     clipman
@@ -179,4 +178,6 @@ in
   programs.fzf = {
     enable = true;
   } // configs.fzf;
+
+  programs.lazygit.enable = true;
 }
