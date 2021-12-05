@@ -1,8 +1,4 @@
 {
-  extraConfig = ''
-    map shift+left previous_tab
-    map shift+right next_tab
-  '';
   font = {
     name = "JetBrains Mono";
     # size = 10;
@@ -43,5 +39,7 @@
   };
   keybindings = {
     "ctrl+c" = "copy_and_clear_or_interrupt";
+    "shift+left" = "previous_tab";
+    "shift+right" = "next_tab";
   };
 }
