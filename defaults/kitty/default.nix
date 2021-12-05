@@ -41,5 +41,6 @@
     "ctrl+c" = "copy_and_clear_or_interrupt";
     "shift+left" = "previous_tab";
     "shift+right" = "next_tab";
+    "ctrl+shift+enter" = "new_window_with_cwd";
   };
 }
