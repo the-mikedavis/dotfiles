@@ -68,38 +68,15 @@ bindsym $mod+d exec wofi --show drun --allow-images
 bindsym $mod+b exec \"GDK_BACKEND=wayland firefox\"
 # bindsym $mod+b exec \"qutebrowser\"
 
-################################################################################################
-## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
-################################################################################################
-
 exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-#exec --no-startup-id pulseaudio
-#exec --no-startup-id pa-applet
-#bindsym $mod+Ctrl+m exec pavucontrol
 
-################################################################################################
+bindsym $mod+Ctrl+m exec ${pkgs.wofi-emoji}/bin/wofi-emoji
 
 # Screen brightness controls
 # bindsym XF86MonBrightnessUp exec \"xbacklight -inc 10; notify-send 'brightness up'\"
 # bindsym XF86MonBrightnessDown exec \"xbacklight -dec 10; notify-send 'brightness down'\"
 
-# Start Applications
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec palemoon
-bindsym $mod+F3 exec pcmanfm
-# bindsym $mod+F3 exec ranger
-bindsym $mod+Shift+F3 exec pcmanfm_pkexec
-bindsym $mod+F5 exec terminal -e 'mocp'
-# bindsym $mod+Ctrl+t exec --no-startup-id picom -b
-# bindsym $mod+Ctrl+Shift+t exec --no-startup-id pkill picom
-bindsym $mod+Shift+d --release exec \"killall dunst; exec notify-send 'restart dunst'\"
-# bindsym Print exec --no-startup-id i3-scrot
-# bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-# bindsym $mod+Shift+p --release exec --no-startup-id i3-scrot -s
-# bindsym $mod+Shift+p --release exec --no-startup-id \"escrotum -s '~/Pictures/%Y-%m-%d-%H%M%S_$wx$h_scrot.png'\"
-# bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
-bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+# screenshot binding
 bindsym $mod+Shift+p --release exec --no-startup-id grim -g \"$(slurp)\" ~/Pictures/$(date +%Y-%m-%d_%H-%M-%S)_grim.png
 
 # focus_follows_mouse no
@@ -127,6 +104,7 @@ bindsym $mod+Shift+h move left
 # set $mousemove \"/home/michael/.config/fish/w-focus-middle.fish\"
 # sway has a built-in for it!
 mouse_warping container
+
 # swaymsg -t get_tree can help find the app_ids (wayland) and class-s (x)
 bindsym Ctrl+1 [app_id=\"kitty\"] focus
 # bindsym Ctrl+2 [app_id=\"qutebrowser\"] focus
@@ -137,12 +115,6 @@ bindsym Ctrl+5 [app_id=\"chromium-browser\"] focus
 # bindsym Ctrl+5 [app_id=\"Chromium-browser\"] focus
 bindsym Ctrl+6 [class=\"1Password\"] focus
 bindsym Ctrl+8 [class=\"Element\"] focus
-
-# alternatively, you can use the cursor keys:
-# bindsym $mod+Shift+Left move left
-# bindsym $mod+Shift+Down move down
-# bindsym $mod+Shift+Up move up
-# bindsym $mod+Shift+Right move right
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
@@ -190,7 +162,7 @@ bindsym $mod+Ctrl+Left workspace prev
 # cmd+a does ctrl+a
 # bindsym $mod+a exec --no-startup-id xdotool key --clearmodifiers ctrl+a
 # bindsym $mod+v exec --no-startup-id xdotool key --clearmodifiers ctrl+v
-bindsym $mod+c exec --no-startup-id wl-copy
+# bindsym $mod+c exec --no-startup-id wl-copy
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
@@ -276,9 +248,6 @@ for_window [urgent=latest] focus
 # reload the configuration file
 bindsym $mod+Shift+r reload
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-# bindsym $mod+Shift+r restart
-
 bindsym $mod+r mode \"resize\"
 mode \"resize\" {
   # These bindings trigger as soon as you enter the resize mode
@@ -296,9 +265,6 @@ mode \"resize\" {
   bindsym Return mode \"default\"
   bindsym Escape mode \"default\"
 }
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec \"i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'\"
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode \"$mode_system\"
@@ -340,81 +306,11 @@ exec swayidle -w \\
        resume 'swaymsg \"output * dpms on\"' \\
   before-sleep 'swaylock -f -c 000000'
 
-exec --no-startup-id ydotoold
-
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
-# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id ntfd
-
-# Color palette used for the terminal ( ~/.Xresources file )
-# Colors are gathered based on the documentation:
-# https://i3wm.org/docs/userguide.html#xresources
-# Change the variable name at the place you want to match the color
-# of your terminal like this:
-# [example]
-# If you want your bar to have the same background color as your
-# terminal background change the line 362 from:
-# background #14191D
-# to:
-# background $term_background
-# Same logic applied to everything else.
-# set_from_resource $term_background background
-# set_from_resource $term_foreground foreground
-# set_from_resource $term_color0     color0
-# set_from_resource $term_color1     color1
-# set_from_resource $term_color2     color2
-# set_from_resource $term_color3     color3
-# set_from_resource $term_color4     color4
-# set_from_resource $term_color5     color5
-# set_from_resource $term_color6     color6
-# set_from_resource $term_color7     color7
-# set_from_resource $term_color8     color8
-# set_from_resource $term_color9     color9
-# set_from_resource $term_color10    color10
-# set_from_resource $term_color11    color11
-# set_from_resource $term_color12    color12
-# set_from_resource $term_color13    color13
-# set_from_resource $term_color14    color14
-# set_from_resource $term_color15    color15
-
 set $bar_hl_color #C6643D
-
-# Start i3bar to display a workspace bar (plus the system information i3status if available)
-#bar {
-#  i3bar_command i3bar
-#    status_command i3status
-#    position bottom
-
-### please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-##  tray_output primary
-##  tray_output eDP1
-
-#    bindsym button4 nop
-#    bindsym button5 nop
-##   font xft:URWGothic-Book 11
-#    strip_workspace_numbers yes
-
-#    colors {
-#      background $term_background
-#        statusline #F9FAF9
-#        separator  #454947
-
-#    #                      border  backgr.        text
-#        focused_workspace  #F9FAF9 $bar_hl_color  #292F34
-#        active_workspace   #595B5B #353836        #FDF6E3
-#        inactive_workspace #595B5B #222D31        #EEE8D5
-#        binding_mode       #16a085 #2C2C2C        #F9FAF9
-#        urgent_workspace   #16a085 #FDF6E3        #E5201D
-#    }
-#}
 
 bar {
   swaybar_command ${pkgs.waybar}/bin/waybar
 }
-
-# hide/unhide i3status bar
-# bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                 border  backgr. text          indic.   child_border
@@ -426,18 +322,9 @@ client.placeholder      #000000 #0c0c0c #ffffff       #000000
 
 client.background       #2B2C2B
 
-#############################
-### settings for i3-gaps: ###
-#############################
-
 # Set inner/outer gaps
 gaps inner 50
 gaps outer 30
-
-# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
-# gaps inner|outer current|all set|plus|minus <px>
-# gaps inner all set 10
-# gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
 smart_gaps on
