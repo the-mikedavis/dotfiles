@@ -19,9 +19,12 @@
     let
       system = "x86_64-linux";
       nixconfig = {
-        nixpkgs.config = {
-          allowUnfree = true;
-          chromium.enableWideVine = true;
+        nixpkgs = {
+          config = {
+            allowUnfree = true;
+            chromium.enableWideVine = true;
+          };
+          overlays = [ (import ./overlays) ];
         };
       };
 
