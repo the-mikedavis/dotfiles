@@ -31,6 +31,10 @@
     dc = "docker-compose";
     lg = "lazygit";
     nd = "nix develop --command fish";
+    mf = "mix format";
+    mfc = "mix format --check-formatted";
+    mb = "mix bless";
+    mt = "mix test";
   };
   interactiveShellInit = ''
     ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
