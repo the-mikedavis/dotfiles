@@ -44,7 +44,7 @@
             pkgs-unstable.spotify
             pkgs-unstable.element-desktop
             pkgs-unstable.wireshark
-            inputs.kak-buffercraft.defaultPackage.${system}
+            # inputs.kak-buffercraft.defaultPackage.${system}
           ];
         }
         ./modules/common.nix
