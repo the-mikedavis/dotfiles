@@ -33,7 +33,7 @@
 "type" = { fg = "green1" }
 "variable.builtin" = "orange1"
 "variable" = { fg = "fg0", modifiers = ["italic"] }
-"variable.parameter" = "fg2"
+"variable.parameter" = { fg = "fg0", modifiers = ["underlined"] }
 "variable.other.member" = "aqua1"
 
 "warning" = { fg = "orange1", bg = "bg1" }
