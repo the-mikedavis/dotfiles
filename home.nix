@@ -137,6 +137,7 @@ in
 
     [editor]
     auto-pairs = false
+    idle-timeout = 50
 
     [keys.normal]
     "A-k" = "expand_selection"
