@@ -94,6 +94,7 @@ in
     nix-prefetch-github
     clipman
     gnome3.adwaita-icon-theme
+    helix
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
@@ -139,11 +140,11 @@ in
     auto-pairs = false
     idle-timeout = 50
 
-    [keys.normal]
-    "A-k" = "expand_selection"
-    "A-j" = "select_first_child"
-    "A-l" = "select_next_sibling"
-    "A-h" = "select_prev_sibling"
+    # [keys.normal]
+    # "A-k" = "expand_selection"
+    # "A-j" = "select_first_child"
+    # "A-l" = "select_next_sibling"
+    # "A-h" = "select_prev_sibling"
 
     # [lsp]
     # display-messages = true
