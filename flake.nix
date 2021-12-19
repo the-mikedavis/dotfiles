@@ -18,35 +18,30 @@
   outputs = inputs@{ nixpkgs, home-manager, impermanence, ... }:
     let
       system = "x86_64-linux";
+
+      pkgs-unstable = import inputs.unstable { config.allowUnfree = true; system = system; };
+
       nixconfig = {
         nixpkgs = {
           config = {
             allowUnfree = true;
             chromium.enableWideVine = true;
           };
-          overlays = [ (import ./overlays) ];
+          overlays = [
+            (import ./overlays)
+            (_final: _prev: { unstable = pkgs-unstable; })
+          ];
         };
       };
 
-      pkgs-unstable = import inputs.unstable { config.allowUnfree = true; system = system; };
       common-modules = [
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.michael = import ./home.nix pkgs-unstable;
+          home-manager.users.michael = import ./home.nix;
         }
         impermanence.nixosModules.impermanence
-        {
-          environment.systemPackages = [
-            pkgs-unstable._1password-gui
-            pkgs-unstable.discord
-            pkgs-unstable.spotify
-            pkgs-unstable.element-desktop
-            pkgs-unstable.wireshark
-            # inputs.kak-buffercraft.defaultPackage.${system}
-          ];
-        }
         ./modules/common.nix
       ];
     in

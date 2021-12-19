@@ -1,4 +1,4 @@
-unstable: { pkgs, ... }:
+{ pkgs, ... }:
 let
   dirs = {
     defaults = ./defaults;
@@ -95,6 +95,11 @@ in
     clipman
     gnome3.adwaita-icon-theme
     helix
+    unstable._1password-gui
+    unstable.discord
+    unstable.spotify
+    unstable.element-desktop
+    unstable.wireshark
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
@@ -114,7 +119,7 @@ in
   xdg.configFile."kak/colors/grv.kak".source = (dirs.colorschemes + /kakoune/grv.kak);
 
   programs.git = {
-    package = unstable.git;
+    package = pkgs.unstable.git;
     enable = true;
   } // configs.git;
 
