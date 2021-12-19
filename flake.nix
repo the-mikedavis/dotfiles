@@ -39,7 +39,6 @@
             pkgs-unstable._1password-gui
             pkgs-unstable.discord
             pkgs-unstable.spotify
-            (pkgs-unstable.tree-sitter.override { webUISupport = true; })
             pkgs-unstable.element-desktop
             pkgs-unstable.wireshark
             inputs.kak-buffercraft.defaultPackage.${system}
