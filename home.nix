@@ -100,6 +100,7 @@ in
     unstable.spotify
     unstable.element-desktop
     unstable.wireshark
+    fd
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
