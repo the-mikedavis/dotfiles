@@ -10,6 +10,7 @@
 "function.builtin" = "yellow1"
 "function" = "fg1"
 "function.macro" = "aqua1"
+"function.special" = "aqua1"
 "keyword.directive" = "red0"
 "keyword" = { fg = "red1" }
 "label" = "aqua1"
