@@ -92,7 +92,7 @@ in
     wrapperFeatures.gtk = true;
   };
 
-  environment.variables.EDITOR = "kak";
+  environment.variables.EDITOR = "hx";
 
   security.sudo.extraConfig = ''
     Defaults lecture = never
