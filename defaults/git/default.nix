@@ -20,7 +20,7 @@
     lt = "!git tag --sort=version:refname | tail -n 1";
   };
   extraConfig = {
-    core.editor = "kak";
+    core.editor = "hx";
     hub.protocol = "ssh";
     pull.rebase = "false";
     init.defaultBranch = "main";
