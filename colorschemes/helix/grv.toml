@@ -25,6 +25,7 @@
 "string" = "green1"
 "string.special.symbol" = "yellow1"
 "string.special.path" = "purple0"
+"tag" = "fg3"
 "text" = "fg2"
 "text.literal" = "fg4"
 "text.title" = { fg = "blue0", modifiers = ["bold"] }
