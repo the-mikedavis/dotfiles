@@ -46,6 +46,12 @@
 "markup.raw" = "fg4"
 "markup.quote" = { fg = "fg2", modifiers = ["italic"] }
 
+# vcs (git) things
+"diff.plus" = "green1"
+"diff.minus" = "red1"
+"diff.delta" = "orange1"
+"diff.delta.moved" = "aqua1"
+
 "warning" = { fg = "orange1", bg = "bg1" }
 "error" = { fg = "red1", bg = "bg1" }
 "info" = { fg = "aqua1", bg = "bg1" }
