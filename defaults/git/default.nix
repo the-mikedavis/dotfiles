@@ -27,6 +27,7 @@
     push.followTags = "true";
     push.default = "simple";
     tag.gpgSign = "true";
+    commit.verbose = "true";
   };
   ignores = [
     "*.swp"
