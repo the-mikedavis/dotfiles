@@ -8,12 +8,12 @@ rustPlatform.buildRustPackage rec {
   src = fetchFromGitHub {
     owner = "the-mikedavis";
     repo = pname;
-    rev = "509028f77cf401531e32bf88f44df0b8039d7fe8";
+    rev = "20b6b4a3930115e3e8c11ec4c1727c12d8ea7956";
     fetchSubmodules = true;
-    sha256 = "sha256-pyx5eFNwBoBapbJXRSa6rUFMzkumqKi87lbT3xLd/7c=";
+    sha256 = "sha256-ckrHeKINpQQWSW8MIRxd7Y34WcH4bwCn0SSwZe24xMI=";
   };
 
-  cargoSha256 = "sha256-9zNdF7rPp4e6PtkdSyFC1upUEq24oU/XheknZoK+iMc=";
+  cargoSha256 = "sha256-owU8iUX96c0/x3end5fzZ7qmTgsvjGgw9D46dW94czo=";
 
   nativeBuildInputs = [ makeWrapper ];
 
