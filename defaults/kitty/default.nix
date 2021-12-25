@@ -13,7 +13,9 @@
     bell_on_tab = "no";
     term = "xterm-kitty";
     allow_remote_control = "yes";
-    background_opacity = "0.98";
+    # defaults to 1
+    # background_opacity = "0.98";
+    # ---
     # colors
     background = "#282828";
     foreground = "#ebdbb2";
