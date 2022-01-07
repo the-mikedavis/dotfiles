@@ -42,8 +42,9 @@
 "markup.heading" = { fg = "blue0", modifiers = ["bold"] }
 "markup.bold" = { modifiers = ["bold"] }
 "markup.italic" = { modifiers = ["italic"] }
-"markup.link.label" = "purple1"
+"markup.link.label" = { fg = "blue1", modifiers = ["underlined"] }
 "markup.link.url" = { fg = "blue1", modifiers = ["underlined"] }
+"markup.link.text" = "purple1"
 "markup.raw" = "fg4"
 "markup.quote" = { fg = "fg2", modifiers = ["italic"] }
 

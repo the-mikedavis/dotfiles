@@ -4,9 +4,9 @@ theme = "grv"
 auto-pairs = false
 idle-timeout = 50
 
-# [keys.normal]
-# "A-k" = "expand_selection"
-# "A-j" = "select_first_child"
+[keys.normal]
+"A-k" = "expand_selection"
+"A-j" = "shrink_selection"
 # "A-l" = "select_next_sibling"
 # "A-h" = "select_prev_sibling"
 
