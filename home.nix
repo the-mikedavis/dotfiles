@@ -145,6 +145,10 @@ in
   xdg.configFile."helix/config.toml".source = (dirs.defaults + /helix/config.toml);
   xdg.configFile."helix/themes/grv.toml".source = (dirs.colorschemes + /helix/grv.toml);
 
+  xdg.configFile."rebar3/rebar.config".text = ''
+    {plugins, [rebar3_hex]}.
+  '';
+
   xdg.configFile."electron-flags.conf".text = ''
     --enable-features=UseOzonePlatform
     --ozone-platform=wayland
