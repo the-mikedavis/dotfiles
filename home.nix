@@ -102,6 +102,8 @@ in
     unstable.wireshark
     fd
     (tree-sitter.override { webUISupport = true; })
+    fastmod
+    hexyl
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
