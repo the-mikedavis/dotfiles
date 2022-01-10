@@ -35,6 +35,7 @@
     mfc = "mix format --check-formatted";
     mb = "mix bless";
     mt = "mix test";
+    ch = "check";
   };
   interactiveShellInit = ''
     ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
