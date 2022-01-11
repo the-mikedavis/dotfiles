@@ -28,6 +28,13 @@
       options = [ "defaults" "size=2G" "mode=755" ];
     };
 
+  fileSystems."/tmp" =
+    {
+      device = "none";
+      fsType = "tmpfs";
+      options = [ "defaults" "size=10G" "mode=755" ];
+    };
+
   fileSystems."/boot" =
     {
       device = "/dev/disk/by-uuid/EA11-942D";
