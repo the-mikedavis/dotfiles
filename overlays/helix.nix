@@ -3,21 +3,21 @@
 # a derivation of helix based on my fork
 rustPlatform.buildRustPackage rec {
   pname = "helix";
-  version = "0.5.0";
+  version = "0.6.0.1-tmd";
 
   src = fetchFromGitHub {
     owner = "the-mikedavis";
     repo = pname;
-    rev = "9df23b75c564f5e6e0a2dc7b50fe87b8faa75f02";
+    rev = "a4200ba60b03094e6146541bbe1d68549c122f26";
     fetchSubmodules = true;
     # when building from a new rev, this value clashes first with lib.fakeSha256, then the
     # cargoSha256 after that
     #
-    sha256 = "sha256-B1mJtVGHjIe8bDDSLHfpekMOI5bIx6DUAx+EYQG5z1M=";
+    sha256 = "sha256-i5c2Bl9SvtTfL1EGlmCpo7HmB4EbQwClpXVAP8gNWhI=";
     # sha256 = lib.fakeSha256;
   };
 
-  cargoSha256 = "sha256-Wbu5ulfjhx1nVewNFL1s20SYHEA5wAApC4e05nmBrnQ=";
+  cargoSha256 = "sha256-7oVGK+0oX+CKu4MAUeFJlGqzxcbEuKK73VWwdLcdAek=";
   # cargoSha256 = lib.fakeSha256;
 
   nativeBuildInputs = [ makeWrapper ];
