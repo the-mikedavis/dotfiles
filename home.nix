@@ -52,9 +52,6 @@ in
   # changes in each release.
   home.stateVersion = "21.05";
 
-  programs.exa.enable = true;
-  programs.command-not-found.enable = true;
-
   home.packages = with pkgs; [
     tree
     curl
@@ -178,5 +175,12 @@ in
     enable = true;
   } // configs.fzf;
 
+  programs.exa.enable = true;
   programs.lazygit.enable = true;
+
+  # build an index of available packages within nixpkgs
+  programs.nix-index = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 }
