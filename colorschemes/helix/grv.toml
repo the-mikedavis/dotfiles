@@ -4,8 +4,8 @@
 "attribute" = "purple1"
 "comment" = { fg = "gray1", modifiers = ["italic"]  }
 "constant.builtin" = { fg = "purple1", modifiers = ["bold"] }
-"constant" = { fg = "aqua1" }
-"constructor" = { fg = "aqua1", modifiers = ["bold"] }
+"constant" = { fg = "purple1" }
+"constructor" = { fg = "purple1", modifiers = ["bold"] }
 "escape" = { fg = "fg2", modifiers = ["bold"] }
 "function.builtin" = "yellow1"
 "function" = "fg1"
@@ -14,14 +14,12 @@
 "keyword.directive" = "red0"
 "keyword" = { fg = "red1" }
 "label" = "purple1"
-"module" = "purple1"
-"namespace" = "purple1"
-"number" = "aqua1"
+"module" = "yellow1"
+"namespace" = "yellow1"
 "operator" = "blue1"
 "property" = "blue1"
 "punctuation.delimiter" = "fg3"
 "punctuation" = "fg3"
-"special" = "purple0"
 "string" = "green1"
 "string.special.symbol" = "yellow1"
 "string.special.path" = "purple0"
@@ -32,12 +30,12 @@
 "text.strong" = { fg = "fg2", modifiers = ["bold"] }
 "text.emphasis" = { fg = "fg2", modifiers = ["italic"] }
 "text.uri" = { fg = "blue1", modifiers = ["underlined"] }
-"text.reference" = "aqua1"
+"text.reference" = "purple1"
 "type" = { fg = "green1" }
 "variable.builtin" = "orange1"
 "variable" = { fg = "fg0", modifiers = ["italic"] }
 "variable.parameter" = { fg = "fg0", modifiers = ["underlined"] }
-"variable.other.member" = "purple1"
+"variable.other.member" = "aqua1"
 
 "markup.heading" = { fg = "blue0", modifiers = ["bold"] }
 "markup.bold" = { modifiers = ["bold"] }
