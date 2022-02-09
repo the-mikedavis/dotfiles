@@ -53,6 +53,7 @@ if you're interested in using flakes to manage all configuration.
       syntax highlighting which is far more accurate and customizable for
       languages I work with (elixir, nix, etc.) than normal regex-based
       counterparts
+    * the overlay in `overlays/helix.nix` is a derivation for my fork
 * I have my root device setup to use `tmpfs`
     * see [this great guide](https://elis.nu/blog/2020/05/nixos-tmpfs-as-root/)
     * also see [the impermanence project](https://github.com/nix-community/impermanence)
