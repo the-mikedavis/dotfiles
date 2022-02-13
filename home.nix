@@ -98,7 +98,7 @@ in
     unstable.element-desktop
     unstable.wireshark
     fd
-    (tree-sitter.override { webUISupport = true; })
+    (unstable.tree-sitter.override { webUISupport = true; })
     fastmod
     hexyl
   ];
