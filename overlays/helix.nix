@@ -8,12 +8,12 @@ rustPlatform.buildRustPackage rec {
   src = fetchFromGitHub {
     owner = "the-mikedavis";
     repo = pname;
-    rev = "8d4db7d3e554379c59083218eb40b0d6250b9c53";
+    rev = "558a87e01329cc73dd6cc2250b520d6c76481d39";
     fetchSubmodules = true;
     # when building from a new rev, this value clashes first with lib.fakeSha256, then the
     # cargoSha256 after that
     #
-    sha256 = "sha256-ShO69nyIxQAEeBG9M7qSYCjoQCJLfh9/gQzUQ5zTRbc=";
+    sha256 = "sha256-qrUdIB4lx+NDG8q/j4tEo6DDe7Y7d+cL12WaeuZhiEM=";
     # sha256 = lib.fakeSha256;
   };
 
