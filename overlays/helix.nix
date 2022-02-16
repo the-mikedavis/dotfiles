@@ -8,16 +8,16 @@ rustPlatform.buildRustPackage rec {
   src = fetchFromGitHub {
     owner = "the-mikedavis";
     repo = pname;
-    rev = "558a87e01329cc73dd6cc2250b520d6c76481d39";
-    fetchSubmodules = true;
+    rev = "23a37037a23222e6fa990ba0c9d5537a9d1e7c80";
+
     # when building from a new rev, this value clashes first with lib.fakeSha256, then the
     # cargoSha256 after that
     #
-    sha256 = "sha256-qrUdIB4lx+NDG8q/j4tEo6DDe7Y7d+cL12WaeuZhiEM=";
+    sha256 = "sha256-2loAsmSAZzadWGUTGu/GQvEMwPP4+YzYMYJQ1voYxX4=";
     # sha256 = lib.fakeSha256;
   };
 
-  cargoSha256 = "sha256-7oVGK+0oX+CKu4MAUeFJlGqzxcbEuKK73VWwdLcdAek=";
+  cargoSha256 = "sha256-y7bciYVv2bwvLr5UUcOIgh/qcQmv/ZSgakTmOmVFG5Q=";
   # cargoSha256 = lib.fakeSha256;
 
   nativeBuildInputs = [ makeWrapper ];
@@ -29,6 +29,14 @@ rustPlatform.buildRustPackage rec {
   postFixup = ''
     wrapProgram $out/bin/hx --set HELIX_RUNTIME $out/lib/runtime
   '';
+
+  # HAXXX -
+  # Turn off tests: we need at least the rust grammar built to run tests
+  # successfully after #1659. I should be able to fix this within my
+  # own dotfiles because I use nix 2.6, but this is not easy to fix in
+  # nix < 2.6 because `builtins.fromTOML` has bug that fails to parse
+  # languages.toml.
+  doCheck = false;
 
   meta = with lib; {
     description = "A post-modern modal text editor";
