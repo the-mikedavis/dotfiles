@@ -85,7 +85,7 @@ in
     bat
     killall
     _1password
-    nixpkgs-fmt
+    nixfmt
     rust-analyzer
     lazydocker
     nix-prefetch-github
