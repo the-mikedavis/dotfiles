@@ -35,6 +35,15 @@
       };
 
       common-modules = [
+        # add flakes support
+        {
+          nix = {
+            package = pkgs-unstable.nix;
+            extraOptions = ''
+              experimental-features = nix-command flakes
+            '';
+          };
+        }
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
