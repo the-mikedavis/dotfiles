@@ -41,8 +41,8 @@ bindsym $mod+y border pixel 5
 bindsym $mod+n border normal
 
 # brightness
-bindsym XF86MonBrightnessDown exec \"brightnessctl set 2%-\"
-bindsym XF86MonBrightnessUp exec \"brightnessctl set +2%\"
+bindsym XF86MonBrightnessDown exec \"${pkgs.brightnessctl} set 2%-\"
+bindsym XF86MonBrightnessUp exec \"${pkgs.brightnessctl} set +2%\"
 
 # volume
 bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ +1%'
