@@ -1,4 +1,4 @@
-{ fetchFromGitHub, lib, rustPlatform, makeWrapper }:
+{ fetchFromGitHub, lib, rustPlatform, makeWrapper, runCommand, yj }:
 
 # a derivation of helix based on my fork
 let
@@ -14,7 +14,10 @@ let
     # sha256 = lib.fakeSha256;
   };
 
-  config = builtins.fromTOML (builtins.readFile "${src}/languages.toml");
+  languages-json = runCommand "languages-toml-to-json" {} ''
+    ${yj}/bin/yj -t < ${src}/languages.toml > $out
+  '';
+  config = builtins.fromJSON (builtins.readFile (builtins.toPath languages-json));
   isGitGrammar = (grammar:
     builtins.hasAttr "source" grammar && builtins.hasAttr "git" grammar.source
     && builtins.hasAttr "rev" grammar.source);
@@ -36,9 +39,9 @@ in rustPlatform.buildRustPackage rec {
   inherit src;
 
   pname = "helix";
-  version = "0.6.0.4-tmd";
+  version = "0.6.0.5-tmd";
 
-  cargoSha256 = "sha256-VOLm7/hmNUX21skw8hp9ep9svenqq5D0MVxwctKihts=";
+  cargoSha256 = "sha256-KYu8s9d8DbU3oGvu/hhYCW0T5GWsEcB1uqnuXXxaAlA=";
   # cargoSha256 = lib.fakeSha256;
 
   nativeBuildInputs = [ makeWrapper ];
