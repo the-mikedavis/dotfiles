@@ -5,12 +5,12 @@ let
   src = fetchFromGitHub {
     owner = "the-mikedavis";
     repo = "helix";
-    rev = "4da7aa0441be8dd7df775cdf3c39be78f7cc7ccd";
+    rev = "e8d81b0b617a556001f04cc0b38ae279d7385094";
 
     # when building from a new rev, this value clashes first with lib.fakeSha256, then the
     # cargoSha256 after that
     #
-    sha256 = "sha256-o021YCSXiGwZH9qZVLICumZhd8tfG5Kry4GWkME7QiU=";
+    sha256 = "sha256-R73jc7YGPmc2DU73ET1biVBf3U7fhn8KldmPy1GE4To=";
     # sha256 = lib.fakeSha256;
   };
   config = (builtins.fromTOML
