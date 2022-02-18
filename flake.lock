@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "bleeding-edge": {
+      "locked": {
+        "lastModified": 1645191594,
+        "narHash": "sha256-IExtJTrVbVzJ6pbx7NsujwDLS0O98Umw9crfrbZQbtA=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "722fb55f3e2b5211f17a79e01cd45335b62dc31d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "master",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "devshell": {
       "locked": {
         "lastModified": 1625086391,
@@ -159,6 +175,7 @@
     },
     "root": {
       "inputs": {
+        "bleeding-edge": "bleeding-edge",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
         "kak-buffercraft": "kak-buffercraft",

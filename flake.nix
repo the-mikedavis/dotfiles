@@ -6,6 +6,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-21.11";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    bleeding-edge.url = "github:nixos/nixpkgs/master";
 
     home-manager.url = "github:nix-community/home-manager/release-21.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -20,6 +21,7 @@
       system = "x86_64-linux";
 
       pkgs-unstable = import inputs.unstable { config.allowUnfree = true; system = system; };
+      pkgs-edge = import inputs.bleeding-edge { config.allowUnfree = true; system = system; };
 
       nixconfig = {
         nixpkgs = {
@@ -29,7 +31,7 @@
           };
           overlays = [
             (import ./overlays)
-            (_final: _prev: { unstable = pkgs-unstable; })
+            (_final: _prev: { unstable = pkgs-unstable; edge = pkgs-edge; })
           ];
         };
       };

@@ -93,7 +93,7 @@ in
     gnome3.adwaita-icon-theme
     helix
     unstable._1password-gui
-    unstable.discord
+    edge.discord
     unstable.spotify
     unstable.element-desktop
     unstable.wireshark
