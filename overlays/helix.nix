@@ -5,12 +5,12 @@ let
   src = fetchFromGitHub {
     owner = "the-mikedavis";
     repo = "helix";
-    rev = "c167d97862657ada4c5ded07ff145dd7b1974082";
+    rev = "83827d797e33e23f2c8d4cb5ecdc122ad79ef8fe";
 
     # when building from a new rev, this value clashes first with lib.fakeSha256, then the
     # cargoSha256 after that
     #
-    sha256 = "sha256-c7hUcSNdVwobQMWe0pE7nOHJ3L4imsnTegFvg7fmWDo=";
+    sha256 = "sha256-Y4IUFm2FJYZQoLNMsaz7seyeBI5IYrSvWzNyAzqNXpE=";
     # sha256 = lib.fakeSha256;
   };
 
