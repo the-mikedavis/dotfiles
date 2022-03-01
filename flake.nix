@@ -13,7 +13,8 @@
 
     impermanence.url = "github:nix-community/impermanence/master";
 
-    kak-buffercraft.url = "github:the-mikedavis/buffercraft.kak/v0.0.1";
+    # my fork with some experimental changes / extra grammars / etc.
+    helix.url = "github:the-mikedavis/helix/dirty-9";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, impermanence, ... }:
@@ -22,6 +23,7 @@
 
       pkgs-unstable = import inputs.unstable { config.allowUnfree = true; system = system; };
       pkgs-edge = import inputs.bleeding-edge { config.allowUnfree = true; system = system; };
+      helix = inputs.helix.defaultPackage.${system};
 
       nixconfig = {
         nixpkgs = {
@@ -31,7 +33,11 @@
           };
           overlays = [
             (import ./overlays)
-            (_final: _prev: { unstable = pkgs-unstable; edge = pkgs-edge; })
+            (_final: _prev: {
+              inherit helix;
+              unstable = pkgs-unstable;
+              edge = pkgs-edge;
+            })
           ];
         };
       };
