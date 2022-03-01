@@ -44,6 +44,7 @@
             extraOptions = ''
               experimental-features = nix-command flakes
             '';
+            trustedUsers = [ "root" "michael" ];
           };
         }
         home-manager.nixosModules.home-manager

@@ -101,6 +101,7 @@ in
     (unstable.tree-sitter.override { webUISupport = true; })
     fastmod
     hexyl
+    cachix
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
