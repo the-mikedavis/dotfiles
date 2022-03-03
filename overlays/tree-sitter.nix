@@ -27,11 +27,11 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "tree-sitter";
-  version = "0.20.3";
+  version = "0.20.6";
 
-  sha256 = "sha256-I0jHuW9bcaJrp49gHqbWQCPiTtxgMK6hFVlVj3x/zBA=";
+  sha256 = "sha256-zaxy8VCfJKK8NtfuFFojmmP5a19FP1zO/eB5q1EoQPw=";
   # sha256 = lib.fakeSha256;
-  cargoSha256 = "sha256-9qbCQYdpGxPrZMiNmG5ZrqyuYbhSeADaYOgnn+zHDog=";
+  cargoSha256 = "sha256-sOOhzm2nz+HC6dvT+8hj/wh19o+OB2zQ6Uz+H89txSA=";
   # cargoSha256 = lib.fakeSha256;
 
   src = fetchFromGitHub {

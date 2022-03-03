@@ -98,7 +98,7 @@ in
     unstable.element-desktop
     unstable.wireshark
     fd
-    (unstable.tree-sitter.override { webUISupport = true; })
+    tree-sitter
     fastmod
     hexyl
     cachix
