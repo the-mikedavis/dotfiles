@@ -65,6 +65,7 @@ in
   fonts.fonts = with pkgs; [
     jetbrains-mono
     font-awesome
+    apple-color-emoji
   ];
 
   programs.qt5ct.enable = true;
