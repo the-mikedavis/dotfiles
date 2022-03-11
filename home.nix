@@ -101,6 +101,7 @@ in
     fastmod
     hexyl
     cachix
+    helix
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
