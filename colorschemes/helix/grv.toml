@@ -63,15 +63,18 @@
 "ui.statusline" = { fg = "fg1", bg = "bg2" }
 "ui.statusline.inactive" = { fg = "fg4", bg = "bg1" }
 "ui.popup" = { bg = "bg1" }
+"ui.popup.info" = { bg = "bg1" }
 "ui.window" = { bg = "bg1" }
 "ui.help" = { bg = "bg1", fg = "fg1" }
 "ui.text" = { fg = "fg1" }
+"ui.text.info" = { fg = "fg1" }
 "ui.text.focus" = { fg = "fg1" }
 "ui.selection" = { bg = "bg3", modifiers = ["reversed"] }
 "ui.cursor.primary" = { modifiers = ["reversed"] }
 "ui.cursor.match" = { modifiers = ["reversed"] }
 "ui.menu" = { fg = "fg1", bg = "bg2" }
 "ui.menu.selected" = { fg = "bg2", bg = "blue1", modifiers = ["bold"] }
+"ui.indent-guide" = { fg = "bg1" }
 
 "diagnostic" = { modifiers = ["underlined"] }
 
