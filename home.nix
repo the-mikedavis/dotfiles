@@ -92,7 +92,7 @@ in
     clipman
     gnome3.adwaita-icon-theme
     unstable._1password-gui
-    edge.discord
+    unstable.discord
     unstable.spotify
     unstable.element-desktop
     unstable.wireshark
