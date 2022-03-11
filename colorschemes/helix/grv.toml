@@ -35,7 +35,7 @@
 "variable.builtin" = "orange1"
 "variable" = { fg = "fg0", modifiers = ["italic"] }
 "variable.parameter" = { fg = "fg0", modifiers = ["underlined"] }
-"variable.other.member" = "aqua1"
+"variable.other.member" = "blue1"
 
 "markup.heading" = { fg = "blue0", modifiers = ["bold"] }
 "markup.bold" = { modifiers = ["bold"] }
