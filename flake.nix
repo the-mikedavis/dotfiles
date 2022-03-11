@@ -41,7 +41,7 @@
         # add flakes support
         {
           nix = {
-            package = pkgs-unstable.nix;
+            package = pkgs-edge.nix;
             extraOptions = ''
               experimental-features = nix-command flakes
             '';
