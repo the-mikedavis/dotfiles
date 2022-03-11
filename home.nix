@@ -91,7 +91,6 @@ in
     nix-prefetch-github
     clipman
     gnome3.adwaita-icon-theme
-    helix
     unstable._1password-gui
     edge.discord
     unstable.spotify

@@ -12,9 +12,6 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     impermanence.url = "github:nix-community/impermanence/master";
-
-    # my fork with some experimental changes / extra grammars / etc.
-    helix.url = "github:the-mikedavis/helix/dirty-9";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, impermanence, ... }:
@@ -23,7 +20,6 @@
 
       pkgs-unstable = import inputs.unstable { config.allowUnfree = true; system = system; };
       pkgs-edge = import inputs.bleeding-edge { config.allowUnfree = true; system = system; };
-      helix = inputs.helix.defaultPackage.${system};
 
       nixconfig = {
         nixpkgs = {
@@ -34,7 +30,6 @@
           overlays = [
             (import ./overlays)
             (_final: _prev: {
-              inherit helix;
               unstable = pkgs-unstable;
               edge = pkgs-edge;
             })
