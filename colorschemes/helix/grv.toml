@@ -75,6 +75,7 @@
 "ui.menu" = { fg = "fg1", bg = "bg2" }
 "ui.menu.selected" = { fg = "bg2", bg = "blue1", modifiers = ["bold"] }
 "ui.indent-guide" = { fg = "bg1" }
+"ui.text.whitespace" = { fg = "bg2" }
 
 "diagnostic" = { modifiers = ["underlined"] }
 
