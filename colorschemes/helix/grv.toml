@@ -74,8 +74,9 @@
 "ui.cursor.match" = { modifiers = ["reversed"] }
 "ui.menu" = { fg = "fg1", bg = "bg2" }
 "ui.menu.selected" = { fg = "bg2", bg = "blue1", modifiers = ["bold"] }
+"ui.virtual" = { fg = "bg2" }
+# temporary: remove when indent guide pr switches to ui.virtual.indent-guide
 "ui.indent-guide" = { fg = "bg1" }
-"ui.text.whitespace" = { fg = "bg2" }
 
 "diagnostic" = { modifiers = ["underlined"] }
 
