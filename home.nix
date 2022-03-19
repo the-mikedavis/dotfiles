@@ -115,8 +115,6 @@ in
     enable = true;
   } // configs.kakoune;
 
-  programs.emacs.enable = true;
-
   xdg.configFile."kak/colors/grv.kak".source = (dirs.colorschemes + /kakoune/grv.kak);
 
   programs.git = {
