@@ -15,7 +15,7 @@
 "keyword" = { fg = "red1" }
 "label" = "purple1"
 "module" = "green1"
-"namespace" = "yellow1"
+"namespace" = "green1"
 "operator" = "blue1"
 "property" = "blue1"
 "punctuation.delimiter" = "fg3"
