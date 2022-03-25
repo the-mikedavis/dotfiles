@@ -31,7 +31,7 @@
 "text.emphasis" = { fg = "fg2", modifiers = ["italic"] }
 "text.uri" = { fg = "blue1", modifiers = ["underlined"] }
 "text.reference" = "purple1"
-"type" = { fg = "orange1" }
+"type" = { fg = "yellow1" }
 "variable.builtin" = "orange1"
 "variable" = { fg = "fg0", modifiers = ["italic"] }
 "variable.parameter" = { fg = "fg0", modifiers = ["underlined"] }
