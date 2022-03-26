@@ -70,9 +70,8 @@
 "ui.text.info" = { fg = "fg1" }
 "ui.text.focus" = { fg = "fg1" }
 "ui.selection" = { bg = "bg3", modifiers = ["reversed"] }
-"ui.cursor" = { modifiers = "reversed" }
-"ui.cursor.primary" = { bg = "bg3", fg = "yellow1" }
-"ui.cursor.match" = { bg = "bg3", fg = "yellow0" }
+"ui.cursor.primary" = { modifiers = ["reversed"] }
+"ui.cursor.match" = { modifiers = ["reversed"] }
 "ui.menu" = { fg = "fg1", bg = "bg2" }
 "ui.menu.selected" = { fg = "bg2", bg = "blue1", modifiers = ["bold"] }
 "ui.virtual" = { fg = "bg2" }
