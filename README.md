@@ -25,7 +25,7 @@ if you're interested in using flakes to manage all configuration.
 * `home.nix` - the [`home-manager`](https://github.com/nix-community/home-manager)
   configuration for my user on all machines
     * this is where most of the configuration ends up, especially for user-space
-      tools like `docker-compose`, `sway`, editors and browsers, etc.
+      tools like `sway`, editors and browsers, etc.
     * documentation on all available options in home-manager can be found
       [here](https://nix-community.github.io/home-manager/options.html)
 * `.git-crypt` and `.gitattributes` control which directories get encrypted

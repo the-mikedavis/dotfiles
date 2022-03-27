@@ -33,7 +33,7 @@ in
     directories = [
       "/etc/nixos"
       "/etc/NetworkManager/system-connections"
-      "/var/lib/docker"
+      "/var/lib/containers"
       "/home/michael"
       "/var/log"
     ];
@@ -51,7 +51,7 @@ in
   users.users.michael = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" "wireshark" "docker" ];
+    extraGroups = [ "wheel" "wireshark" "podman" ];
     initialHashedPassword = passwd.michael;
   };
 
@@ -77,7 +77,12 @@ in
 
   services.openssh.enable = true;
 
-  virtualisation.docker.enable = true;
+  virtualisation.podman = {
+    enable = true;
+    dockerSocket.enable = true;
+    # make a `docker` alias for podman
+    dockerCompat = true;
+  };
 
   # sway/wayland
   programs.sway = {

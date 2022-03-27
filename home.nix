@@ -56,8 +56,6 @@ in
     tree
     curl
     neofetch
-    docker-compose
-    docker-sync
     dnsutils
     traceroute
     nmap
@@ -87,7 +85,6 @@ in
     _1password
     nixfmt
     rust-analyzer
-    lazydocker
     nix-prefetch-github
     clipman
     gnome3.adwaita-icon-theme
@@ -101,6 +98,7 @@ in
     fastmod
     hexyl
     cachix
+    docker-compose
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
