@@ -1,7 +1,7 @@
 {
   font = {
     name = "JetBrains Mono";
-    # size = 10;
+    size = 13;
   };
   settings = {
     disable_ligatures = "never";
