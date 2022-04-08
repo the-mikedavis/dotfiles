@@ -15,6 +15,7 @@
     pl = "pull";
     d = "diff";
     f = "fetch";
+    ff = "merge --ff-only";
     branch-name = "rev-parse --abbrev-ref HEAD";
     pub = "!git push -u origin $(git branch-name)";
     lt = "!git tag --sort=version:refname | tail -n 1";
