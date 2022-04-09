@@ -99,7 +99,6 @@ in
     hexyl
     cachix
     docker-compose
-    erlang-ls
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
