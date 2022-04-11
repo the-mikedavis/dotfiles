@@ -144,6 +144,14 @@ in
     {plugins, [rebar3_hex]}.
   '';
 
+  xdg.configFile."erlang_ls/erlang_ls.config".text = ''
+    apps_dirs:
+      - "_build/default/lib/*"
+    include_dirs:
+      - "_build/default/lib/*/include"
+      - "include"
+  '';
+
   xdg.configFile."electron-flags.conf".text = ''
     --enable-features=UseOzonePlatform
     --ozone-platform=wayland
