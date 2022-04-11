@@ -93,6 +93,7 @@ in
     unstable.spotify
     unstable.element-desktop
     unstable.wireshark
+    unstable.wezterm
     fd
     tree-sitter
     fastmod
