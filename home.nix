@@ -100,6 +100,7 @@ in
     hexyl
     cachix
     docker-compose
+    asciinema
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
