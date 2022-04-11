@@ -2,4 +2,4 @@
 
 [editor]
 auto-pairs = false
-idle-timeout = 50
+idle-timeout = 100
