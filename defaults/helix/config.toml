@@ -1,4 +1,4 @@
-theme = "grv"
+# theme = "grv"
 
 [editor]
 auto-pairs = false
