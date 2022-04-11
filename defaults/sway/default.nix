@@ -303,9 +303,9 @@ exec --no-startup-id clipit
 # exec --no-startup-id xautolock -time 10 -locker swaylock
 # exec --no-startup-id xautolock -time 10 -notify 5 -notifier '/usr/lib/xsecurelock/until_nonidle /usr/lib/xsecurelock/dimmer' -locker xsecurelock
 exec swayidle -w \\
-  timeout 300 'swaylock -f -c 000000' \\
-  timeout 600 'swaymsg \"output * dpms off\"' \\
-       resume 'swaymsg \"output * dpms on\"' \\
+  timeout 600  'swaylock -f -c 000000' \\
+  timeout 1200 'swaymsg \"output * dpms off\"' \\
+        resume 'swaymsg \"output * dpms on\"' \\
   before-sleep 'swaylock -f -c 000000'
 
 set $bar_hl_color #C6643D
