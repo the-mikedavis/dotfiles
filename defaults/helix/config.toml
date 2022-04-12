@@ -1,5 +1,5 @@
-# theme = "grv"
+theme = "grv"
 
 [editor]
 auto-pairs = false
-idle-timeout = 100
+idle-timeout = 50
