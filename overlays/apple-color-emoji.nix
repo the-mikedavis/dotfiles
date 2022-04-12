@@ -5,7 +5,7 @@ let
 in
 builtins.fetchurl {
   name = "${pname}-${version}";
-  url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/latest/AppleColorEmoji.ttf";
+  url = "https://github.com/samuelngs/apple-emoji-linux/releases/download/ios-14.6/AppleColorEmoji.ttf";
   # sha256 = lib.fakeSha256;
-  sha256 = "sha256:0dg0d6x5l74lmyhgn0d7ilz7gb1wkf0r50c418xv870xam1csl0g";
+  sha256 = "sha256:1hi9cgbgl7g728plm6lfqywmva0bn90wjjv7jmnnbwz1sfqq7c5i";
 }
