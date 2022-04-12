@@ -38,6 +38,7 @@
     mdg = "mix deps.get";
     ch = "check";
     ts = "tree-sitter";
+    pr = "gh checkout pr";
   };
   interactiveShellInit = ''
     ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
