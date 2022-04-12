@@ -37,7 +37,13 @@
 "variable.parameter" = { fg = "fg0", modifiers = ["underlined"] }
 "variable.other.member" = "blue1"
 
-"markup.heading" = { fg = "blue0", modifiers = ["bold"] }
+"markup.heading.marker" = { fg = "blue0" }
+"markup.heading.1" = { fg = "red0", modifiers = ["bold"] }
+"markup.heading.2" = { fg = "orange0", modifiers = ["bold"] }
+"markup.heading.3" = { fg = "yellow0", modifiers = ["bold"] }
+"markup.heading.4" = { fg = "green0", modifiers = ["bold"] }
+"markup.heading.5" = { fg = "blue0", modifiers = ["bold"] }
+"markup.heading.6" = { fg = "fg0", modifiers = ["bold"] }
 "markup.bold" = { modifiers = ["bold"] }
 "markup.italic" = { modifiers = ["italic"] }
 "markup.link.label" = { fg = "blue1", modifiers = ["underlined"] }
