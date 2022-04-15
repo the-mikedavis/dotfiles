@@ -36,6 +36,7 @@
     ".projections.json"
     "*.elixir_ls/"
     "nohup.out"
+    "erlang_ls.config"
   ];
   userName = "Michael Davis";
   userEmail = "mcarsondavis@gmail.com";
