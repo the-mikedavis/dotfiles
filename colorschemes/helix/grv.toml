@@ -19,6 +19,7 @@
 "operator" = "blue1"
 "property" = "blue1"
 "punctuation.delimiter" = "fg3"
+"punctuation.special" = "purple0"
 "punctuation" = "fg3"
 "string" = "green1"
 "string.special.symbol" = "yellow1"
