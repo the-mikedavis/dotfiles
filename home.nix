@@ -18,6 +18,14 @@ let
     fzf = import (dirs.defaults + /fzf);
   };
 
+  erlangR25 = pkgs.beam.lib.callErlang ./overlays/R25.nix {
+    parallelBuild = true;
+    wxGTK = pkgs.wxGTK30;
+    autoconf = pkgs.buildPackages.autoconf269;
+    wxSupport = false;
+    systemdSupport = false;
+  };
+
   github-notifications-token = (import (dirs.defaults + /tokens)).github-notifications;
 in
 {
@@ -101,6 +109,7 @@ in
     cachix
     docker-compose
     asciinema
+    erlangR25
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
