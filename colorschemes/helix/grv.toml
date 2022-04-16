@@ -76,8 +76,9 @@
 "ui.text" = { fg = "fg1" }
 "ui.text.info" = { fg = "fg1" }
 "ui.text.focus" = { fg = "fg1" }
-"ui.selection" = { bg = "bg3", modifiers = ["reversed"] }
-"ui.cursor.primary" = { modifiers = ["reversed"] }
+"ui.selection.primary" = { modifiers = ["reversed"] }
+"ui.selection" = { bg = "bg3" }
+"ui.cursor.primary" = { modifiers = ["reversed", "underlined"] }
 "ui.cursor.match" = { modifiers = ["underlined"] }
 "ui.menu" = { fg = "fg1", bg = "bg2" }
 "ui.menu.selected" = { fg = "bg2", bg = "blue1", modifiers = ["bold"] }
