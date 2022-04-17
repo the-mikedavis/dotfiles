@@ -4,3 +4,6 @@ theme = "grv"
 auto-pairs = false
 idle-timeout = 50
 gutters = ["diagnostics"]
+
+[keys.normal]
+"=" = ":pipe fmt -w 80"
