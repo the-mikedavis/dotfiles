@@ -110,6 +110,7 @@ in
     docker-compose
     asciinema
     erlangR25
+    (unstable.rebar3.overrideAttrs (prev: { buildInputs = [ erlangR25 ]; }))
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
