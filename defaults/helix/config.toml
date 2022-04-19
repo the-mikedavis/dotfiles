@@ -5,5 +5,9 @@ auto-pairs = false
 idle-timeout = 50
 gutters = ["diagnostics"]
 
+[editor.lsp]
+# display progress messages in status-line
+display-messages = true
+
 [keys.normal]
 "=" = ":pipe fmt -w 80"
