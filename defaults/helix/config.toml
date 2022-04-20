@@ -13,7 +13,9 @@ display-messages = true
 render = "all"
 
 [editor.whitespace.characters]
-tab = "➝"
+tab = "▸"
+newline = "◂"
+# newline = "↯"
 
 [keys.normal]
 "=" = ":pipe fmt -w 80"
