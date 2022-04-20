@@ -9,5 +9,11 @@ gutters = ["diagnostics"]
 # display progress messages in status-line
 display-messages = true
 
+[editor.whitespace]
+render = "all"
+
+[editor.whitespace.characters]
+tab = "➝"
+
 [keys.normal]
 "=" = ":pipe fmt -w 80"
