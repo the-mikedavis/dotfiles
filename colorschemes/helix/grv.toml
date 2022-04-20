@@ -59,10 +59,10 @@
 "diff.delta" = "orange1"
 "diff.delta.moved" = "aqua1"
 
-"warning" = { fg = "orange1", bg = "bg1" }
-"error" = { fg = "red1", bg = "bg1" }
-"info" = { fg = "aqua1", bg = "bg1" }
-"hint" = { fg = "blue1", bg = "bg1" }
+"warning" = { fg = "orange1" }
+"error" = { fg = "red1" }
+"info" = { fg = "aqua1" }
+"hint" = { fg = "blue1" }
 
 "ui.background" = { bg = "bg0" }
 "ui.linenr" = { fg = "bg4" }
