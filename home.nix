@@ -151,7 +151,7 @@ in
   xdg.configFile."helix/themes/grv.toml".source = (dirs.colorschemes + /helix/grv.toml);
 
   xdg.configFile."rebar3/rebar.config".text = ''
-    {plugins, [rebar3_hex]}.
+    {plugins, [rebar3_hex, rebar3_ex_doc]}.
   '';
 
   xdg.configFile."erlang_ls/erlang_ls.config".text = ''
