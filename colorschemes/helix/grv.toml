@@ -36,6 +36,8 @@
 "variable" = { fg = "fg0", modifiers = ["italic"] }
 "variable.parameter" = { fg = "fg0", modifiers = ["underlined"] }
 "variable.other.member" = "blue1"
+# matched text in the picker/menus
+"special" = { fg = "red1", modifiers = ["bold"] }
 
 "markup.heading" = { fg = "blue0" }
 "markup.heading.1" = { fg = "red0", modifiers = ["bold"] }
