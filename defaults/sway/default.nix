@@ -1,12 +1,10 @@
 { pkgs }:
 let
-  wallpaper = pkgs.fetchurl {
-    url = "https://cdn.mcarsondavis.com/drip.jpeg";
-    sha256 = "sha256-h1QDGsgUgNWyDjnY12GwQfdWN64Uify8VG8fuUGpKs8=";
-  };
-  wallpaperVertical = pkgs.fetchurl {
-    url = "https://images.unsplash.com/photo-1617140237060-d09a58ba8edd";
-    sha256 = "sha256-/LqxnQxSalc+PEPfMYWqjQs4BuPnCcFjFqq1q6yZK1k=";
+  nixos-logo-gruvbox-wallpaper = pkgs.fetchFromGitHub {
+    owner = "lunik1";
+    repo = "nixos-logo-gruvbox-wallpaper";
+    rev = "c94a15202a1498e6d828dde570e6f24b6f4f922b";
+    sha256 = "12any5ns0cimjdf7f8qi8xsygnrpagkas3zhvwhag8264xg8ljmj";
   };
 in
 {
@@ -398,20 +396,18 @@ input \"5426:623:Razer_Razer_Blade_Keyboard\" {
 
 output eDP-1 {
   pos 0 0
-  transform 0
-  background ${wallpaper} fill
+  bg ${nixos-logo-gruvbox-wallpaper}/png/gruvbox-dark-rainbow.png fill
 }
 
 output DP-2 {
   pos 0 0
-  transform 0
-  background ${wallpaper} fill
+  bg ${nixos-logo-gruvbox-wallpaper}/png/gruvbox-dark-rainbow.png fill
 }
 
 output HDMI-A-2 {
   pos 3840 -875
   transform 90
-  background ${wallpaperVertical} fill
+  bg ${nixos-logo-gruvbox-wallpaper}/png/gruvbox-dark-rainbow.png fill
 }
   ";
 }
