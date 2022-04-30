@@ -22,6 +22,9 @@
     '';
     # run kakoune as a daemon with session name passed as $argv[1]
     kakd = "setsid kak -d -s $argv[1] &";
+    "," = ''
+      nix run "nixpkgs#$argv[1]" -- $argv[2..-1]
+    '';
   };
   shellAliases = {
     c = "cd";
