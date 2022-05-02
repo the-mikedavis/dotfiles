@@ -8,7 +8,7 @@ gutters = ["diagnostics"]
 [editor.lsp]
 # display progress messages in status-line
 display-messages = true
-auto-signature-help = true
+# auto-signature-help = true
 
 [editor.whitespace]
 render = "all"
