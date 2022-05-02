@@ -20,3 +20,7 @@ newline = "◂"
 
 [keys.normal]
 "=" = ":pipe fmt -w 80"
+
+[keys.insert]
+"C-n" = "no_op"
+"C-p" = "no_op"
