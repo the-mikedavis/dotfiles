@@ -112,6 +112,8 @@ in
     erlangR25
     (unstable.rebar3.overrideAttrs (prev: { buildInputs = [ erlangR25 ]; }))
     cloc
+    unstable.audacity
+    unstable.zoom-us
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
