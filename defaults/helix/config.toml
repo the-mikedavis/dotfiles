@@ -5,9 +5,9 @@ auto-pairs = false
 idle-timeout = 50
 gutters = ["diagnostics"]
 
-[editor.lsp]
+# [editor.lsp]
 # display progress messages in status-line
-display-messages = true
+# display-messages = true
 # auto-signature-help = true
 
 [editor.whitespace]
