@@ -11,6 +11,7 @@
 "function" = "fg1"
 "function.macro" = "purple1"
 "function.special" = "purple1"
+"keyword.operator" = "red2"
 "keyword.directive" = "red0"
 "keyword" = { fg = "red1" }
 "label" = "purple1"
@@ -109,6 +110,7 @@ gray1 = "#928374"
 
 red0 = "#cc241d" # neutral
 red1 = "#fb4934" # bright
+red2 = "#fc5b49" # brighter
 green0 = "#98971a"
 green1 = "#b8bb26"
 yellow0 = "#d79921"
