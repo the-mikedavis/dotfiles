@@ -115,6 +115,7 @@ in
     cloc
     unstable.audacity
     unstable.zoom-us
+    unstable.exa
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
@@ -193,7 +194,6 @@ in
     enable = true;
   } // configs.fzf;
 
-  programs.exa.enable = true;
   programs.lazygit.enable = true;
 
   # build an index of available packages within nixpkgs
