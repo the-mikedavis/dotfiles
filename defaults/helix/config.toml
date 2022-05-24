@@ -5,10 +5,10 @@ auto-pairs = false
 idle-timeout = 50
 gutters = ["diagnostics"]
 
-# [editor.lsp]
+[editor.lsp]
 # display progress messages in status-line
-# display-messages = true
-# auto-signature-help = true
+display-messages = false
+auto-signature-help = true
 
 [editor.whitespace]
 render = "all"
@@ -17,9 +17,6 @@ render = "all"
 tab = "▸"
 newline = "◂"
 # newline = "↯"
-
-[keys.normal]
-"=" = ":pipe fmt -w 80"
 
 [keys.insert]
 "C-n" = "no_op"
