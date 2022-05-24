@@ -119,8 +119,6 @@ in
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
 
-  programs.qutebrowser.enable = true;
-
   programs.ssh = {
     enable = true;
   } // configs.ssh;
