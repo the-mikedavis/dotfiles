@@ -35,6 +35,7 @@ in
   # fish shell
   programs.fish = {
     enable = true;
+    package = pkgs.unstable.fish;
   } // configs.fish;
 
   programs.gh = {
