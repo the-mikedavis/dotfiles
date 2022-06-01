@@ -4,6 +4,7 @@ theme = "grv"
 auto-pairs = false
 idle-timeout = 50
 gutters = ["diagnostics"]
+mouse = false
 
 [editor.whitespace]
 render = "all"
