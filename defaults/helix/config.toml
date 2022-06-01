@@ -5,18 +5,12 @@ auto-pairs = false
 idle-timeout = 50
 gutters = ["diagnostics"]
 
-[editor.lsp]
-# display progress messages in status-line
-display-messages = false
-auto-signature-help = true
-
 [editor.whitespace]
 render = "all"
 
 [editor.whitespace.characters]
 tab = "▸"
 newline = "◂"
-# newline = "↯"
 
 [keys.normal]
 A-j = "shrink_selection"
