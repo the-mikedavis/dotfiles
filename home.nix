@@ -194,8 +194,12 @@ in
     enable = true;
   } // configs.fzf;
 
-  programs.lazygit.enable = true;
   programs.lazygit = {
+    enable = true;
+    settings = {
+      promptToReturnFromSubprocess = false;
+    };
+  };
 
   # build an index of available packages within nixpkgs
   programs.nix-index = {
