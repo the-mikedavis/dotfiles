@@ -98,7 +98,7 @@ in
     clipman
     gnome3.adwaita-icon-theme
     unstable._1password-gui
-    unstable.discord
+    edge.discord
     unstable.spotify
     unstable.element-desktop
     unstable.wireshark
@@ -195,6 +195,7 @@ in
   } // configs.fzf;
 
   programs.lazygit.enable = true;
+  programs.lazygit = {
 
   # build an index of available packages within nixpkgs
   programs.nix-index = {
