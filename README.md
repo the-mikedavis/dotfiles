@@ -38,7 +38,6 @@ if you're interested in using flakes to manage all configuration.
   machine-specific `configuration.nix` module and a hardware-specific
   `hardware-configuration.nix` module
     * `mango` is a custom-built desktop machine
-    * `nox` is a 15-inch 2021 Razer Blade
 * `colorschemes/` has program-specific color schemes setup as nix attribute
   sets
 
@@ -66,8 +65,6 @@ if you're interested in using flakes to manage all configuration.
 * I use [`sway`](https://github.com/swaywm/sway) as a window manager
     * Wayland support is actually not bad these days
     * I find Wayland more consistent and less buggy than X in my experience
-    * unfortunately I can't get sway to work with external monitors on my
-      `nox` machine, I suspect because of the nvidia driver :(
 * I prefer gruvbox for a colorscheme
     * the sway configuration in this repository loads a gruvbox colored
       NixOS logo as a background and sets up kitty and kakoune with gruvbox

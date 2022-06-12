@@ -68,14 +68,6 @@
             ./machines/mango/configuration.nix
           ] ++ common-modules;
         };
-
-        nox = nixpkgs.lib.nixosSystem {
-          system = system;
-          modules = [
-            nixconfig
-            ./machines/nox/configuration.nix
-          ] ++ common-modules;
-        };
       };
     };
 }
