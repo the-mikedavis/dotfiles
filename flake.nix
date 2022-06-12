@@ -49,12 +49,13 @@
           };
         }
         home-manager.nixosModules.home-manager
+        impermanence.nixosModules.impermanence
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.michael = import ./home.nix;
+          home-manager.users.root = import ./users/root.nix;
+          home-manager.users.michael = import ./users/michael.nix (impermanence + "/home-manager.nix");
         }
-        impermanence.nixosModules.impermanence
         ./modules/common.nix
       ];
     in

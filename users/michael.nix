@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+impermanence: { pkgs, ... }:
 let
   dirs = {
-    defaults = ./defaults;
-    colorschemes = ./colorschemes;
+    defaults = ../defaults;
+    colorschemes = ../colorschemes;
+    overlays = ../overlays;
   };
 
   configs = {
@@ -18,7 +19,7 @@ let
     fzf = import (dirs.defaults + /fzf);
   };
 
-  erlangR25 = pkgs.beam.lib.callErlang ./overlays/R25.nix {
+  erlangR25 = pkgs.beam.lib.callErlang (dirs.overlays + /R25.nix) {
     parallelBuild = true;
     wxGTK = pkgs.wxGTK30;
     autoconf = pkgs.buildPackages.autoconf269;
@@ -29,6 +30,8 @@ let
   github-notifications-token = (import (dirs.defaults + /tokens)).github-notifications;
 in
 {
+  imports = [ impermanence ];
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -41,7 +44,7 @@ in
   programs.gh = {
     enable = true;
     settings = {
-      editor = "kak";
+      editor = "hx";
       git_protocol = "ssh";
     };
   };
@@ -169,6 +172,85 @@ in
     --enable-features=UseOzonePlatform
     --ozone-platform=wayland
   '';
+
+  xdg.configFile."tree-sitter/config.json".source = (dirs.defaults + /tree-sitter/config.json);
+
+  ## Persistence config.
+  # The root file-system is a tmpfs: volatile memory that is
+  # wiped on reboot. So we need to explicitly declare what to persist across
+  # reboots. These files/directories are mounted from non-volatile memory.
+  # In modules/common.nix we declare the system-level persisted directories.
+  home.persistence."/nix/persist/home/michael" = {
+    directories = [
+      # Misc docs.
+      "Documents"
+      # == Top-level dots ==
+      # Source code. This is essentially a cache since everything is a git repo.
+      "src"
+      # GPG keys and metadata.
+      ".gnupg"
+      # SSH keys and config.
+      ".ssh"
+      # hex.pm caches, downloaded library tarballs, auth etc.
+      ".hex"
+      # Mix archives (Elixir)
+      ".mix"
+      # Firefox data, essentially a cache plus auth stuff.
+      # ".firefox"
+      ".mozilla"
+      # cargo cache (Rust)
+      ".cargo/registry"
+      ".cargo/bin"
+      ".cargo/git"
+      # == Local state ==
+      # Fish history and completions
+      ".local/share/fish"
+      # Podman cache
+      ".local/share/containers"
+      # Repl history and trusted settings
+      ".local/share/nix"
+      # Z (fish jump util) database
+      ".local/share/z"
+      # == Config ==
+      # Most apps in this category abuse the config dir to store state.
+      ".config/Slack"
+      ".config/discord"
+      ".config/chromium"
+      ".config/Element"
+      ".config/spotify"
+      ".config/1Password"
+      # == Cache ==
+      ".cache/nix"
+      ".cache/mozilla"
+      ".cache/chromium"
+      ".cache/yarn"
+      ".cache/spotify"
+      ".cache/mix"
+      ".cache/nix-index"
+      ".cache/erlang_ls"
+      ".cache/rebar3"
+      ".cache/fontconfig"
+      ".cache/erlang-history"
+      ".cache/gleam"
+    ];
+    files = [
+      # Lazygit repository history
+      # ".config/lazygit/state.yml"
+      # Fish universal variables
+      ".config/fish/fish_variables"
+      # Auth config for Hex.pm (Erlang)
+      ".config/rebar3/hex.config"
+      # Nix cache config
+      ".config/nix/nix.conf"
+      # Cachix auth
+      ".config/cachix/cachix.dhall"
+      # GitHub CLI auth
+      ".config/gh/hosts.yml"
+    ];
+    # > allows other users, such as `root`, to access files through the bind
+    # > mounted directories listed in `directories`.
+    allowOther = true;
+  };
 
   wayland.windowManager.sway = {
     enable = true;

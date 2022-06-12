@@ -34,7 +34,6 @@ in
       "/etc/nixos"
       "/etc/NetworkManager/system-connections"
       "/var/lib/containers"
-      "/home/michael"
       "/var/log"
     ];
     files = [
@@ -89,6 +88,10 @@ in
     enable = true;
     wrapperFeatures.gtk = true;
   };
+
+  # Allow other users like `root` to access directories bind-mounted
+  # by impermanence's home-manager integration.
+  programs.fuse.userAllowOther = true;
 
   environment.variables.EDITOR = "hx";
 

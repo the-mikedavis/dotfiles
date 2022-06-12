@@ -22,12 +22,13 @@ if you're interested in using flakes to manage all configuration.
       in the repo, such as `home.nix`
 * `flake.lock` - lockfile for all flake dependencies, so that builds are
   reproducible across machines
-* `home.nix` - the [`home-manager`](https://github.com/nix-community/home-manager)
+* `users/michael.nix` - the [`home-manager`](https://github.com/nix-community/home-manager)
   configuration for my user on all machines
     * this is where most of the configuration ends up, especially for user-space
       tools like `sway`, editors and browsers, etc.
     * documentation on all available options in home-manager can be found
       [here](https://nix-community.github.io/home-manager/options.html)
+    * `users/root.nix` is much thinner, it's just git config for root
 * `.git-crypt` and `.gitattributes` control which directories get encrypted
   by `git-crypt`, allowing me to host secrets in a public repo
 * `defaults/` contains configuration on a per-program basis
@@ -43,17 +44,6 @@ if you're interested in using flakes to manage all configuration.
 
 ## Some specifics
 
-* I use [`helix`](https://github.com/helix-editor/helix) as my editor
-    * it's very vim-like but you select and then perform operations
-      (e.g. `xxd` selects 2 lines and then deletes them, where with vim
-      you do `dddd` or `2dd` and there's no selection involved. being able
-      to see the selection before operating feels better than just doing the
-      operation, imo)
-    * it uses [`tree-sitter`](https://github.com/tree-sitter/tree-sitter) for
-      syntax highlighting which is far more accurate and customizable for
-      languages I work with (elixir, nix, etc.) than normal regex-based
-      counterparts
-    * the overlay in `overlays/helix.nix` is a derivation for my fork
 * I have my root device setup to use `tmpfs`
     * see [this great guide](https://elis.nu/blog/2020/05/nixos-tmpfs-as-root/)
     * also see [the impermanence project](https://github.com/nix-community/impermanence)
@@ -64,8 +54,11 @@ if you're interested in using flakes to manage all configuration.
     * this also reveals some annoyances like browsers asking to be defaults,
       and forces you to go find the configuration switch to turn off annoying
       behavior
+    * I also use the `home-manager` integration so I have to be specific about
+      what persists across reboots for my user. See `users/michael.nix` for the
+      commented list.
 * Non-volatile memory (including swap spaces) are luks-encrypted
-    * generally I don't encrypt `/boot`, however
+    * (`/boot` is not encrypted though)
     * I recommend [this gist](https://gist.github.com/martijnvermaat/76f2e24d0239470dd71050358b4d5134)
       as a guide
     * also see the [NixOS full disk encryption](https://nixos.wiki/wiki/Full_Disk_Encryption)
@@ -85,3 +78,11 @@ if you're interested in using flakes to manage all configuration.
       supports flakes
     * see [the Flakes wiki page](https://nixos.wiki/wiki/Flakes) for more info
       about flakes
+
+## Exceptions
+
+Using the `nix profile` command to install flakes is imperative and not
+reproducible across machines. I use it for anything I hack on, like
+[helix](https://github.com/helix-editor/helix), where I'll make a fork,
+add a `flake.nix` if it's missing, and install it into the profile,
+making sure to push any branches of consequence.
