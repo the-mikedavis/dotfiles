@@ -14,6 +14,7 @@
     ph = "push";
     pl = "pull";
     d = "diff";
+    dt = "difftool";
     f = "fetch";
     ff = "merge --ff-only";
     branch-name = "rev-parse --abbrev-ref HEAD";
@@ -29,6 +30,11 @@
     push.default = "simple";
     tag.gpgSign = "true";
     commit.verbose = "true";
+    # use difftastic as the difftool ('git dt')
+    diff.tool = "difftastic";
+    "difftool \"difftastic\"".cmd = "difft \"$LOCAL\" \"$REMOTE\"";
+    difftool.prompt = false;
+    pager.difftool = true;
   };
   ignores = [
     "*.swp"
