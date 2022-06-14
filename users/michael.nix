@@ -246,6 +246,9 @@ in
       ".config/cachix/cachix.dhall"
       # GitHub CLI auth
       ".config/gh/hosts.yml"
+      # wofi (picker) history
+      ".cache/wofi-drun"
+      ".cache/wofi-dmenu"
     ];
     # > allows other users, such as `root`, to access files through the bind
     # > mounted directories listed in `directories`.
