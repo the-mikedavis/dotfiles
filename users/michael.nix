@@ -246,8 +246,6 @@ in
       ".config/cachix/cachix.dhall"
       # GitHub CLI auth
       ".config/gh/hosts.yml"
-      # trusted settings in nix like `nix-command` and `flakes`
-      ".local/share/nix/trusted-settings.json"
     ];
     # > allows other users, such as `root`, to access files through the bind
     # > mounted directories listed in `directories`.

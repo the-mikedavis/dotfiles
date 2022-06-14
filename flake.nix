@@ -21,6 +21,8 @@
       pkgs-unstable = import inputs.unstable { config.allowUnfree = true; system = system; };
       pkgs-edge = import inputs.bleeding-edge { config.allowUnfree = true; system = system; };
 
+      home-manager-impermanence = impermanence + "/home-manager.nix";
+
       nixconfig = {
         nixpkgs = {
           config = {
@@ -53,8 +55,8 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.root = import ./users/root.nix;
-          home-manager.users.michael = import ./users/michael.nix (impermanence + "/home-manager.nix");
+          home-manager.users.root = import ./users/root.nix home-manager-impermanence;
+          home-manager.users.michael = import ./users/michael.nix home-manager-impermanence;
         }
         ./modules/common.nix
       ];
