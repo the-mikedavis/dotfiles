@@ -13,8 +13,7 @@
     unstage = "reset HEAD --";
     ph = "push";
     pl = "pull";
-    d = "diff";
-    dt = "difftool";
+    d = "difftool";
     f = "fetch";
     ff = "merge --ff-only";
     branch-name = "rev-parse --abbrev-ref HEAD";
