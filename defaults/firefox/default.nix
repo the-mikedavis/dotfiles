@@ -24,8 +24,6 @@
         "security.insecure_password.ui.enabled" = false;
         "security.insecure_field_warning.contextual.enabled" = false;
       };
-
-      userChrome = builtins.readFile ./userChrome.css;
     };
   };
 }
