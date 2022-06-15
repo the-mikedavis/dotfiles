@@ -5,7 +5,6 @@ auto-pairs = false
 idle-timeout = 50
 gutters = ["diagnostics"]
 mouse = false
-lsp.auto-signature-help = true
 
 [editor.whitespace]
 render = "all"
