@@ -7,9 +7,9 @@
 "constant" = { fg = "purple1" }
 "constructor" = { fg = "purple1", modifiers = ["bold"] }
 "escape" = { fg = "fg2", modifiers = ["bold"] }
-"function.builtin" = "yellow1"
+"function.builtin" = { fg = "fg1", modifiers = ["bold"] }
 "function" = "fg1"
-"function.macro" = "purple1"
+"function.macro" = "red0"
 "function.special" = "purple1"
 "keyword.operator" = "red2"
 "keyword.directive" = "red0"
