@@ -96,7 +96,6 @@ in
     killall
     _1password
     nixfmt
-    unstable.rust-analyzer
     nix-prefetch-github
     clipman
     gnome3.adwaita-icon-theme
