@@ -16,9 +16,6 @@
 		"custom/right-arrow-dark",
     "custom/right-arrow-light",
     "clock#6",
-		"custom/right-arrow-dark",
-    "custom/right-arrow-light",
-    "clock#7",
 		"custom/right-arrow-dark"
 	],
 	"modules-center": [
@@ -100,16 +97,12 @@
     "timezone": "Etc/UTC"
   },
   "clock#5": {
-    "format": "JP {:%H:%M}",
-    "timezone": "Asia/Tokyo"
-  },
-  "clock#6": {
-    "format": "NYC {:%H:%M}",
-    "timezone": "America/New_York"
-  },
-  "clock#7": {
     "format": "CET {:%H:%M}",
     "timezone": "CET"
+  },
+  "clock#6": {
+    "format": "JP {:%H:%M}",
+    "timezone": "Asia/Tokyo"
   },
 
 	"pulseaudio": {
