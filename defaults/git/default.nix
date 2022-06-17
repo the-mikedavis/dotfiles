@@ -10,6 +10,7 @@
     ci = "commit";
     cia = "commit -a";
     co = "checkout";
+    count = "rev-list --all --count";
     unstage = "reset HEAD --";
     ph = "push";
     pl = "pull";
