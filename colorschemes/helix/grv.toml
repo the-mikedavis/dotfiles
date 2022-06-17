@@ -13,6 +13,7 @@
 "function.special" = "purple1"
 "keyword.operator" = "red2"
 "keyword.directive" = "red0"
+"keyword.storage" = "red2"
 "keyword" = { fg = "red1" }
 "label" = "purple1"
 "module" = "green1"
