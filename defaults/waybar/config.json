@@ -16,6 +16,9 @@
 		"custom/right-arrow-dark",
     "custom/right-arrow-light",
     "clock#6",
+		"custom/right-arrow-dark",
+    "custom/right-arrow-light",
+    "clock#7",
 		"custom/right-arrow-dark"
 	],
 	"modules-center": [
@@ -101,6 +104,10 @@
     "timezone": "CET"
   },
   "clock#6": {
+    "format": "IST {:%H:%M}",
+    "timezone": "Asia/Kolkata"
+  },
+  "clock#7": {
     "format": "JP {:%H:%M}",
     "timezone": "Asia/Tokyo"
   },
