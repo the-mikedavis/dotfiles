@@ -112,7 +112,7 @@ gray1 = "#928374"
 
 red0 = "#cc241d" # neutral
 red1 = "#fb4934" # bright
-red2 = "#fc5b49" # brighter
+red2 = "#fc6b59" # brighter
 green0 = "#98971a"
 green1 = "#b8bb26"
 yellow0 = "#d79921"
