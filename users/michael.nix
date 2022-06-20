@@ -248,12 +248,26 @@ in
       # wofi (picker) history
       ".cache/wofi-drun"
       ".cache/wofi-dmenu"
-      # Mime->Application routing table (used by xdg-open)
-      ".config/mimeapps.list" # can this be closed over by config?
     ];
     # > allows other users, such as `root`, to access files through the bind
     # > mounted directories listed in `directories`.
     allowOther = true;
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "x-scheme-handler/http" = "firefox.desktop";
+      "x-scheme-handler/https" = "firefox.desktop";
+      "x-scheme-handler/chrome" = "firefox.desktop";
+      "text/html" = "firefox.desktop";
+      "application/x-extension-htm" = "firefox.desktop";
+      "application/x-extension-html" = "firefox.desktop";
+      "application/x-extension-shtml" = "firefox.desktop";
+      "application/xhtml+xml" = "firefox.desktop";
+      "application/x-extension-xhtml" = "firefox.desktop";
+      "application/x-extension-xht" = "firefox.desktop";
+    };
   };
 
   wayland.windowManager.sway = {
