@@ -83,6 +83,7 @@
 "ui.text.focus" = { fg = "fg1", modifiers = ["bold"] }
 "ui.selection.primary" = { modifiers = ["reversed"] }
 "ui.selection" = { bg = "bg3" }
+"ui.cursorline" = { bg = "bg1" }
 "ui.cursor.primary" = { modifiers = ["reversed", "underlined"] }
 "ui.cursor.match" = { modifiers = ["underlined"] }
 "ui.menu" = { fg = "fg1", bg = "bg2" }
