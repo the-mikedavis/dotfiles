@@ -248,6 +248,8 @@ in
       # wofi (picker) history
       ".cache/wofi-drun"
       ".cache/wofi-dmenu"
+      # Mime->Application routing table (used by xdg-open)
+      ".config/mimeapps.list" # can this be closed over by config?
     ];
     # > allows other users, such as `root`, to access files through the bind
     # > mounted directories listed in `directories`.
