@@ -1,24 +1,23 @@
 {
 	"layer": "top",
 	"position": "top",
-
 	"modules-left": [
 		"sway/workspaces",
 		"custom/right-arrow-dark",
-    "custom/right-arrow-light",
-    "custom/github",
+		"custom/right-arrow-light",
+		"custom/github",
 		"custom/right-arrow-dark",
-    "custom/right-arrow-light",
-    "clock#4",
+		"custom/right-arrow-light",
+		"clock#4",
 		"custom/right-arrow-dark",
-    "custom/right-arrow-light",
-    "clock#5",
+		"custom/right-arrow-light",
+		"clock#5",
 		"custom/right-arrow-dark",
-    "custom/right-arrow-light",
-    "clock#6",
+		"custom/right-arrow-light",
+		"clock#6",
 		"custom/right-arrow-dark",
-    "custom/right-arrow-light",
-    "clock#7",
+		"custom/right-arrow-light",
+		"clock#7",
 		"custom/right-arrow-dark"
 	],
 	"modules-center": [
@@ -51,7 +50,6 @@
 		"custom/left-arrow-dark",
 		"tray"
 	],
-
 	"custom/left-arrow-dark": {
 		"format": "",
 		"tooltip": false
@@ -68,20 +66,17 @@
 		"format": "",
 		"tooltip": false
 	},
-
-  "custom/github": {
-    "format": " {}",
-    "return-type": "json",
-    "interval": 60,
-    "exec": "$HOME/.config/waybar/github.sh",
-    "tooltip": false
-  },
-
+	"custom/github": {
+		"format": " {}",
+		"return-type": "json",
+		"interval": 60,
+		"exec": "$HOME/.config/waybar/github.sh",
+		"tooltip": false
+	},
 	"sway/workspaces": {
 		"disable-scroll": true,
 		"format": "{name}"
 	},
-
 	"clock#1": {
 		"format": "{:%a}",
 		"tooltip": false
@@ -94,24 +89,22 @@
 		"format": "{:%m-%d}",
 		"tooltip": false
 	},
-
-  "clock#4": {
-    "format": "UTC {:%H:%M}",
-    "timezone": "Etc/UTC"
-  },
-  "clock#5": {
-    "format": "CET {:%H:%M}",
-    "timezone": "CET"
-  },
-  "clock#6": {
-    "format": "IST {:%H:%M}",
-    "timezone": "Asia/Kolkata"
-  },
-  "clock#7": {
-    "format": "JP {:%H:%M}",
-    "timezone": "Asia/Tokyo"
-  },
-
+	"clock#4": {
+		"format": "UTC {:%H:%M}",
+		"timezone": "Etc/UTC"
+	},
+	"clock#5": {
+		"format": "CET {:%H:%M}",
+		"timezone": "CET"
+	},
+	"clock#6": {
+		"format": "IST {:%H:%M}",
+		"timezone": "Asia/Kolkata"
+	},
+	"clock#7": {
+		"format": "JP {:%H:%M}",
+		"timezone": "Asia/Tokyo"
+	},
 	"pulseaudio": {
 		"format": "{icon} {volume:2}%",
 		"format-bluetooth": "{icon}  {volume}%",
