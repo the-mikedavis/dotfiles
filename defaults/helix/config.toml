@@ -19,10 +19,6 @@ A-k = "expand_selection"
 A-l = "select_next_sibling"
 A-h = "select_prev_sibling"
 
-# https://github.com/helix-editor/helix/issues/2817
-o = ["add_newline_below", "move_line_down"]
-O = ["add_newline_above", "move_line_up"]
-
 [keys.insert]
 C-n = "no_op"
 C-p = "no_op"
