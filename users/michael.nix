@@ -73,7 +73,6 @@ in
     nmap
     ipcalc
     slack
-    stow
     jetbrains-mono
     xdg-utils
     swaylock
