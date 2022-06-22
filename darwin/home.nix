@@ -11,7 +11,6 @@ let
 
   configs = {
     fish = import (dirs.defaults + /fish) { inherit pkgs; };
-    ssh = import (dirs.defaults + /ssh);
     kakoune = import (dirs.defaults + /kakoune) { inherit pkgs; };
     git = import (dirs.defaults + /git);
     sway = import (dirs.defaults + /sway) { inherit pkgs; };
@@ -68,7 +67,7 @@ in
 
   programs.ssh = {
     enable = true;
-  } // configs.ssh;
+  };
 
   programs.git = {
     package = pkgs.git;
