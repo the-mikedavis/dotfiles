@@ -17,6 +17,7 @@ let
     kitty = import (dirs.defaults + /kitty);
     firefox = import (dirs.defaults + /firefox) { inherit pkgs; };
     fzf = import (dirs.defaults + /fzf);
+    lazygit = import (dirs.defaults + /lazygit);
   };
 in
 {
@@ -97,24 +98,5 @@ in
 
   programs.lazygit = {
     enable = true;
-    settings = {
-      promptToReturnFromSubprocess = false;
-      customCommands = [
-        # C-p checks out a pull request by number
-        # https://github.com/jesseduffield/lazygit/wiki/Custom-Commands-Compendium#checkout-branch-via-github-pull-request-id
-        {
-          key = "<c-p>";
-          prompts = [
-            {
-              type = "input";
-              title = "PR #";
-            }
-          ];
-          command = "gh pr checkout {{ index .PromptResponses 0 }}";
-          context = "localBranches";
-          loadingText = "Checking out PR";
-        }
-      ];
-    };
-  };
+  } // configs.lazygit;
 }
