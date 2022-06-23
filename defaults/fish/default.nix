@@ -13,6 +13,9 @@
   ];
   functions = {
     latestcommitmessage = "git log -1 --format=%s";
+    "," = ''
+      nix run "nixpkgs#$argv[1]" -- $argv[2..-1]
+    '';
   };
   shellAliases = {
     c = "cd";
