@@ -267,6 +267,10 @@ in
       "application/xhtml+xml" = "firefox.desktop";
       "application/x-extension-xhtml" = "firefox.desktop";
       "application/x-extension-xht" = "firefox.desktop";
+      "application/pdf" = "firefox.desktop";
+      "application/x-bzpdf" = "firefox.desktop";
+      "application/x-gzpdf" = "firefox.desktop";
+      "application/x-xzpdf" = "firefox.desktop";
     };
   };
 
