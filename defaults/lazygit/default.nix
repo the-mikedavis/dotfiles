@@ -12,10 +12,12 @@
             title = "PR #";
           }
         ];
-        command = "gh pr checkout {{ index .PromptResponses 0 }}";
+        command = "gh pr checkout {{index .PromptResponses 0}}";
         context = "localBranches";
         loadingText = "Checking out PR";
       }
     ];
+    os.editCommand = "hx";
+    os.editCommandTemplate = "{{editor}} -- {{filename}}:{{line}}";
   };
 }
