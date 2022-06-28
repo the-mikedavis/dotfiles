@@ -17,8 +17,7 @@
 "keyword.function" = "red2"
 "keyword" = { fg = "red1" }
 "label" = "purple1"
-"module" = "green1"
-"namespace" = "orange1"
+"namespace" = "green1"
 "operator" = "blue1"
 "punctuation.delimiter" = "fg3"
 "punctuation.special" = "purple0"
