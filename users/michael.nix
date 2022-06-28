@@ -118,6 +118,7 @@ in
     unstable.audacity
     unstable.zoom-us
     unstable.exa
+    unstable.linuxPackages-libre.perf
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
