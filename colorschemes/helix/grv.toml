@@ -75,6 +75,7 @@
 "ui.linenr.selected" = { fg = "yellow1" }
 "ui.statusline" = { fg = "fg1", bg = "bg2" }
 "ui.statusline.inactive" = { fg = "fg4", bg = "bg1" }
+"ui.statusline.select" = { bg = "lua-blue" }
 "ui.popup" = { bg = "bg1" }
 "ui.popup.info" = { bg = "bg1" }
 "ui.window" = { bg = "bg1" }
@@ -84,6 +85,7 @@
 "ui.text.focus" = { fg = "fg1", modifiers = ["bold"] }
 "ui.selection.primary" = { modifiers = ["reversed"] }
 "ui.selection" = { bg = "bg3" }
+"ui.cursorline.primary" = { bg = "bg2" }
 "ui.cursorline" = { bg = "bg1" }
 "ui.cursor.primary" = { modifiers = ["reversed", "underlined"] }
 "ui.cursor.match" = { modifiers = ["underlined"] }
@@ -120,6 +122,7 @@ green0 = "#98971a"
 green1 = "#b8bb26"
 yellow0 = "#d79921"
 yellow1 = "#fabd2f"
+lua-blue = "#000080"
 blue0 = "#458588"
 blue1 = "#83a598"
 purple0 = "#b16286"
