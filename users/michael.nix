@@ -20,14 +20,6 @@ let
     lazygit = import (dirs.defaults + /lazygit);
   };
 
-  erlangR25 = pkgs.beam.lib.callErlang (dirs.overlays + /R25.nix) {
-    parallelBuild = true;
-    wxGTK = pkgs.wxGTK30;
-    autoconf = pkgs.buildPackages.autoconf269;
-    wxSupport = false;
-    systemdSupport = false;
-  };
-
   github-notifications-token = (import (dirs.defaults + /tokens)).github-notifications;
 in
 {
