@@ -238,6 +238,8 @@ in
       ".config/cachix/cachix.dhall"
       # GitHub CLI auth
       ".config/gh/hosts.yml"
+      # Asciinema installation ID that links to your account
+      ".config/asciinema/install-id"
       # wofi (picker) history
       ".cache/wofi-drun"
       ".cache/wofi-dmenu"
