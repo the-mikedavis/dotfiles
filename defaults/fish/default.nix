@@ -18,6 +18,7 @@
     '';
     fish_right_prompt = ''
       ${pkgs.any-nix-shell}/bin/nix-shell-info
+      printf " "
 
       set_color $fish_color_autosuggestion 2> /dev/null; or set_color 255
       date "+%H:%M:%S"
