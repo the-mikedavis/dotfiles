@@ -16,6 +16,13 @@
     "," = ''
       nix run "nixpkgs#$argv[1]" -- $argv[2..-1]
     '';
+    fish_right_prompt = ''
+      ${pkgs.any-nix-shell}/bin/nix-shell-info
+
+      set_color $fish_color_autosuggestion 2> /dev/null; or set_color 255
+      date "+%H:%M:%S"
+      set_color normal
+    '';
   };
   shellAliases = {
     c = "cd";
@@ -29,7 +36,4 @@
     ts = "tree-sitter";
     pr = "gh pr checkout";
   };
-  interactiveShellInit = ''
-    ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
-  '';
 }
