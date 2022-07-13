@@ -13,6 +13,9 @@
     bell_on_tab = "no";
     term = "xterm-kitty";
     allow_remote_control = "yes";
+    # Use MacOS's Option key (on the left-hand-side of the keyboard) as
+    # Alt.
+    macos_option_as_alt = "left";
     # defaults to 1
     # background_opacity = "0.98";
     # ---
