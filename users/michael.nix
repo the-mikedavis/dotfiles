@@ -111,7 +111,6 @@ in
     unstable.zoom-us
     unstable.exa
     unstable.linuxPackages-libre.perf
-    unstable.bazel_5
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
@@ -225,6 +224,7 @@ in
       ".cache/fontconfig"
       ".cache/erlang-history"
       ".cache/gleam"
+      ".cache/bazel"
     ];
     files = [
       # Lazygit repository history
