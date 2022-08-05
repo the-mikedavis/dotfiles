@@ -20,6 +20,10 @@
     branch-name = "rev-parse --abbrev-ref HEAD";
     pub = "!git push -u origin $(git branch-name)";
     lt = "!git tag --sort=version:refname | tail -n 1";
+    # Garbage-collect the repository to save on space and make git
+    # snappier. Good for large repositories with many thousands of
+    # commits.
+    pack = "gc --aggressive --prune=now";
   };
   extraConfig = {
     core.editor = "hx";
