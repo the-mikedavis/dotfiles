@@ -276,6 +276,7 @@ in
 
   programs.kitty = {
     enable = true;
+    package = pkgs.unstable.kitty;
   } // configs.kitty;
 
   programs.firefox = {

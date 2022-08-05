@@ -2,7 +2,6 @@ theme = "grv"
 
 [editor]
 idle-timeout = 50
-mouse = false
 
 [editor.whitespace]
 render = "all"
