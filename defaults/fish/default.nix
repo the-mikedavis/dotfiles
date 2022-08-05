@@ -36,5 +36,6 @@
     ch = "check";
     ts = "tree-sitter";
     pr = "gh pr checkout";
+    rsh = "nix develop github:the-mikedavis/rabbitmq-nix-shell --command fish";
   };
 }
