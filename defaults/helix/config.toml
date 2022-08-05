@@ -1,7 +1,6 @@
 theme = "grv"
 
 [editor]
-auto-pairs = false
 idle-timeout = 50
 gutters = ["diagnostics"]
 mouse = false
