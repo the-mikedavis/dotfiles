@@ -225,6 +225,7 @@ in
       ".cache/erlang-history"
       ".cache/gleam"
       ".cache/bazel"
+      ".cache/direnv"
     ];
     files = [
       # Lazygit repository history
@@ -303,5 +304,10 @@ in
   programs.nix-index = {
     enable = true;
     enableFishIntegration = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
   };
 }
