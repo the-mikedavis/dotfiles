@@ -191,6 +191,8 @@ in
       ".local/share/nix"
       # Z (fish jump util) database
       ".local/share/z"
+      # direnv allowlist
+      ".local/share/direnv"
       # == Config ==
       # Most apps in this category abuse the config dir to store state.
       ".config/Slack"
@@ -213,7 +215,6 @@ in
       ".cache/erlang-history"
       ".cache/gleam"
       ".cache/bazel"
-      ".cache/direnv"
     ];
     files = [
       # Lazygit repository history
