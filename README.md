@@ -66,9 +66,11 @@ if you're interested in using flakes to manage all configuration.
 * I use [`sway`](https://github.com/swaywm/sway) as a window manager
     * Wayland support is actually not bad these days
     * I find Wayland more consistent and less buggy than X in my experience
-* I prefer gruvbox for a colorscheme
+* Gruvbox is almost 100% awesome
     * the sway configuration in this repository loads a gruvbox colored
-      NixOS logo as a background and sets up kitty and kakoune with gruvbox
+      NixOS logo as a background and sets up kitty and GTK with gruvbox
+    * I yak shave extensively on a gruvbox-descendant theme I tentatively
+      call `grv`.
 * I use Nix flakes
     * they're experimental and it's not clear when/if they will become stable
     * they help with reproducibility and working across machines
