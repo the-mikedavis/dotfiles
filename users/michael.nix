@@ -104,8 +104,6 @@ in
     cachix
     docker-compose
     asciinema
-    erlangR25
-    (unstable.rebar3.overrideAttrs (prev: { buildInputs = [ erlangR25 ]; }))
     cloc
     unstable.audacity
     unstable.zoom-us
