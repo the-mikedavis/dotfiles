@@ -24,6 +24,9 @@
       date "+%H:%M:%S"
       set_color normal
     '';
+    ghc = ''
+      git clone "git@github.com:$argv[1]"
+    '';
   };
   shellAliases = {
     c = "cd";
