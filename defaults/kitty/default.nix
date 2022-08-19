@@ -40,7 +40,7 @@
     color6 = "#689d6a";
     color14 = "#8ec07c";
     color7 = "#a89984";
-    color15 = "#a29384";
+    color15 = "#a79889";
   };
   keybindings = {
     "ctrl+c" = "copy_and_clear_or_interrupt";
