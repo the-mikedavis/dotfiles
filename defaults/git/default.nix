@@ -1,4 +1,10 @@
-{
+{ pkgs }:
+let
+  ssh-key-id = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM7lG1J2TQNaqJLKqAzTQQ8yHBArm4o9k/eeaYLSrDuo";
+  allowed_signers = pkgs.writeText "allowed_signers" ''
+    michael@mango ${ssh-key-id}
+  '';
+in {
   aliases = {
     git = "!exec git";
     g = "!exec git";
@@ -34,6 +40,8 @@
     push.default = "simple";
     tag.gpgSign = "true";
     commit.verbose = "true";
+    gpg.format = "ssh";
+    gpg.ssh.allowedSignersFile = "${allowed_signers}";
     # use difftastic as the difftool ('git dt')
     diff.tool = "difftastic";
     "difftool \"difftastic\"".cmd = "difft \"$LOCAL\" \"$REMOTE\"";
@@ -51,7 +59,7 @@
   userName = "Michael Davis";
   userEmail = "mcarsondavis@gmail.com";
   signing = {
-    key = "25D3AFE4BA2A0C49";
+    key = ssh-key-id;
     signByDefault = true;
   };
 }
