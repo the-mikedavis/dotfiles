@@ -245,6 +245,9 @@ for_window [class=\"Xfburn\"] floating enable
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
+# disable chromium shortcuts inhibitor
+for_window [app_id=\"^chrome-.*\"] shortcuts_inhibitor disable
+
 # reload the configuration file
 bindsym $mod+Shift+r reload
 
