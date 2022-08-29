@@ -132,8 +132,9 @@
 		"format": "CPU {usage:2}%"
 	},
 	"temperature": {
+		"thermal-zone": 2,
 		"format": " {temperatureC}°C",
-		"critical-threshold": 80,
+		"critical-threshold": 100,
 		"format-critical": " {temperatureC}°C"
 	},
 	"battery": {
