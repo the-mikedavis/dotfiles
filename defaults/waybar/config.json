@@ -42,6 +42,9 @@
 		"cpu",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
+		"temperature",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
 		"battery",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
@@ -127,6 +130,11 @@
 	"cpu": {
 		"interval": 5,
 		"format": "CPU {usage:2}%"
+	},
+	"temperature": {
+		"format": " {temperatureC}°C",
+		"critical-threshold": 80,
+		"format-critical": " {temperatureC}°C"
 	},
 	"battery": {
 		"states": {
