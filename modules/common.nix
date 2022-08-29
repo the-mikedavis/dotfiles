@@ -52,6 +52,8 @@ in
     shell = pkgs.fish;
     extraGroups = [ "wheel" "wireshark" "podman" ];
     initialHashedPassword = passwd.michael;
+    subUidRanges = [ { count = 100000; startUid = 65536; } ];
+    subGidRanges = [ { count = 100000; startGid = 65536; } ];
   };
 
   environment.systemPackages = with pkgs; [
@@ -81,6 +83,10 @@ in
     dockerSocket.enable = true;
     # make a `docker` alias for podman
     dockerCompat = true;
+    extraPackages = with pkgs; [
+      slirp4netns
+      fuse-overlayfs
+    ];
   };
 
   # sway/wayland
