@@ -132,6 +132,7 @@
 		"format": "CPU {usage:2}%"
 	},
 	"temperature": {
+		"interval": 5,
 		"thermal-zone": 2,
 		"format": " {temperatureC}°C",
 		"critical-threshold": 100,
