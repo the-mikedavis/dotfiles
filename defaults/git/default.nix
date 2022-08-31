@@ -36,7 +36,6 @@ in {
     hub.protocol = "ssh";
     pull.rebase = "false";
     init.defaultBranch = "main";
-    push.followTags = "true";
     push.default = "simple";
     tag.gpgSign = "true";
     commit.verbose = "true";
