@@ -19,8 +19,6 @@ let
     fzf = import (dirs.defaults + /fzf);
     lazygit = import (dirs.defaults + /lazygit);
   };
-
-  github-notifications-token = (import (dirs.defaults + /tokens)).github-notifications;
 in
 {
   imports = [ impermanence ];
@@ -135,10 +133,6 @@ in
   # is wrong
   xdg.configFile."waybar/config".source = (dirs.defaults + /waybar/config.json);
   xdg.configFile."waybar/style.css".source = (dirs.defaults + /waybar/style.css);
-  xdg.configFile."waybar/github.sh".source = pkgs.writeShellScript "github.sh" ''
-    count=`${pkgs.curl}/bin/curl --no-progress-meter -u the-mikedavis:${github-notifications-token} https://api.github.com/notifications | ${pkgs.jq}/bin/jq '. | length'`
-    echo '{"text":'$count',"tooltip":"$tooltip","class":"$class"}'
-  '';
   # wofi styling and config
   xdg.configFile."wofi/config".source = (dirs.defaults + /wofi/config);
   xdg.configFile."wofi/style.css".source = (dirs.defaults + /wofi/style.css);
