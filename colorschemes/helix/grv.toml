@@ -93,7 +93,11 @@
 "ui.virtual.ruler" = { bg = "bg0.5" }
 "ui.virtual.indent-guide" = { fg = "bg0.5" }
 
-"diagnostic" = { modifiers = ["underlined"] }
+# "diagnostic" = { modifiers = ["underlined"] }
+"diagnostic.error" = { underline = "red1", modifiers = ["undercurled"] }
+"diagnostic.warning" = { underline = "orange1", modifiers = ["undercurled"] }
+"diagnostic.info" = { underline = "aqua1", modifiers = ["undercurled"] }
+"diagnostic" = { underline = "blue1", modifiers = ["underlined"] }
 
 # rainbow = ["red1", "orange1", "yellow1", "green1", "blue1", "purple1"]
 
