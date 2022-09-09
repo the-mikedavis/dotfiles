@@ -90,8 +90,8 @@
 "ui.menu" = { fg = "fg1", bg = "bg2" }
 "ui.menu.selected" = { fg = "bg2", bg = "blue1", modifiers = ["bold"] }
 "ui.virtual.whitespace" = { fg = "bg2" }
-"ui.virtual.ruler" = { bg = "bg1" }
-"ui.virtual.indent-guide" = { fg = "bg1" }
+"ui.virtual.ruler" = { bg = "bg0.5" }
+"ui.virtual.indent-guide" = { fg = "bg0.5" }
 
 "diagnostic" = { modifiers = ["underlined"] }
 
@@ -99,6 +99,7 @@
 
 [palette]
 bg0 = "#282828" # main background
+"bg0.5" = "#303030" # ever so slightly lighter than the main background
 bg1 = "#3c3836"
 bg2 = "#504945"
 bg3 = "#665c54"
