@@ -24,7 +24,7 @@ in
     hosts = import (dirs.defaults + /hosts);
   };
 
-  security.pam.loginLimits = [{ domain = "*"; type = "soft"; item = "nofile"; value = "8192"; }];
+  security.pam.loginLimits = [{ domain = "*"; type = "soft"; item = "nofile"; value = "65535"; }];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
