@@ -16,7 +16,7 @@ in
     # Mod1=<Alt>, Mod4=<Super>
     modifier = "Mod4";
   };
-  extraConfig = ''
+  extraConfig = /* bash */ ''
     set $mod Mod4
     # set default desktop layout (default is tiling)
     # workspace_layout tabbed <stacking|tabbed>
@@ -407,8 +407,8 @@ in
     }
 
     output HDMI-A-2 {
-      pos 3840 -875
-      transform 90
+      pos -2160 -875
+      transform 270
       bg ${nixos-logo-gruvbox-wallpaper}/png/gruvbox-dark-rainbow.png fill
     }
   '';
