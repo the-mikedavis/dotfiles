@@ -42,9 +42,6 @@
 		"temperature",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
-		"battery",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
 		"disk",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
@@ -123,26 +120,11 @@
 	},
 	"temperature": {
 		"interval": 5,
-		"hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon",
+		"hwmon-path-abs": "/sys/devices/pci0000:00/0000:00:18.3/hwmon",
 		"input-filename": "temp1_input",
 		"format": " {temperatureC}°C",
 		"critical-threshold": 100,
 		"format-critical": " {temperatureC}°C"
-	},
-	"battery": {
-		"states": {
-			"good": 95,
-			"warning": 30,
-			"critical": 15
-		},
-		"format": "{icon} {capacity}%",
-		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			""
-		]
 	},
 	"disk": {
 		"interval": 5,

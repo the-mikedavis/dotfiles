@@ -64,10 +64,17 @@
     {
       nixosConfigurations = {
         mango = nixpkgs.lib.nixosSystem {
-          system = system;
+          inherit system;
           modules = [
             nixconfig
             ./machines/mango/configuration.nix
+          ] ++ common-modules;
+        };
+        calcifer = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            nixconfig
+            ./machines/calcifer/configuration.nix
           ] ++ common-modules;
         };
       };
