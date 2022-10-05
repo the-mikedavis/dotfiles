@@ -402,12 +402,12 @@ in
     }
 
     output DP-2 {
-      pos 0 0
+      pos 2160 875
       bg ${nixos-logo-gruvbox-wallpaper}/png/gruvbox-dark-rainbow.png fill
     }
 
     output HDMI-A-2 {
-      pos -2160 -875
+      pos 0 0
       transform 270
       bg ${nixos-logo-gruvbox-wallpaper}/png/gruvbox-dark-rainbow.png fill
     }
