@@ -67,7 +67,6 @@ in
     jetbrains-mono
     xdg-utils
     swaylock
-    swayidle
     wl-clipboard
     grim
     slurp
