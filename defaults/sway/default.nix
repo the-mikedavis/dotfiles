@@ -113,7 +113,7 @@ in
     bindsym Ctrl+5 [app_id="chrome-open.spotify.com__-Default"] focus
     # bindsym Ctrl+5 [app_id="Chromium-browser"] focus
     bindsym Ctrl+6 [class="1Password"] focus
-    bindsym Ctrl+8 [class="Element"] focus
+    # bindsym Ctrl+8 [class="Element"] focus
 
     # workspace back and forth (with/without active container)
     workspace_auto_back_and_forth yes
