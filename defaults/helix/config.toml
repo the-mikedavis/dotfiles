@@ -1,8 +1,5 @@
 theme = "grv"
 
-[editor]
-idle-timeout = 50
-
 [editor.whitespace]
 render = "all"
 characters = { tab = "▸", newline = "◂" }
