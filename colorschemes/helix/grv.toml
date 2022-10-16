@@ -31,7 +31,7 @@
 "text.title" = { fg = "blue0", modifiers = ["bold"] }
 "text.strong" = { fg = "fg2", modifiers = ["bold"] }
 "text.emphasis" = { fg = "fg2", modifiers = ["italic"] }
-"text.uri" = { fg = "blue1", modifiers = ["underlined"] }
+"text.uri" = { fg = "blue1", underline = { color = "blue1" } }
 "text.reference" = "purple1"
 "type" = { fg = "aqua1" }
 "variable.builtin" = "orange1"
@@ -93,11 +93,10 @@
 "ui.virtual.ruler" = { bg = "bg0.5" }
 "ui.virtual.indent-guide" = { fg = "bg0.5" }
 
-# "diagnostic" = { modifiers = ["underlined"] }
-"diagnostic.error" = { underline_color = "red1", underline_style = "curl" }
-"diagnostic.warning" = { underline_color = "orange1", underline_style = "curl" }
-"diagnostic.info" = { underline_color = "aqua1", underline_style = "curl" }
-"diagnostic" = { underline_color = "blue1", underline_style = "line" }
+"diagnostic.error".underline = { color = "red1", style = "curl" }
+"diagnostic.warning".underline = { color = "orange1", style = "curl" }
+"diagnostic.info".underline = { color = "aqua1", style = "curl" }
+"diagnostic".underline = { color = "blue1", style = "line" }
 
 # rainbow = ["red1", "orange1", "yellow1", "green1", "blue1", "purple1"]
 
