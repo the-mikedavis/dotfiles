@@ -101,7 +101,7 @@ in
     cachix
     docker-compose
     asciinema
-    cloc
+    scc
     unstable.audacity
     unstable.zoom-us
     unstable.exa
