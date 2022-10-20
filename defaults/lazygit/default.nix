@@ -14,7 +14,15 @@
         ];
         command = "gh pr checkout {{index .PromptResponses 0}}";
         context = "localBranches";
-        loadingText = "Checking out PR";
+        loadingText = "Checking out PR...";
+        description = "check out a pull request by number";
+      }
+      {
+        key = "<c-p>";
+        command = "git remote prune {{.SelectedRemote.Name}}";
+        context = "remotes";
+        loadingText = "Pruning...";
+        description = "prune deleted remote branches";
       }
     ];
     os.editCommand = "hx";
