@@ -1,5 +1,10 @@
+{ pkgs }:
 {
   settings = {
+    git.paging = {
+      colorArg = "always";
+      pager = "${pkgs.delta}/bin/delta --line-numbers --syntax-theme gruvbox-dark --paging=never --24-bit-color=never";
+    };
     promptToReturnFromSubprocess = false;
     customCommands = [
       # C-p checks out a pull request by number
