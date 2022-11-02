@@ -17,7 +17,7 @@ let
     kitty = import (dirs.defaults + /kitty);
     firefox = import (dirs.defaults + /firefox) { inherit pkgs; };
     fzf = import (dirs.defaults + /fzf);
-    lazygit = import (dirs.defaults + /lazygit) { inherit pkgs; };
+    lazygit = import (dirs.defaults + /lazygit);
   };
 in
 {

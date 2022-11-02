@@ -17,7 +17,7 @@ let
     gpg = import (dirs.defaults + /gpg);
     gtk = import (dirs.defaults + /gtk) { inherit pkgs; };
     fzf = import (dirs.defaults + /fzf);
-    lazygit = import (dirs.defaults + /lazygit) { inherit pkgs; };
+    lazygit = import (dirs.defaults + /lazygit);
   };
 in
 {
