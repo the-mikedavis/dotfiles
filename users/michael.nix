@@ -107,6 +107,7 @@ in
     unstable.exa
     unstable.linuxPackages-libre.perf
     unstable.rnix-lsp
+    btop
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
