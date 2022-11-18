@@ -106,7 +106,7 @@ in
     unstable.zoom-us
     unstable.exa
     unstable.linuxPackages-libre.perf
-    unstable.rnix-lsp
+    unstable.nil
     btop
     typos
     hotspot
