@@ -109,6 +109,7 @@ in
     unstable.rnix-lsp
     btop
     typos
+    hotspot
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
