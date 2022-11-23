@@ -12,7 +12,7 @@ in
     ];
 
   networking = {
-    hostName = "calcifer";
+    hostName = "mango2";
 
     useDHCP = false;
     interfaces.enp67s0.useDHCP = true;

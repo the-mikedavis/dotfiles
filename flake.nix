@@ -70,11 +70,11 @@
             ./machines/mango/configuration.nix
           ] ++ common-modules;
         };
-        calcifer = nixpkgs.lib.nixosSystem {
+        mango2 = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
             nixconfig
-            ./machines/calcifer/configuration.nix
+            ./machines/mango2/configuration.nix
           ] ++ common-modules;
         };
       };
