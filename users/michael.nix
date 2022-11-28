@@ -142,6 +142,11 @@ in
 
   xdg.configFile."helix/config.toml".source = (dirs.defaults + /helix/config.toml);
   xdg.configFile."helix/themes/grv.toml".source = (dirs.colorschemes + /helix/grv.toml);
+  xdg.configFile."helix/languages.toml".text = ''
+    [[language]]
+    name = "erlang"
+    rulers = [80]
+  '';
 
   xdg.configFile."electron-flags.conf".text = ''
     --enable-features=UseOzonePlatform
