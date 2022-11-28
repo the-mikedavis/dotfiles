@@ -1,5 +1,1 @@
 theme = "grv"
-
-[editor.whitespace]
-render = "all"
-characters = { tab = "▸", newline = "◂" }
