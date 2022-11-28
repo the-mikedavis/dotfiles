@@ -59,10 +59,10 @@
 "markup.quote" = { fg = "fg2", modifiers = ["italic"] }
 
 # vcs (git) things
-"diff.plus" = "green1"
-"diff.minus" = "red1"
-"diff.delta" = "orange1"
-"diff.delta.moved" = "aqua1"
+"diff.plus" = { fg = "green1", modifiers = ["dim"] }
+"diff.minus" = { fg = "red1", modifiers = ["dim"] }
+"diff.delta" = { fg = "orange1", modifiers = ["dim"] }
+"diff.delta.moved" = { fg = "aqua1", modifiers = ["dim"] }
 
 "warning" = { fg = "orange1" }
 "error" = { fg = "red1" }
