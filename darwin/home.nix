@@ -12,7 +12,7 @@ let
   configs = {
     fish = import (dirs.defaults + /fish) { inherit pkgs; };
     kakoune = import (dirs.defaults + /kakoune) { inherit pkgs; };
-    git = import (dirs.defaults + /git);
+    git = import (dirs.defaults + /git) { inherit pkgs; } "mbp";
     sway = import (dirs.defaults + /sway) { inherit pkgs; };
     kitty = import (dirs.defaults + /kitty);
     firefox = import (dirs.defaults + /firefox) { inherit pkgs; };
