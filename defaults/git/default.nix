@@ -37,7 +37,6 @@ in {
     pull.rebase = "false";
     init.defaultBranch = "main";
     push.default = "simple";
-    tag.gpgSign = "true";
     commit.verbose = "true";
     gpg.format = "ssh";
     gpg.ssh.allowedSignersFile = "${allowed_signers}";

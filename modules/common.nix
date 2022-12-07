@@ -26,7 +26,6 @@ in
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [ xdg-desktop-portal-wlr xdg-desktop-portal-gtk ];
-    gtkUsePortal = true;
   };
 
   environment.persistence."/nix/persist" = {
@@ -69,8 +68,6 @@ in
     apple-color-emoji
   ];
 
-  programs.qt5ct.enable = true;
-
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
@@ -90,10 +87,7 @@ in
   };
 
   # sway/wayland
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
+  programs.sway.enable = true;
 
   # Allow other users like `root` to access directories bind-mounted
   # by impermanence's home-manager integration.

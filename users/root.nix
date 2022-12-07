@@ -9,4 +9,6 @@ impermanence: { pkgs, ... }:
 
   home.persistence."/nix/persist/home/root" = {
   };
+
+  home.stateVersion = "21.05";
 }

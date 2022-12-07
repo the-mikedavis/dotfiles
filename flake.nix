@@ -4,11 +4,11 @@
   nixConfig.extra-experimental-features = "nix-command flakes";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     bleeding-edge.url = "github:nixos/nixpkgs/master";
 
-    home-manager.url = "github:nix-community/home-manager/release-22.05";
+    home-manager.url = "github:nix-community/home-manager/release-22.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     impermanence.url = "github:nix-community/impermanence/master";
@@ -47,7 +47,7 @@
             extraOptions = ''
               experimental-features = nix-command flakes
             '';
-            trustedUsers = [ "root" "michael" ];
+            settings.trusted-users = [ "root" "michael" ];
           };
         }
         home-manager.nixosModules.home-manager

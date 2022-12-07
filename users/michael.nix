@@ -78,7 +78,6 @@ in
     aspell
     aspellDicts.en
     git-crypt
-    subsurface
     ripgrep
     imv
     bat
