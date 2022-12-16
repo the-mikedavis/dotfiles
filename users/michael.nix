@@ -109,6 +109,8 @@ in
     btop
     typos
     hotspot
+    # Bazel is not good on NixOS. Put it in a container.
+    distrobox
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
