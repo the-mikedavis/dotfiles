@@ -58,59 +58,99 @@ in
   home.packages = with pkgs; [
     tree
     curl
+    # Hello r/unixporn.
     neofetch
+    # ?
     dnsutils
     traceroute
+    # All your ports are mine.
     nmap
-    ipcalc
+    # Community Slacks.
     slack
+    # Font.
     jetbrains-mono
+    # xdg-open and friends.
     xdg-utils
+    # Lockscreen for wayland.
     swaylock
+    # Clipboard for Wayland.
     wl-clipboard
+    # Screenshot taker for Wayland.
     grim
+    # Geometry recorder for Wayland.
     slurp
+    # Video recorder for Wayland.
     wf-recorder
+    # ?
     wdisplays
+    # Swaybar but fancy.
     wofi
+    # Works well on Wayland for running Spotify but Firefox is nicer for real
+    # browsing.
     chromium
+    # Show me file details.
     file
-    aspell
-    aspellDicts.en
+    # Unused since I switched from Kakoune:
+    # aspell
+    # aspellDicts.en
+    # Hide stuff in this repository.
     git-crypt
+    # Workspace-wide grep.
     ripgrep
+    # Image viewer that works well with Wayland/Sway.
     imv
-    bat
-    killall
-    _1password
-    nixfmt
+    # Go get SHAs for github repos.
     nix-prefetch-github
+    # M-Z for clipboard history. Wiped on reboot because of impermanence. Should be
+    # moved into the sway config by absolute path in the future.
     clipman
+    # ? I don't remember. Better icons / GTK theme?
     gnome3.adwaita-icon-theme
+    # Occasionally useful for managing vaults. The web UI is more useful though.
     unstable._1password-gui
+    # Using edge here since new Discord updates sometimes need an update _right now_
+    # or else you're not allowed to use it.
     edge.discord
-    unstable.spotify
+    # Until this works better on Wayland, I just run it in Chromium in app mode:
+    # unstable.spotify
+    # Matrix client.
     unstable.element-desktop
+    # Record network packet captures.
     unstable.wireshark
+    # Alternate terminal.
     unstable.wezterm
+    # Find but better CLI args? Not convinced on this one yet.
     fd
+    # Overlay of the latest tree-sitter.
     tree-sitter
+    # Workspace-wide search/replace via regex. Basically `codemod`.
     fastmod
+    # Hex viewer. Pipes into `less` nicely.
     hexyl
+    # Fast flake downloads.
     cachix
+    # NOTE: should be replaced with podman-compose if possible.
     docker-compose
+    # Recordings for Helix.
     asciinema
+    # cloc but with a fun cost-of-development metric.
     scc
-    unstable.audacity
-    unstable.zoom-us
+    # Occasionally useful for recordings (commented out most of the time):
+    # unstable.audacity
     unstable.exa
     unstable.linuxPackages-libre.perf
+    # Nix language server.
     unstable.nil
+    # System monitor / colorful `top`.
     btop
+    # Find typos.
     typos
+    # Nice GUI for perf.data, creates flamegraphs without having to mess with perl.
     hotspot
     # Bazel is not good on NixOS. Put it in a container.
     distrobox
+    # Faster and more automatic auto-squash.
+    git-absorb
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
@@ -143,7 +183,7 @@ in
 
   xdg.configFile."helix/config.toml".source = (dirs.defaults + /helix/config.toml);
   xdg.configFile."helix/themes/grv.toml".source = (dirs.colorschemes + /helix/grv.toml);
-  xdg.configFile."helix/languages.toml".text = ''
+  xdg.configFile."helix/languages.toml".text = /* toml */ ''
     [[language]]
     name = "erlang"
     rulers = [80]
@@ -155,6 +195,12 @@ in
   '';
 
   xdg.configFile."tree-sitter/config.json".source = (dirs.defaults + /tree-sitter/config.json);
+
+  xdg.configFile."containers/storage.conf".text = /* toml */ ''
+    [storage]
+    driver = "overlay"
+    graphroot = "/nix/persist/var/lib/michael/containers"
+  '';
 
   ## Persistence config.
   # The root file-system is a tmpfs: volatile memory that is
@@ -187,7 +233,7 @@ in
       # Fish history and completions
       ".local/share/fish"
       # Podman cache
-      ".local/share/containers"
+      # ".local/share/containers"
       # Repl history and trusted settings
       ".local/share/nix"
       # Z (fish jump util) database
