@@ -80,6 +80,7 @@
 "ui.window" = { bg = "bg1" }
 "ui.help" = { bg = "bg1", fg = "fg1" }
 "ui.text" = { fg = "fg1" }
+"ui.text.inactive" = "gray1"
 "ui.text.info" = { fg = "fg1" }
 "ui.text.focus" = { fg = "fg1", modifiers = ["bold"] }
 "ui.selection.primary" = { modifiers = ["reversed"] }
