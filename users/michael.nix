@@ -55,6 +55,8 @@ in
   # changes in each release.
   home.stateVersion = "21.05";
 
+  # TODO: use a module to declare per-user packages with `stdenv.isLinux`/`stdenv.isDarwin`
+  # to control linux vs. macos packages.
   home.packages = with pkgs; [
     tree
     curl
