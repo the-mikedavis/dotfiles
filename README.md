@@ -37,7 +37,7 @@ if you're interested in using flakes to manage all configuration.
 * `machines/` contains directories for each NixOS machine I have with an overall
   machine-specific `configuration.nix` module and a hardware-specific
   `hardware-configuration.nix` module
-    * `mango` is a custom-built desktop machine
+    * `mango` and `mango2` are custom-built desktop machines
 * `colorschemes/` has program-specific color schemes setup as nix attribute
   sets
 * `darwin/` darwin (MacOS) home-manager configuration
@@ -47,7 +47,6 @@ if you're interested in using flakes to manage all configuration.
 * I have my root device setup to use `tmpfs`
     * see [this great guide](https://elis.nu/blog/2020/05/nixos-tmpfs-as-root/)
     * also see [the impermanence project](https://github.com/nix-community/impermanence)
-      from the nix community
     * this forces me to explicitly control what data I want stored in
       non-volatile memory, which helps give confidence that my configuration
       is fully described by nix and is reproducible across machines
@@ -57,23 +56,17 @@ if you're interested in using flakes to manage all configuration.
     * I also use the `home-manager` integration so I have to be specific about
       what persists across reboots for my user. See `users/michael.nix` for the
       commented list.
-* Non-volatile memory (including swap spaces) are luks-encrypted
-    * (`/boot` is not encrypted though)
+* Non-volatile memory are luks-encrypted (including swaps but not `/boot`)
     * I recommend [this gist](https://gist.github.com/martijnvermaat/76f2e24d0239470dd71050358b4d5134)
       as a guide
     * also see the [NixOS full disk encryption](https://nixos.wiki/wiki/Full_Disk_Encryption)
       wiki page
-* I use [`sway`](https://github.com/swaywm/sway) as a window manager
+* Window manager: [`sway`](https://github.com/swaywm/sway)
     * Wayland support is actually not bad these days
-    * I find Wayland more consistent and less buggy than X in my experience
-* Gruvbox is almost 100% awesome
-    * the sway configuration in this repository loads a gruvbox colored
-      NixOS logo as a background and sets up kitty and GTK with gruvbox
-    * I yak shave extensively on a gruvbox-descendant theme I tentatively
-      call `grv`.
-* I use Nix flakes
+    * I find Wayland more consistent and less buggy than X
+* Nix flakes
     * they're experimental and it's not clear when/if they will become stable
-    * they help with reproducibility and working across machines
+    * they're good for projects you work on actively or update often
     * pretty much everything in [@nix-community](https://github.com/nix-community)
       supports flakes
     * see [the Flakes wiki page](https://nixos.wiki/wiki/Flakes) for more info
@@ -83,6 +76,6 @@ if you're interested in using flakes to manage all configuration.
 
 Using the `nix profile` command to install flakes is imperative and not
 reproducible across machines. I use it for anything I hack on, like
-[helix](https://github.com/helix-editor/helix), where I'll make a fork,
+[helix](https://github.com/helix-editor/helix) where I'll make a fork,
 add a `flake.nix` if it's missing, and install it into the profile,
 making sure to push any branches of consequence.
