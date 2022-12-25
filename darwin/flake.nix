@@ -9,7 +9,7 @@
   };
   outputs = { self, nixpkgs, home-manager }: {
     homeConfigurations = {
-      "michaeld2@michaeld2-a01.vmware.com" = home-manager.lib.homeManagerConfiguration {
+      "michaeld2" = home-manager.lib.homeManagerConfiguration {
         configuration = import ./home.nix;
         system = "aarch64-darwin";
         pkgs = import nixpkgs { system = "aarch64-darwin"; };
