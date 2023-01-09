@@ -20,6 +20,11 @@ in
     hosts = import (dirs.defaults + /hosts);
   };
 
+  services.tailscale = {
+    enable = true;
+    package = pkgs.unstable.tailscale;
+  };
+
   security.pam.loginLimits = [{ domain = "*"; type = "soft"; item = "nofile"; value = "65535"; }];
 
   # This value determines the NixOS release from which the default
