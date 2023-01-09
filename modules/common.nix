@@ -34,6 +34,8 @@ in
       "/etc/NetworkManager/system-connections"
       "/var/lib/containers"
       "/var/log"
+      # Tailscale state files.
+      "/var/lib/tailscale"
     ];
     files = [
       "/etc/machine-id"
