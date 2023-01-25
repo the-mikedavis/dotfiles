@@ -57,6 +57,7 @@
 "markup.list.unnumbered" = "aqua1"
 "markup.raw" = "fg4"
 "markup.quote" = { fg = "fg2", modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
 
 # vcs (git) things
 "diff.plus" = { fg = "green1", modifiers = ["dim"] }
