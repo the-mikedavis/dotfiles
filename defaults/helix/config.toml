@@ -1,1 +1,2 @@
 theme = "grv"
+editor.idle-timeout = 250
