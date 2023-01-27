@@ -56,6 +56,7 @@ in {
     "*.elixir_ls/"
     "nohup.out"
     "erlang_ls.config"
+    "/worktrees/"
   ];
   userName = "Michael Davis";
   userEmail = "mcarsondavis@gmail.com";
