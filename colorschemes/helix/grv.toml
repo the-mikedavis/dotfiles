@@ -94,6 +94,7 @@
 "ui.virtual.whitespace" = "bg2"
 "ui.virtual.ruler" = { bg = "bg0.5" }
 "ui.virtual.indent-guide" = "bg0.5"
+"ui.virtual.wrap" = "bg3"
 
 "diagnostic.error".underline = { color = "red1", style = "curl" }
 "diagnostic.warning".underline = { color = "orange1", style = "curl" }
