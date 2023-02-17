@@ -227,6 +227,11 @@ in
       # Firefox data, essentially a cache plus auth stuff.
       # ".firefox"
       ".mozilla"
+      # ASDF version manager
+      # I use Nix to install erlang/elixir/rebar3 on the host machine.
+      # This is just to cache the asdf builds and configuration for my
+      # work distrobox.
+      ".asdf"
       # cargo cache (Rust)
       ".cargo/registry"
       ".cargo/bin"
@@ -283,6 +288,8 @@ in
       # wofi (picker) history
       ".cache/wofi-drun"
       ".cache/wofi-dmenu"
+      # asdf global versions
+      ".tool-versions"
     ];
     # > allows other users, such as `root`, to access files through the bind
     # > mounted directories listed in `directories`.

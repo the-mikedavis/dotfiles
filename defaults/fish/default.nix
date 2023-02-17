@@ -28,6 +28,11 @@
       git clone "git@github.com:$argv[1]"
     '';
   };
+  interactiveShellInit = ''
+    if [ (uname --nodename) = "rabbit.mango2" ]
+        source ~/.asdf/asdf.fish
+    end
+  '';
   shellAliases = {
     c = "cd";
     e = "exa";
