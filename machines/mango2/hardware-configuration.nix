@@ -19,9 +19,11 @@
     # Make these modules available early in boot for luks encrypted volumes.
     "aesni_intel"
     "cryptd"
+    # GPU support for modern AMD GPUs
+    "amdgpu"
   ];
-  boot.initrd.kernelModules = [ "dm-snapshot" ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.initrd.kernelModules = [ "dm-snapshot" "amdgpu" ];
+  boot.kernelModules = [ "kvm-amd" "amdgpu" ];
   boot.extraModulePackages = [ ];
 
   boot.initrd.luks.devices.main = {

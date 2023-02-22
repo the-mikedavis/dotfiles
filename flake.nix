@@ -4,7 +4,7 @@
   nixConfig.extra-experimental-features = "nix-command flakes";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     bleeding-edge.url = "github:nixos/nixpkgs/master";
 

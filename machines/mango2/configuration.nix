@@ -20,6 +20,9 @@ in
     hosts = import (dirs.defaults + /hosts);
   };
 
+  # Linux Kernel
+  boot.kernelPackages = pkgs.linuxPackages_testing;
+
   services.tailscale = {
     enable = true;
     package = pkgs.unstable.tailscale;

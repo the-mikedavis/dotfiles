@@ -392,17 +392,20 @@ in
       xkb_variant "dvp"
     }
 
+    # not sure which monitor this is... :/
     output eDP-1 {
       pos 0 0
       bg ${nixos-logo-gruvbox-wallpaper}/png/gruvbox-dark-rainbow.png fill
     }
 
-    output DP-2 {
+    # AOC 5K via Displayport connected to mango2
+    output DP-3 {
       pos 2160 875
       bg ${nixos-logo-gruvbox-wallpaper}/png/gruvbox-dark-rainbow.png fill
     }
 
-    output HDMI-A-2 {
+    # LG 4K HDMI connected to mango2
+    output HDMI-A-1 {
       pos 0 0
       transform 270
       bg ${nixos-logo-gruvbox-wallpaper}/png/gruvbox-dark-rainbow.png fill
