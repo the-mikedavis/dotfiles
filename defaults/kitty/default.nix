@@ -13,6 +13,8 @@
     bell_on_tab = "no";
     term = "xterm-kitty";
     allow_remote_control = "yes";
+    # 100MB of saved history accessible in the pager (Ctrl-H)
+    scrollback_pager_history_size = "100";
     # Use MacOS's Option key (on the left-hand-side of the keyboard) as
     # Alt.
     macos_option_as_alt = "left";
