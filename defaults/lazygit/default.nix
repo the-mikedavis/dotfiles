@@ -12,7 +12,7 @@
             title = "PR #";
           }
         ];
-        command = "gh pr checkout {{index .PromptResponses 0}}";
+        command = "gh pr checkout {{index .PromptResponses 0}} --branch {{index .PromptResponses 0}}";
         context = "localBranches";
         loadingText = "Checking out PR...";
         description = "check out a pull request by number";
