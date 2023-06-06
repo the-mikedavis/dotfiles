@@ -35,6 +35,7 @@
         description = "absorb staged changes into fixup commits";
       }
     ];
-    os.editPreset = "helix";
+    os.editCommand = "hx";
+    os.editCommandTemplate = "{{editor}} -- {{filename}}:{{line}}";
   };
 }
