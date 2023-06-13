@@ -35,7 +35,14 @@
         description = "absorb staged changes into fixup commits";
       }
     ];
-    os.editCommand = "hx";
-    os.editCommandTemplate = "{{editor}} -- {{filename}}:{{line}}";
+    # This exists on lazygit master but isn't released yet as of v0.38.2.
+    #   os.editPreset = "helix";
+    # Remove these once that preset exists:
+    os = {
+      edit = "hx {{filename}}";
+      editAtLine = "hx -- {{filename}}:{{line}}";
+      editAtLineAndWait = "hx -- {{filename}}:{{line}}";
+      editInTerminal = true;
+    };
   };
 }
