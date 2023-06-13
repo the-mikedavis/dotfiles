@@ -185,6 +185,8 @@ in
   xdg.configFile."wofi/config".source = (dirs.defaults + /wofi/config);
   xdg.configFile."wofi/style.css".source = (dirs.defaults + /wofi/style.css);
 
+  xdg.configFile."helix/config.toml".source = (dirs.defaults + /helix/config.toml);
+  xdg.configFile."helix/themes/grv.toml".source = (dirs.colorschemes + /helix/grv.toml);
   xdg.configFile."helix/languages.toml".text = /* toml */ ''
     [[language]]
     name = "erlang"
