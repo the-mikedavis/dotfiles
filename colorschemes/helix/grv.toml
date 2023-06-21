@@ -96,6 +96,7 @@
 "ui.virtual.indent-guide" = "bg0.5"
 "ui.virtual.wrap" = "bg3"
 "ui.virtual.inlay-hint" = { fg = "bg3", modifiers = ["italic"] }
+"ui.virtual.jump-label" = "yellow1"
 
 "diagnostic.error".underline = { color = "red1", style = "curl" }
 "diagnostic.warning".underline = { color = "orange1", style = "curl" }
