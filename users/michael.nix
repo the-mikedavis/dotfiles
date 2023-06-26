@@ -117,8 +117,6 @@ in
     # unstable.spotify
     # Matrix client.
     unstable.element-desktop
-    # Record network packet captures.
-    unstable.wireshark
     # Alternate terminal.
     unstable.wezterm
     # Find but better CLI args? Not convinced on this one yet.

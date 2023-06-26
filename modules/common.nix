@@ -99,6 +99,11 @@ in
   # by impermanence's home-manager integration.
   programs.fuse.userAllowOther = true;
 
+  programs.wireshark = {
+    enable = true;
+    package = pkgs.unstable.wireshark;
+  };
+
   environment.variables.EDITOR = "hx";
 
   security.sudo.extraConfig = ''
