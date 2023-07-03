@@ -236,6 +236,8 @@ in
       ".cargo/registry"
       ".cargo/bin"
       ".cargo/git"
+      # kubectl
+      ".kube"
       # == Local state ==
       # Fish history and completions
       ".local/share/fish"
@@ -255,6 +257,7 @@ in
       ".config/Element"
       ".config/spotify"
       ".config/1Password"
+      ".config/gcloud"
       # == Cache ==
       ".cache/nix"
       ".cache/mozilla"
