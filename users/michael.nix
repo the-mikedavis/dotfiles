@@ -245,8 +245,8 @@ in
       # ".local/share/containers"
       # Repl history and trusted settings
       ".local/share/nix"
-      # Z (fish jump util) database
-      ".local/share/z"
+      # zoxide directory database
+      ".local/share/zoxide"
       # direnv allowlist
       ".local/share/direnv"
       # == Config ==
