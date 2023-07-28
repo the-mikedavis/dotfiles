@@ -121,8 +121,6 @@ in
     unstable.wezterm
     # Find but better CLI args? Not convinced on this one yet.
     fd
-    # Overlay of the latest tree-sitter.
-    tree-sitter
     # Workspace-wide search/replace via regex. Basically `codemod`.
     fastmod
     # Hex viewer. Pipes into `less` nicely.
