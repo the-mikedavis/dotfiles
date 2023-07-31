@@ -42,7 +42,10 @@
 		"temperature",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
-		"disk",
+		"disk#1",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"disk#2",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"tray"
@@ -126,10 +129,15 @@
 		"critical-threshold": 100,
 		"format-critical": " {temperatureC}°C"
 	},
-	"disk": {
+	"disk#1": {
+		"interval": 5,
+		"format": "Tmpfs {percentage_used:2}%",
+		"path": "/"
+	},
+	"disk#2": {
 		"interval": 5,
 		"format": "Disk {percentage_used:2}%",
-		"path": "/"
+		"path": "/nix"
 	},
 	"tray": {
 		"icon-size": 20
