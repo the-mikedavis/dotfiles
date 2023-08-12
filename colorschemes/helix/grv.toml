@@ -60,10 +60,10 @@
 "markup.strikethrough" = { modifiers = ["crossed_out"] }
 
 # vcs (git) things
-"diff.plus" = { fg = "green1", modifiers = ["dim"] }
-"diff.minus" = { fg = "red1", modifiers = ["dim"] }
-"diff.delta" = { fg = "orange1", modifiers = ["dim"] }
-"diff.delta.moved" = { fg = "aqua1", modifiers = ["dim"] }
+"diff.plus" = { fg = "green1" }
+"diff.minus" = { fg = "red1" }
+"diff.delta" = { fg = "orange1" }
+"diff.delta.moved" = { fg = "aqua1" }
 
 "warning" = "orange1"
 "error" = "red1"
