@@ -247,6 +247,8 @@ in
       ".local/share/zoxide"
       # direnv allowlist
       ".local/share/direnv"
+      # nix profile and any other data Nix wants to store there.
+      ".local/state/nix"
       # == Config ==
       # Most apps in this category abuse the config dir to store state.
       ".config/Slack"
