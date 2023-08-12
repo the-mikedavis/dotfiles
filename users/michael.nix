@@ -210,10 +210,12 @@ in
   home.persistence."/nix/persist/home/michael" = {
     directories = [
       # Misc docs.
-      "Documents"
+      # "Documents"
+      { directory = "Documents"; method = "symlink"; }
       # == Top-level dots ==
       # Source code. This is essentially a cache since everything is a git repo.
-      "src"
+      # "src"
+      { directory = "src"; method = "symlink"; }
       # GPG keys and metadata.
       ".gnupg"
       # SSH keys and config.
