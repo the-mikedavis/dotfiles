@@ -35,15 +35,7 @@
         description = "absorb staged changes into fixup commits";
       }
     ];
-    # This exists on lazygit master but isn't released yet as of v0.38.2.
-    #   os.editPreset = "helix";
-    # Remove these once that preset exists:
-    os = {
-      edit = "hx {{filename}}";
-      editAtLine = "hx -- {{filename}}:{{line}}";
-      editAtLineAndWait = "hx -- {{filename}}:{{line}}";
-      editInTerminal = true;
-    };
+    os.editPreset = "helix";
     # Prevent lazygit from performing fetches on startup. This behavior can
     # get in your way if you use git+ssh for remotes and password-protect
     # your SSH keys.

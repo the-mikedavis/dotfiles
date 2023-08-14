@@ -348,6 +348,7 @@ in
 
   programs.lazygit = {
     enable = true;
+    package = pkgs.unstable.lazygit;
   } // configs.lazygit;
 
   # build an index of available packages within nixpkgs
