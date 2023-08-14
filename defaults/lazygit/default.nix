@@ -44,5 +44,9 @@
       editAtLineAndWait = "hx -- {{filename}}:{{line}}";
       editInTerminal = true;
     };
+    # Prevent lazygit from performing fetches on startup. This behavior can
+    # get in your way if you use git+ssh for remotes and password-protect
+    # your SSH keys.
+    git.autoFetch = false;
   };
 }
