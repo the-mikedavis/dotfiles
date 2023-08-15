@@ -151,6 +151,8 @@ in
     git-absorb
     # Markdown language server
     unstable.marksman
+    # `notify-send` for manually sending notifications (to mako)
+    libnotify
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
@@ -324,6 +326,21 @@ in
   wayland.windowManager.sway = {
     enable = true;
   } // configs.sway;
+
+  # Notifications daemon
+  # adapted from <https://github.com/archseer/snowflake/blob/352fbbe1fe30d717b0d16eba4c13cd86d42aca34/profiles/graphical/sway/default.nix#L82-L104>
+  services.mako = {
+    enable = true;
+    font = "JetBrains Mono 11";
+    padding = "15,20";
+    backgroundColor = "#282828F0";
+    textColor = "#ebdbb2";
+    borderSize = 2;
+    borderColor = "#504945";
+    defaultTimeout = 10000;
+    markup = true;
+    format = "<b>%s</b>\\n\\n%b";
+  };
 
   programs.kitty = {
     enable = true;
