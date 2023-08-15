@@ -273,7 +273,7 @@ in
       ".cache/fontconfig"
       ".cache/erlang-history"
       ".cache/gleam"
-      ".cache/bazel"
+      { directory = ".cache/bazel"; method = "symlink"; }
     ];
     files = [
       # Lazygit repository history
