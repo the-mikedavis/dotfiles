@@ -62,6 +62,7 @@ in
     cloc
     exa
     gnupg
+    direnv
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
