@@ -16,6 +16,10 @@
     ghc = ''
       git clone "git@github.com:$argv[1]"
     '';
+    notify = /* fish */ ''
+      ${pkgs.mpv}/bin/mpv ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/message-new-instant.oga >/dev/null 2>&1 &
+      ${pkgs.libnotify}/bin/notify-send $argv
+    '';
   };
   interactiveShellInit = ''
     if [ (uname -n) = "rabbit.mango2" ]

@@ -151,8 +151,6 @@ in
     git-absorb
     # Markdown language server
     unstable.marksman
-    # `notify-send` for manually sending notifications (to mako)
-    libnotify
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
@@ -341,9 +339,6 @@ in
     defaultTimeout = 10000;
     markup = true;
     format = "<b>%s</b>\\n\\n%b";
-    extraConfig = ''
-      on-notify=exec ${pkgs.mpv}/bin/mpv ${pkgs.sound-theme-freedesktop}/share/sounds/freedesktop/stereo/message-new-instant.oga
-    '';
   };
 
   programs.kitty = {
