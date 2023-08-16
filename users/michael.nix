@@ -331,6 +331,7 @@ in
   # adapted from <https://github.com/archseer/snowflake/blob/352fbbe1fe30d717b0d16eba4c13cd86d42aca34/profiles/graphical/sway/default.nix#L82-L104>
   services.mako = {
     enable = true;
+    anchor = "top-left";
     font = "JetBrains Mono 11";
     padding = "15,20";
     backgroundColor = "#282828F0";
