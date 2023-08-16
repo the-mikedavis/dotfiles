@@ -16,6 +16,9 @@ in
     # Mod1=<Alt>, Mod4=<Super>
     modifier = "Mod4";
   };
+  extraSessionCommands = /* bash */ ''
+    export QT_QPA_PLATFORMTHEME=qt5ct
+  '';
   extraConfig = /* bash */ ''
     set $mod Mod4
     # set default desktop layout (default is tiling)

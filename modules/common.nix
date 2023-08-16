@@ -66,6 +66,8 @@ in
     pavucontrol
     cryptsetup
     ncdu
+    qt5.qtwayland
+    qt5ct
   ];
 
   fonts.fonts = with pkgs; [
