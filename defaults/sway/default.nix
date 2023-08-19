@@ -109,14 +109,11 @@ in
 
     # swaymsg -t get_tree can help find the app_ids (wayland) and class-s (x)
     bindsym Ctrl+1 [app_id="kitty"] focus
-    # bindsym Ctrl+2 [app_id="qutebrowser"] focus
     bindsym Ctrl+2 [app_id="firefox"] focus
     bindsym Ctrl+3 [class="Slack"] focus
     bindsym Ctrl+4 [class="discord"] focus
-    bindsym Ctrl+5 [app_id="chrome-open.spotify.com__-Default"] focus
-    # bindsym Ctrl+5 [app_id="Chromium-browser"] focus
+    bindsym Ctrl+5 [class="Spotify"] focus
     bindsym Ctrl+6 [class="1Password"] focus
-    # bindsym Ctrl+8 [class="Element"] focus
 
     # workspace back and forth (with/without active container)
     workspace_auto_back_and_forth yes

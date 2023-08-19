@@ -113,8 +113,7 @@ in
     # Using edge here since new Discord updates sometimes need an update _right now_
     # or else you're not allowed to use it.
     edge.discord
-    # Until this works better on Wayland, I just run it in Chromium in app mode:
-    # unstable.spotify
+    unstable.spotify
     # Matrix client.
     unstable.element-desktop
     # Alternate terminal.
