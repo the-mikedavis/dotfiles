@@ -209,24 +209,26 @@ in
   # In modules/common.nix we declare the system-level persisted directories.
   home.persistence."/nix/persist/home/michael" = {
     directories = [
-      # Misc docs.
-      # "Documents"
-      { directory = "Documents"; method = "symlink"; }
-      # == Top-level dots ==
-      # Source code. This is essentially a cache since everything is a git repo.
-      # "src"
-      { directory = "src"; method = "symlink"; }
       # GPG keys and metadata.
       ".gnupg"
       # SSH keys and config.
       ".ssh"
+      # Firefox data, essentially a cache plus auth stuff.
+      ".mozilla"
+      # Fish history and completions
+      ".local/share/fish"
+      # nix profile and any other data Nix wants to store there.
+      ".local/state/nix"
+    ] ++ (builtins.map (d: { directory = d; method = "symlink"; }) [
+      # Misc docs.
+      "Documents"
+      # == Top-level dots ==
+      # Source code. This is essentially a cache since everything is a git repo.
+      "src"
       # hex.pm caches, downloaded library tarballs, auth etc.
       ".hex"
       # Mix archives (Elixir)
       ".mix"
-      # Firefox data, essentially a cache plus auth stuff.
-      # ".firefox"
-      ".mozilla"
       # ASDF version manager
       # I use Nix to install erlang/elixir/rebar3 on the host machine.
       # This is just to cache the asdf builds and configuration for my
@@ -239,8 +241,6 @@ in
       # kubectl
       ".kube"
       # == Local state ==
-      # Fish history and completions
-      ".local/share/fish"
       # Podman cache
       # ".local/share/containers"
       # Repl history and trusted settings
@@ -249,8 +249,6 @@ in
       ".local/share/zoxide"
       # direnv allowlist
       ".local/share/direnv"
-      # nix profile and any other data Nix wants to store there.
-      ".local/state/nix"
       # == Config ==
       # Most apps in this category abuse the config dir to store state.
       ".config/Slack"
@@ -273,8 +271,8 @@ in
       ".cache/fontconfig"
       ".cache/erlang-history"
       ".cache/gleam"
-      { directory = ".cache/bazel"; method = "symlink"; }
-    ];
+      ".cache/bazel"
+    ]);
     files = [
       # Lazygit repository history
       # ".config/lazygit/state.yml"
