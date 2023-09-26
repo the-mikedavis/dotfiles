@@ -28,8 +28,8 @@
   '';
   shellAliases = {
     c = "cd";
-    e = "exa";
-    l = "exa --long --all --links --git";
+    e = "eza";
+    l = "eza --long --all --links --git";
     g = "git";
     dc = "docker-compose";
     lg = "lazygit";

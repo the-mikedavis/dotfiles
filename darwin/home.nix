@@ -60,7 +60,7 @@ in
     # docker-compose
     asciinema
     cloc
-    exa
+    eza
     gnupg
     direnv
   ];

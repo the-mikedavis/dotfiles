@@ -134,7 +134,7 @@ in
     scc
     # Occasionally useful for recordings (commented out most of the time):
     # unstable.audacity
-    unstable.exa
+    unstable.eza
     unstable.linuxPackages-libre.perf
     # Nix language server.
     unstable.nil
