@@ -100,4 +100,9 @@ in
   programs.lazygit = {
     enable = true;
   } // configs.lazygit;
+
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 }
