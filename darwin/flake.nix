@@ -1,22 +1,27 @@
 {
   description = "Darwin home configuration for the work laptop.";
   inputs = {
-    nixpkgs.url = "flake:nixpkgs";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, home-manager }: {
+  outputs = { nixpkgs, home-manager, ... }: {
     homeConfigurations = {
       "michaeld2" = home-manager.lib.homeManagerConfiguration {
-        configuration = import ./home.nix;
-        system = "aarch64-darwin";
-        pkgs = import nixpkgs { system = "aarch64-darwin"; };
-        homeDirectory = "/Users/michaeld2";
-        # yes, like r2d2.
-        username = "michaeld2";
-        stateVersion = "22.05";
+        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+        modules = [
+          ./home.nix
+          {
+            home = {
+              # yes, like r2d2.
+              username = "michaeld2";
+              homeDirectory = "/Users/michaeld2";
+              stateVersion = "22.05";
+            };
+          }
+        ];
       };
     };
   };
