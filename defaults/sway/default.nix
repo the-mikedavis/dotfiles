@@ -398,15 +398,23 @@ in
       bg ${nixos-logo-gruvbox-wallpaper}/png/gruvbox-dark-rainbow.png fill
     }
 
-    # AOC 5K via Displayport connected to mango2
-    output DP-3 {
-      pos 2160 875
+    # AOC 4K via Displayport connected to mango2
+    output DP-1 {
+      # when this monitor is to the left of the other:
+      pos 0 875
+      # when this monitor is to the right:
+      # pos 2160 875
+
       bg ${nixos-logo-gruvbox-wallpaper}/png/gruvbox-dark-rainbow.png fill
     }
 
     # LG 4K HDMI connected to mango2
     output HDMI-A-1 {
-      pos 0 0
+      # when this monitor is to the right of the other:
+      pos 3840 0
+      # when this monitor is to the left:
+      # pos 0 0
+
       transform 270
       bg ${nixos-logo-gruvbox-wallpaper}/png/gruvbox-dark-rainbow.png fill
     }
