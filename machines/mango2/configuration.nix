@@ -16,6 +16,9 @@ in
 
     useDHCP = false;
     interfaces.enp67s0.useDHCP = true;
+    interfaces.wlp68s0f1u3.useDHCP = true;
+    # Enable WiFi
+    networkmanager.enable = true;
 
     hosts = import (dirs.defaults + /hosts);
   };
