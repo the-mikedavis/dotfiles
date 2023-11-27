@@ -44,10 +44,8 @@
         {
           nix = {
             package = pkgs-edge.nix;
-            extraOptions = ''
-              experimental-features = nix-command flakes
-            '';
             settings.trusted-users = [ "root" "michael" ];
+            settings.experimental-features = "nix-command flakes";
           };
         }
         home-manager.nixosModules.home-manager
