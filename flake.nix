@@ -46,6 +46,13 @@
             package = pkgs-edge.nix;
             settings.trusted-users = [ "root" "michael" ];
             settings.experimental-features = "nix-command flakes";
+            gc = {
+              automatic = true;
+              randomizedDelaySec = "15m";
+              # 1:15pm - this computer is usually off at the default 3:15am.
+              dates = "13:15";
+              options = "--delete-older-than 30d";
+            };
           };
         }
         home-manager.nixosModules.home-manager
