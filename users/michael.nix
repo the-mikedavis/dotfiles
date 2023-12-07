@@ -320,6 +320,7 @@ in
 
   wayland.windowManager.sway = {
     enable = true;
+    package = pkgs.unstable.sway;
   } // configs.sway;
 
   # Notifications daemon
