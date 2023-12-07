@@ -399,7 +399,7 @@ in
     }
 
     # AOC 4K via Displayport connected to mango2
-    output DP-1 {
+    output DP-3 {
       # when this monitor is to the left of the other:
       pos 0 875
       # when this monitor is to the right:
