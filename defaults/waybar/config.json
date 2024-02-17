@@ -91,8 +91,8 @@
 		"timezone": "CET"
 	},
 	"clock#6": {
-		"format": "IST {:%H:%M}",
-		"timezone": "Asia/Kolkata"
+		"format": "PT {:%H:%M}",
+		"timezone": "America/Los_Angeles"
 	},
 	"clock#7": {
 		"format": "JP {:%H:%M}",
