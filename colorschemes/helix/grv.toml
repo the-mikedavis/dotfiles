@@ -78,7 +78,7 @@
 "ui.statusline.select" = { bg = "lua-blue" }
 "ui.popup" = { bg = "bg1" }
 "ui.popup.info" = { bg = "bg1" }
-"ui.picker.header" = { modifiers = ["bold"] }
+"ui.picker.header" = { modifiers = ["underlined"] }
 "ui.window" = { bg = "bg1" }
 "ui.help" = { bg = "bg1", fg = "fg1" }
 "ui.text" = "fg1"
