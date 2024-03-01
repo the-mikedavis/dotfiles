@@ -104,8 +104,8 @@
 "diagnostic.info".underline = { color = "aqua1", style = "curl" }
 "diagnostic.hint".underline = { color = "blue1", style = "curl" }
 "diagnostic".underline = { color = "blue1", style = "line" }
-"diagnostic.unnecessary" = { underline = { color = "blue1", style = "curl" }, modifiers = ["dim"] }
-"diagnostic.deprecated" = { underline = { color = "blue1", style = "curl" }, modifiers = ["crossed_out"] }
+"diagnostic.unnecessary" = { underline = { color = "fg1", style = "curl" }, modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
 
 # rainbow = ["red1", "orange1", "yellow1", "green1", "blue1", "purple1"]
 
