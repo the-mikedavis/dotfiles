@@ -34,12 +34,14 @@
 "text.uri" = { fg = "blue1", underline = { color = "blue1" } }
 "text.reference" = "purple1"
 "type" = "aqua1"
+"type.builtin" = { fg = "aqua1", modifiers = ["bold"] }
 "variable.builtin" = "orange1"
 "variable" = { fg = "fg0", modifiers = ["italic"] }
 "variable.parameter" = { fg = "fg0", modifiers = ["underlined"] }
 "variable.other.member" = "blue1"
 # matched text in the picker/menus
 "special" = { fg = "red1", modifiers = ["bold"] }
+"tabstop" = { bg = "bg2", modifiers = ["bold"] }
 
 "markup.heading" = "blue0"
 "markup.heading.1" = { fg = "red0", modifiers = ["bold"] }
@@ -104,7 +106,7 @@
 "diagnostic.info".underline = { color = "aqua1", style = "curl" }
 "diagnostic.hint".underline = { color = "blue1", style = "curl" }
 "diagnostic".underline = { color = "blue1", style = "line" }
-"diagnostic.unnecessary" = { underline = { color = "fg1", style = "curl" }, modifiers = ["dim"] }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
 "diagnostic.deprecated" = { modifiers = ["crossed_out"] }
 
 # rainbow = ["red1", "orange1", "yellow1", "green1", "blue1", "purple1"]
