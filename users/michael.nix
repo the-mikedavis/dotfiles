@@ -148,6 +148,7 @@ in
     distrobox
     # Faster and more automatic auto-squash.
     git-absorb
+    unstable.beeper
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
