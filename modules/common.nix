@@ -33,7 +33,7 @@ in
       # Not sure this is necessary anymore after switching to a flake.
       "/etc/nixos"
       # WiFi connections. Probably not necessary since I don't have a WiFi card.
-      "/etc/NetworkManager/system-connections"
+      # "/etc/NetworkManager/system-connections"
       # Root-level podman containers.
       "/var/lib/containers"
       # Persist system logs so we can read what happened in the event of an unexpected crash or hang.
