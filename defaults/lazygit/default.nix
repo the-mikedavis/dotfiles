@@ -35,7 +35,7 @@
         description = "absorb staged changes into fixup commits";
       }
     ];
-    os.editPreset = "helix";
+    os.editPreset = "helix (hx)";
     # Prevent lazygit from performing fetches on startup. This behavior can
     # get in your way if you use git+ssh for remotes and password-protect
     # your SSH keys.
