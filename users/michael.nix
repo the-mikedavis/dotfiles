@@ -149,6 +149,7 @@ in
     # Faster and more automatic auto-squash.
     git-absorb
     unstable.beeper
+    unzip
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
