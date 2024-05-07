@@ -1,6 +1,13 @@
 {
   settings = {
     promptToReturnFromSubprocess = false;
+    keybinding = {
+      universal.toggleRangeSelect = "V";
+      commits = {
+        cherryPickCopy = "c";
+        pasteCommits = "v";
+      };
+    };
     customCommands = [
       # C-p checks out a pull request by number
       # https://github.com/jesseduffield/lazygit/wiki/Custom-Commands-Compendium#checkout-branch-via-github-pull-request-id
