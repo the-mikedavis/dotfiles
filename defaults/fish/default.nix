@@ -22,7 +22,7 @@
     '';
   };
   interactiveShellInit = ''
-    if [ (uname -n) = "rabbit.mango2" ]
+    if [ (uname -n) = "rabbit.mango2" ] || [ (uname -n) = "rabbit-ci.mango2" ]
         source ~/.asdf/asdf.fish
     end
   '';
