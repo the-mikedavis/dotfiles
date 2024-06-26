@@ -1,9 +1,14 @@
-{ pkgs }: machine:
+{ pkgs }:
+machine:
 let
   ssh-key-id = if machine == "mango2" then
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM7lG1J2TQNaqJLKqAzTQQ8yHBArm4o9k/eeaYLSrDuo" else
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM7lG1J2TQNaqJLKqAzTQQ8yHBArm4o9k/eeaYLSrDuo"
+  else
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMFEzKO2ZpSVWnLzdz+i3vROwdS/bPrrs9QItJO/6yTL";
-  identity = if machine == "mango2" then "michael@mango" else "michaeld2@michaeld2L9XP7.vmware.com";
+  identity = if machine == "mango2" then
+    "michael@mango"
+  else
+    "michaeld2@michaeld2L9XP7.vmware.com";
   allowed_signers = pkgs.writeText "allowed_signers" ''
     ${identity} ${ssh-key-id}
   '';
@@ -45,7 +50,7 @@ in {
     gpg.ssh.allowedSignersFile = "${allowed_signers}";
     # use difftastic as the difftool ('git dt')
     diff.tool = "difftastic";
-    "difftool \"difftastic\"".cmd = "difft \"$LOCAL\" \"$REMOTE\"";
+    "difftool \"difftastic\"".cmd = ''difft "$LOCAL" "$REMOTE"'';
     difftool.prompt = false;
     pager.difftool = true;
   };

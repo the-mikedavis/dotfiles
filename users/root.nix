@@ -1,5 +1,5 @@
-impermanence: { pkgs, ... }:
-{
+impermanence:
+{ pkgs, ... }: {
   imports = [ impermanence ];
 
   programs.git = {
@@ -7,8 +7,7 @@ impermanence: { pkgs, ... }:
     extraConfig.safe.directory = "*";
   };
 
-  home.persistence."/nix/persist/home/root" = {
-  };
+  home.persistence."/nix/persist/home/root" = { };
 
   home.stateVersion = "21.05";
 }

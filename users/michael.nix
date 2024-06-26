@@ -1,4 +1,5 @@
-impermanence: { pkgs, ... }:
+impermanence:
+{ pkgs, ... }:
 let
   dirs = {
     defaults = ../defaults;
@@ -19,8 +20,7 @@ let
     fzf = import (dirs.defaults + /fzf);
     lazygit = import (dirs.defaults + /lazygit);
   };
-in
-{
+in {
   imports = [ impermanence ];
 
   # Let Home Manager install and manage itself.
@@ -155,52 +155,53 @@ in
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
 
-  programs.ssh = {
-    enable = true;
-  } // configs.ssh;
+  programs.ssh = { enable = true; } // configs.ssh;
 
-  programs.kakoune = {
-    enable = true;
-  } // configs.kakoune;
+  programs.kakoune = { enable = true; } // configs.kakoune;
 
-  xdg.configFile."kak/colors/grv.kak".source = (dirs.colorschemes + /kakoune/grv.kak);
+  xdg.configFile."kak/colors/grv.kak".source =
+    (dirs.colorschemes + /kakoune/grv.kak);
 
   programs.git = {
     package = pkgs.unstable.git;
     enable = true;
   } // configs.git;
 
-  programs.waybar = {
-    enable = true;
-  };
+  programs.waybar = { enable = true; };
   # taking manual control of the waybar config since nix tells me the config
   # is wrong
   xdg.configFile."waybar/config".source = (dirs.defaults + /waybar/config.json);
-  xdg.configFile."waybar/style.css".source = (dirs.defaults + /waybar/style.css);
+  xdg.configFile."waybar/style.css".source =
+    (dirs.defaults + /waybar/style.css);
   # wofi styling and config
   xdg.configFile."wofi/config".source = (dirs.defaults + /wofi/config);
   xdg.configFile."wofi/style.css".source = (dirs.defaults + /wofi/style.css);
 
-  xdg.configFile."helix/config.toml".source = (dirs.defaults + /helix/config.toml);
-  xdg.configFile."helix/themes/grv.toml".source = (dirs.colorschemes + /helix/grv.toml);
-  xdg.configFile."helix/languages.toml".text = /* toml */ ''
-    [[language]]
-    name = "erlang"
-    rulers = [80]
-  '';
+  xdg.configFile."helix/config.toml".source =
+    (dirs.defaults + /helix/config.toml);
+  xdg.configFile."helix/themes/grv.toml".source =
+    (dirs.colorschemes + /helix/grv.toml);
+  xdg.configFile."helix/languages.toml".text = # toml
+    ''
+      [[language]]
+      name = "erlang"
+      rulers = [80]
+    '';
 
   xdg.configFile."electron-flags.conf".text = ''
     --enable-features=UseOzonePlatform
     --ozone-platform=wayland
   '';
 
-  xdg.configFile."tree-sitter/config.json".source = (dirs.defaults + /tree-sitter/config.json);
+  xdg.configFile."tree-sitter/config.json".source =
+    (dirs.defaults + /tree-sitter/config.json);
 
-  xdg.configFile."containers/storage.conf".text = /* toml */ ''
-    [storage]
-    driver = "overlay"
-    graphroot = "/nix/persist/var/lib/michael/containers"
-  '';
+  xdg.configFile."containers/storage.conf".text = # toml
+    ''
+      [storage]
+      driver = "overlay"
+      graphroot = "/nix/persist/var/lib/michael/containers"
+    '';
 
   ## Persistence config.
   # The root file-system is a tmpfs: volatile memory that is
@@ -219,7 +220,10 @@ in
       ".local/share/fish"
       # nix profile and any other data Nix wants to store there.
       ".local/state/nix"
-    ] ++ (builtins.map (d: { directory = d; method = "symlink"; }) [
+    ] ++ (builtins.map (d: {
+      directory = d;
+      method = "symlink";
+    }) [
       # Misc docs.
       "Documents"
       # == Top-level dots ==
@@ -345,21 +349,13 @@ in
     package = pkgs.unstable.kitty;
   } // configs.kitty;
 
-  programs.firefox = {
-    enable = true;
-  } // configs.firefox;
+  programs.firefox = { enable = true; } // configs.firefox;
 
-  services.gpg-agent = {
-    enable = true;
-  } // configs.gpg;
+  services.gpg-agent = { enable = true; } // configs.gpg;
 
-  gtk = {
-    enable = true;
-  } // configs.gtk;
+  gtk = { enable = true; } // configs.gtk;
 
-  programs.fzf = {
-    enable = true;
-  } // configs.fzf;
+  programs.fzf = { enable = true; } // configs.fzf;
 
   programs.lazygit = {
     enable = true;

@@ -4,12 +4,10 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules =
+    [ "xhci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -21,34 +19,29 @@
     allowDiscards = true;
   };
 
-  fileSystems."/" =
-    {
-      device = "none";
-      fsType = "tmpfs";
-      options = [ "defaults" "size=5G" "mode=755" ];
-    };
+  fileSystems."/" = {
+    device = "none";
+    fsType = "tmpfs";
+    options = [ "defaults" "size=5G" "mode=755" ];
+  };
 
-  fileSystems."/tmp" =
-    {
-      device = "none";
-      fsType = "tmpfs";
-      options = [ "defaults" "size=15G" "mode=755" ];
-    };
+  fileSystems."/tmp" = {
+    device = "none";
+    fsType = "tmpfs";
+    options = [ "defaults" "size=15G" "mode=755" ];
+  };
 
-  fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/EA11-942D";
-      fsType = "vfat";
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/EA11-942D";
+    fsType = "vfat";
+  };
 
-  fileSystems."/nix" =
-    {
-      device = "/dev/vg/root";
-      fsType = "ext4";
-    };
+  fileSystems."/nix" = {
+    device = "/dev/vg/root";
+    fsType = "ext4";
+  };
 
-  swapDevices =
-    [{ device = "/dev/vg/swap"; }];
+  swapDevices = [{ device = "/dev/vg/swap"; }];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   # high-resolution display

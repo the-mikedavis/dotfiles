@@ -18,8 +18,14 @@
     let
       system = "x86_64-linux";
 
-      pkgs-unstable = import inputs.unstable { config.allowUnfree = true; system = system; };
-      pkgs-edge = import inputs.bleeding-edge { config.allowUnfree = true; system = system; };
+      pkgs-unstable = import inputs.unstable {
+        config.allowUnfree = true;
+        system = system;
+      };
+      pkgs-edge = import inputs.bleeding-edge {
+        config.allowUnfree = true;
+        system = system;
+      };
 
       home-manager-impermanence = impermanence + "/home-manager.nix";
 
@@ -60,27 +66,24 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.root = import ./users/root.nix home-manager-impermanence;
-          home-manager.users.michael = import ./users/michael.nix home-manager-impermanence;
+          home-manager.users.root =
+            import ./users/root.nix home-manager-impermanence;
+          home-manager.users.michael =
+            import ./users/michael.nix home-manager-impermanence;
         }
         ./modules/common.nix
       ];
-    in
-    {
+    in {
       nixosConfigurations = {
         mango = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [
-            nixconfig
-            ./machines/mango/configuration.nix
-          ] ++ common-modules;
+          modules = [ nixconfig ./machines/mango/configuration.nix ]
+            ++ common-modules;
         };
         mango2 = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [
-            nixconfig
-            ./machines/mango2/configuration.nix
-          ] ++ common-modules;
+          modules = [ nixconfig ./machines/mango2/configuration.nix ]
+            ++ common-modules;
         };
       };
     };

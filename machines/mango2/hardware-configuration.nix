@@ -4,10 +4,7 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot.initrd.availableKernelModules = [
     "xhci_pci"
@@ -33,34 +30,29 @@
     allowDiscards = true;
   };
 
-  fileSystems."/" =
-    {
-      device = "none";
-      fsType = "tmpfs";
-      options = [ "defaults" "size=10G" "mode=755" ];
-    };
+  fileSystems."/" = {
+    device = "none";
+    fsType = "tmpfs";
+    options = [ "defaults" "size=10G" "mode=755" ];
+  };
 
-  fileSystems."/tmp" =
-    {
-      device = "none";
-      fsType = "tmpfs";
-      options = [ "defaults" "size=15G" "mode=755" ];
-    };
+  fileSystems."/tmp" = {
+    device = "none";
+    fsType = "tmpfs";
+    options = [ "defaults" "size=15G" "mode=755" ];
+  };
 
-  fileSystems."/nix" =
-    {
-      device = "/dev/vg/root";
-      fsType = "ext4";
-    };
+  fileSystems."/nix" = {
+    device = "/dev/vg/root";
+    fsType = "ext4";
+  };
 
-  fileSystems."/boot" =
-    {
-      device = "/dev/disk/by-uuid/9761-3855";
-      fsType = "vfat";
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/9761-3855";
+    fsType = "vfat";
+  };
 
-  swapDevices =
-    [{ device = "/dev/vg/swap"; }];
+  swapDevices = [{ device = "/dev/vg/swap"; }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -69,5 +61,6 @@
   # networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp67s0.useDHCP = lib.mkDefault true;
 
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
