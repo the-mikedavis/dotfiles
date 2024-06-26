@@ -70,7 +70,7 @@ in
     qt5ct
   ];
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     jetbrains-mono
     font-awesome
     apple-color-emoji
