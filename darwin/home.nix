@@ -19,7 +19,8 @@ let
     fzf = import (dirs.defaults + /fzf);
     lazygit = import (dirs.defaults + /lazygit);
   };
-in {
+in
+{
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -68,17 +69,17 @@ in {
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
 
-  programs.ssh = { enable = true; };
+  programs.ssh = {
+    enable = true;
+  };
 
   programs.git = {
     package = pkgs.git;
     enable = true;
   } // configs.git;
 
-  xdg.configFile."helix/config.toml".source =
-    (dirs.defaults + /helix/config.toml);
-  xdg.configFile."helix/themes/grv.toml".source =
-    (dirs.colorschemes + /helix/grv.toml);
+  xdg.configFile."helix/config.toml".source = (dirs.defaults + /helix/config.toml);
+  xdg.configFile."helix/themes/grv.toml".source = (dirs.colorschemes + /helix/grv.toml);
 
   xdg.configFile."erlang_ls/erlang_ls.config".text = ''
     apps_dirs:
@@ -88,14 +89,19 @@ in {
       - "include"
   '';
 
-  xdg.configFile."tree-sitter/config.json".source =
-    (dirs.defaults + /tree-sitter/config.json);
+  xdg.configFile."tree-sitter/config.json".source = (dirs.defaults + /tree-sitter/config.json);
 
-  programs.kitty = { enable = true; } // configs.kitty;
+  programs.kitty = {
+    enable = true;
+  } // configs.kitty;
 
-  programs.fzf = { enable = true; } // configs.fzf;
+  programs.fzf = {
+    enable = true;
+  } // configs.fzf;
 
-  programs.lazygit = { enable = true; } // configs.lazygit;
+  programs.lazygit = {
+    enable = true;
+  } // configs.lazygit;
 
   programs.zoxide = {
     enable = true;

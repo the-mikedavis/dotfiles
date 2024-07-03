@@ -1,5 +1,6 @@
 impermanence:
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [ impermanence ];
 
   programs.git = {

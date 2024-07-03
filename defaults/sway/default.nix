@@ -6,7 +6,8 @@ let
     rev = "c94a15202a1498e6d828dde570e6f24b6f4f922b";
     sha256 = "12any5ns0cimjdf7f8qi8xsygnrpagkas3zhvwhag8264xg8ljmj";
   };
-in {
+in
+{
   wrapperFeatures.gtk = true;
   config = {
     bars = [ ];

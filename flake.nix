@@ -14,7 +14,13 @@
     impermanence.url = "github:nix-community/impermanence/master";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, impermanence, ... }:
+  outputs =
+    inputs@{
+      nixpkgs,
+      home-manager,
+      impermanence,
+      ...
+    }:
     let
       system = "x86_64-linux";
 
@@ -50,7 +56,10 @@
         {
           nix = {
             package = pkgs-edge.nix;
-            settings.trusted-users = [ "root" "michael" ];
+            settings.trusted-users = [
+              "root"
+              "michael"
+            ];
             settings.experimental-features = "nix-command flakes";
             gc = {
               automatic = true;
@@ -66,24 +75,27 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.root =
-            import ./users/root.nix home-manager-impermanence;
-          home-manager.users.michael =
-            import ./users/michael.nix home-manager-impermanence;
+          home-manager.users.root = import ./users/root.nix home-manager-impermanence;
+          home-manager.users.michael = import ./users/michael.nix home-manager-impermanence;
         }
         ./modules/common.nix
       ];
-    in {
+    in
+    {
       nixosConfigurations = {
         mango = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ nixconfig ./machines/mango/configuration.nix ]
-            ++ common-modules;
+          modules = [
+            nixconfig
+            ./machines/mango/configuration.nix
+          ] ++ common-modules;
         };
         mango2 = nixpkgs.lib.nixosSystem {
           inherit system;
-          modules = [ nixconfig ./machines/mango2/configuration.nix ]
-            ++ common-modules;
+          modules = [
+            nixconfig
+            ./machines/mango2/configuration.nix
+          ] ++ common-modules;
         };
       };
     };

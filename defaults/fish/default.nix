@@ -1,4 +1,5 @@
-{ pkgs }: {
+{ pkgs }:
+{
   functions = {
     latestcommitmessage = "git log -1 --format=%s";
     "," = ''

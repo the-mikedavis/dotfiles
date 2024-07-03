@@ -1,9 +1,12 @@
 { pkgs, ... }:
 
 let
-  dirs = { defaults = ../defaults; };
+  dirs = {
+    defaults = ../defaults;
+  };
   passwd = import (dirs.defaults + /passwd);
-in {
+in
+{
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -24,7 +27,10 @@ in {
   services.pipewire.enable = true;
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-wlr xdg-desktop-portal-gtk ];
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-gtk
+    ];
   };
 
   environment.persistence."/nix/persist" = {
@@ -54,16 +60,24 @@ in {
   users.users.michael = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" "wireshark" "podman" ];
+    extraGroups = [
+      "wheel"
+      "wireshark"
+      "podman"
+    ];
     initialHashedPassword = passwd.michael;
-    subUidRanges = [{
-      count = 100000;
-      startUid = 65536;
-    }];
-    subGidRanges = [{
-      count = 100000;
-      startGid = 65536;
-    }];
+    subUidRanges = [
+      {
+        count = 100000;
+        startUid = 65536;
+      }
+    ];
+    subGidRanges = [
+      {
+        count = 100000;
+        startGid = 65536;
+      }
+    ];
   };
 
   environment.systemPackages = with pkgs; [
@@ -75,7 +89,11 @@ in {
     qt5ct
   ];
 
-  fonts.packages = with pkgs; [ jetbrains-mono font-awesome apple-color-emoji ];
+  fonts.packages = with pkgs; [
+    jetbrains-mono
+    font-awesome
+    apple-color-emoji
+  ];
 
   programs.gnupg.agent = {
     enable = true;
@@ -89,7 +107,10 @@ in {
     dockerSocket.enable = true;
     # make a `docker` alias for podman
     dockerCompat = true;
-    extraPackages = with pkgs; [ slirp4netns fuse-overlayfs ];
+    extraPackages = with pkgs; [
+      slirp4netns
+      fuse-overlayfs
+    ];
   };
 
   # sway/wayland

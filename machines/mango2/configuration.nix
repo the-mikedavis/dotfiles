@@ -1,7 +1,11 @@
 { pkgs, ... }:
 
-let dirs = { defaults = ../../defaults; };
-in {
+let
+  dirs = {
+    defaults = ../../defaults;
+  };
+in
+{
   imports = [ ./hardware-configuration.nix ];
 
   networking = {
@@ -24,12 +28,14 @@ in {
     package = pkgs.unstable.tailscale;
   };
 
-  security.pam.loginLimits = [{
-    domain = "*";
-    type = "soft";
-    item = "nofile";
-    value = "65535";
-  }];
+  security.pam.loginLimits = [
+    {
+      domain = "*";
+      type = "soft";
+      item = "nofile";
+      value = "65535";
+    }
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

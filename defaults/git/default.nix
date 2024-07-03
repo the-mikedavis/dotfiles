@@ -1,18 +1,17 @@
 { pkgs }:
 machine:
 let
-  ssh-key-id = if machine == "mango2" then
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM7lG1J2TQNaqJLKqAzTQQ8yHBArm4o9k/eeaYLSrDuo"
-  else
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMFEzKO2ZpSVWnLzdz+i3vROwdS/bPrrs9QItJO/6yTL";
-  identity = if machine == "mango2" then
-    "michael@mango"
-  else
-    "michaeld2@michaeld2L9XP7.vmware.com";
+  ssh-key-id =
+    if machine == "mango2" then
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM7lG1J2TQNaqJLKqAzTQQ8yHBArm4o9k/eeaYLSrDuo"
+    else
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMFEzKO2ZpSVWnLzdz+i3vROwdS/bPrrs9QItJO/6yTL";
+  identity = if machine == "mango2" then "michael@mango" else "michaeld2@michaeld2L9XP7.vmware.com";
   allowed_signers = pkgs.writeText "allowed_signers" ''
     ${identity} ${ssh-key-id}
   '';
-in {
+in
+{
   aliases = {
     git = "!exec git";
     g = "!exec git";

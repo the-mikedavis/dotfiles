@@ -20,7 +20,8 @@ let
     fzf = import (dirs.defaults + /fzf);
     lazygit = import (dirs.defaults + /lazygit);
   };
-in {
+in
+{
   imports = [ impermanence ];
 
   # Let Home Manager install and manage itself.
@@ -155,32 +156,34 @@ in {
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
 
-  programs.ssh = { enable = true; } // configs.ssh;
+  programs.ssh = {
+    enable = true;
+  } // configs.ssh;
 
-  programs.kakoune = { enable = true; } // configs.kakoune;
+  programs.kakoune = {
+    enable = true;
+  } // configs.kakoune;
 
-  xdg.configFile."kak/colors/grv.kak".source =
-    (dirs.colorschemes + /kakoune/grv.kak);
+  xdg.configFile."kak/colors/grv.kak".source = (dirs.colorschemes + /kakoune/grv.kak);
 
   programs.git = {
     package = pkgs.unstable.git;
     enable = true;
   } // configs.git;
 
-  programs.waybar = { enable = true; };
+  programs.waybar = {
+    enable = true;
+  };
   # taking manual control of the waybar config since nix tells me the config
   # is wrong
   xdg.configFile."waybar/config".source = (dirs.defaults + /waybar/config.json);
-  xdg.configFile."waybar/style.css".source =
-    (dirs.defaults + /waybar/style.css);
+  xdg.configFile."waybar/style.css".source = (dirs.defaults + /waybar/style.css);
   # wofi styling and config
   xdg.configFile."wofi/config".source = (dirs.defaults + /wofi/config);
   xdg.configFile."wofi/style.css".source = (dirs.defaults + /wofi/style.css);
 
-  xdg.configFile."helix/config.toml".source =
-    (dirs.defaults + /helix/config.toml);
-  xdg.configFile."helix/themes/grv.toml".source =
-    (dirs.colorschemes + /helix/grv.toml);
+  xdg.configFile."helix/config.toml".source = (dirs.defaults + /helix/config.toml);
+  xdg.configFile."helix/themes/grv.toml".source = (dirs.colorschemes + /helix/grv.toml);
   xdg.configFile."helix/languages.toml".text = # toml
     ''
       [[language]]
@@ -197,8 +200,7 @@ in {
     --ozone-platform=wayland
   '';
 
-  xdg.configFile."tree-sitter/config.json".source =
-    (dirs.defaults + /tree-sitter/config.json);
+  xdg.configFile."tree-sitter/config.json".source = (dirs.defaults + /tree-sitter/config.json);
 
   xdg.configFile."containers/storage.conf".text = # toml
     ''
@@ -213,74 +215,79 @@ in {
   # reboots. These files/directories are mounted from non-volatile memory.
   # In modules/common.nix we declare the system-level persisted directories.
   home.persistence."/nix/persist/home/michael" = {
-    directories = [
-      # GPG keys and metadata.
-      ".gnupg"
-      # SSH keys and config.
-      ".ssh"
-      # Firefox data, essentially a cache plus auth stuff.
-      ".mozilla"
-      # Fish history and completions
-      ".local/share/fish"
-      # nix profile and any other data Nix wants to store there.
-      ".local/state/nix"
-    ] ++ (builtins.map (d: {
-      directory = d;
-      method = "symlink";
-    }) [
-      # Misc docs.
-      "Documents"
-      # == Top-level dots ==
-      # Source code. This is essentially a cache since everything is a git repo.
-      "src"
-      # hex.pm caches, downloaded library tarballs, auth etc.
-      ".hex"
-      # Mix archives (Elixir)
-      ".mix"
-      # ASDF version manager
-      # I use Nix to install erlang/elixir/rebar3 on the host machine.
-      # This is just to cache the asdf builds and configuration for my
-      # work distrobox.
-      ".asdf"
-      # cargo cache (Rust)
-      ".cargo/registry"
-      ".cargo/bin"
-      ".cargo/git"
-      # kubectl
-      ".kube"
-      # == Local state ==
-      # Podman cache
-      # ".local/share/containers"
-      # Repl history and trusted settings
-      ".local/share/nix"
-      # zoxide directory database
-      ".local/share/zoxide"
-      # direnv allowlist
-      ".local/share/direnv"
-      # == Config ==
-      # Most apps in this category abuse the config dir to store state.
-      ".config/Slack"
-      ".config/discord"
-      ".config/chromium"
-      ".config/Element"
-      ".config/spotify"
-      ".config/1Password"
-      ".config/gcloud"
-      # == Cache ==
-      ".cache/nix"
-      ".cache/mozilla"
-      ".cache/chromium"
-      ".cache/yarn"
-      ".cache/spotify"
-      ".cache/mix"
-      ".cache/nix-index"
-      ".cache/erlang_ls"
-      ".cache/rebar3"
-      ".cache/fontconfig"
-      ".cache/erlang-history"
-      ".cache/gleam"
-      ".cache/bazel"
-    ]);
+    directories =
+      [
+        # GPG keys and metadata.
+        ".gnupg"
+        # SSH keys and config.
+        ".ssh"
+        # Firefox data, essentially a cache plus auth stuff.
+        ".mozilla"
+        # Fish history and completions
+        ".local/share/fish"
+        # nix profile and any other data Nix wants to store there.
+        ".local/state/nix"
+      ]
+      ++ (builtins.map
+        (d: {
+          directory = d;
+          method = "symlink";
+        })
+        [
+          # Misc docs.
+          "Documents"
+          # == Top-level dots ==
+          # Source code. This is essentially a cache since everything is a git repo.
+          "src"
+          # hex.pm caches, downloaded library tarballs, auth etc.
+          ".hex"
+          # Mix archives (Elixir)
+          ".mix"
+          # ASDF version manager
+          # I use Nix to install erlang/elixir/rebar3 on the host machine.
+          # This is just to cache the asdf builds and configuration for my
+          # work distrobox.
+          ".asdf"
+          # cargo cache (Rust)
+          ".cargo/registry"
+          ".cargo/bin"
+          ".cargo/git"
+          # kubectl
+          ".kube"
+          # == Local state ==
+          # Podman cache
+          # ".local/share/containers"
+          # Repl history and trusted settings
+          ".local/share/nix"
+          # zoxide directory database
+          ".local/share/zoxide"
+          # direnv allowlist
+          ".local/share/direnv"
+          # == Config ==
+          # Most apps in this category abuse the config dir to store state.
+          ".config/Slack"
+          ".config/discord"
+          ".config/chromium"
+          ".config/Element"
+          ".config/spotify"
+          ".config/1Password"
+          ".config/gcloud"
+          # == Cache ==
+          ".cache/nix"
+          ".cache/mozilla"
+          ".cache/chromium"
+          ".cache/yarn"
+          ".cache/spotify"
+          ".cache/mix"
+          ".cache/nix-index"
+          ".cache/erlang_ls"
+          ".cache/rebar3"
+          ".cache/fontconfig"
+          ".cache/erlang-history"
+          ".cache/gleam"
+          ".cache/bazel"
+        ]
+      );
     files = [
       # Lazygit repository history
       # ".config/lazygit/state.yml"
@@ -353,13 +360,21 @@ in {
     package = pkgs.unstable.kitty;
   } // configs.kitty;
 
-  programs.firefox = { enable = true; } // configs.firefox;
+  programs.firefox = {
+    enable = true;
+  } // configs.firefox;
 
-  services.gpg-agent = { enable = true; } // configs.gpg;
+  services.gpg-agent = {
+    enable = true;
+  } // configs.gpg;
 
-  gtk = { enable = true; } // configs.gtk;
+  gtk = {
+    enable = true;
+  } // configs.gtk;
 
-  programs.fzf = { enable = true; } // configs.fzf;
+  programs.fzf = {
+    enable = true;
+  } // configs.fzf;
 
   programs.lazygit = {
     enable = true;

@@ -1,4 +1,5 @@
-{ pkgs }: {
+{ pkgs }:
+{
   config = {
     colorScheme = "grv";
     indentWidth = 2;
