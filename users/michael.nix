@@ -150,7 +150,7 @@ in {
     git-absorb
     unstable.beeper
     unzip
-    nixfmt
+    nixfmt-rfc-style
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
