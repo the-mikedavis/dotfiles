@@ -187,6 +187,10 @@ in {
       name = "erlang"
       rulers = [80]
     '';
+  xdg.configFile."helix/ignore".text = # git-ignore
+    ''
+      !.github
+    '';
 
   xdg.configFile."electron-flags.conf".text = ''
     --enable-features=UseOzonePlatform
