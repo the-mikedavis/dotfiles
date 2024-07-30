@@ -149,11 +149,11 @@ in
       # bindsym $mod+a focus parent
 
       # move the currently focused window to the scratchpad
-      bindsym $mod+Shift+minus move scratchpad
+      # bindsym $mod+Shift+minus move scratchpad
 
       # Show the next scratchpad window or hide the focused scratchpad window.
       # If there are multiple scratchpad windows, this command cycles through them.
-      bindsym $mod+minus scratchpad show
+      # bindsym $mod+minus scratchpad show
 
       #navigate workspaces next / previous
       bindsym $mod+Ctrl+Right workspace next
