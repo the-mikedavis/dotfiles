@@ -80,8 +80,8 @@
 "ui.statusline.select" = { bg = "lua-blue" }
 "ui.popup" = { bg = "bg1" }
 "ui.popup.info" = { bg = "bg1" }
-"ui.picker.header" = { underline.style = "line" }
-"ui.picker.header.active" = { fg = "fg0", modifiers = ["bold"], underline.style = "line" }
+"ui.picker.header.column" = { underline.style = "line" }
+"ui.picker.header.column.active" = { fg = "fg0", modifiers = ["bold"], underline.style = "line" }
 "ui.window" = { bg = "bg1" }
 "ui.help" = { bg = "bg1", fg = "fg1" }
 "ui.text" = "fg1"
