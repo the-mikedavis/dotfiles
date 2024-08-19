@@ -152,6 +152,7 @@ in
     unstable.beeper
     unzip
     nixfmt-rfc-style
+    vlc
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
