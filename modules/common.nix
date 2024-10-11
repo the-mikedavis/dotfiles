@@ -45,6 +45,8 @@ in
       "/var/log"
       # Tailscale state files.
       "/var/lib/tailscale"
+      # OS state like uids, gids
+      "/var/lib/nixos"
     ];
     files = [
       "/etc/machine-id"
