@@ -264,6 +264,8 @@ in
           ".local/share/zoxide"
           # direnv allowlist
           ".local/share/direnv"
+          # Spellchecking dictionaries for Helix
+          ".config/helix/runtime/dictionaries"
           # == Config ==
           # Most apps in this category abuse the config dir to store state.
           ".config/Slack"
@@ -309,6 +311,8 @@ in
       ".cache/wofi-dmenu"
       # asdf global versions
       ".tool-versions"
+      # Personal dictionary in Helix (HACK)
+      ".local/state/helix/personal-dictionary.txt"
     ];
     # > allows other users, such as `root`, to access files through the bind
     # > mounted directories listed in `directories`.
