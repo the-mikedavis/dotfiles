@@ -149,10 +149,10 @@ in
     distrobox
     # Faster and more automatic auto-squash.
     git-absorb
-    unstable.beeper
     unzip
     nixfmt-rfc-style
     vlc
+    unstable.signal-desktop
   ];
 
   home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
