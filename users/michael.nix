@@ -155,7 +155,8 @@ in
     unstable.signal-desktop
   ];
 
-  home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
+  # Unused since I switched from Kakoune. (And developed Spellbook too, ofc :P)
+  # home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
 
   programs.ssh = {
     enable = true;
