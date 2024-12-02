@@ -57,6 +57,8 @@
 "markup.link.text" = "purple1"
 "markup.list.numbered" = "aqua0"
 "markup.list.unnumbered" = "aqua1"
+"markup.list.checked" = "aqua1"
+"markup.list.unchecked" = "fg4"
 "markup.raw" = "fg4"
 "markup.quote" = { fg = "fg2", modifiers = ["italic"] }
 "markup.strikethrough" = { modifiers = ["crossed_out"] }
