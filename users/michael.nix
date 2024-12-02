@@ -276,6 +276,7 @@ in
           ".config/spotify"
           ".config/1Password"
           ".config/gcloud"
+          ".config/Signal"
           # == Cache ==
           ".cache/nix"
           ".cache/mozilla"
