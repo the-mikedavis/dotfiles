@@ -153,6 +153,8 @@ in
     nixfmt-rfc-style
     vlc
     unstable.signal-desktop
+    # Basic calculator
+    bc
   ];
 
   # Unused since I switched from Kakoune. (And developed Spellbook too, ofc :P)
