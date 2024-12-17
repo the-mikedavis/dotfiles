@@ -108,7 +108,7 @@ in
     # moved into the sway config by absolute path in the future.
     clipman
     # ? I don't remember. Better icons / GTK theme?
-    gnome3.adwaita-icon-theme
+    adwaita-icon-theme
     # Occasionally useful for managing vaults. The web UI is more useful though.
     unstable._1password-gui
     # Using edge here since new Discord updates sometimes need an update _right now_

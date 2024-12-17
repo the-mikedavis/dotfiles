@@ -17,10 +17,6 @@ in
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
   programs.fish.enable = true;
 
   # enable xdg portals and pipewire for screensharing in wayland
@@ -45,6 +41,8 @@ in
       "/var/log"
       # Tailscale state files.
       "/var/lib/tailscale"
+      # Certain NixOS things like UIDs and GIDs
+      "/var/lib/nixos"
     ];
     files = [
       "/etc/machine-id"
@@ -86,7 +84,7 @@ in
     cryptsetup
     ncdu
     qt5.qtwayland
-    qt5ct
+    libsForQt5.qt5ct
   ];
 
   fonts.packages = with pkgs; [
