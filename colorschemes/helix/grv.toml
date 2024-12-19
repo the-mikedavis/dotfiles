@@ -92,7 +92,7 @@
 "ui.cursor.primary" = { bg = "bg3", modifiers = ["underlined"] }
 "ui.cursor.match" = { modifiers = ["underlined"] }
 "ui.menu" = { fg = "fg1", bg = "bg2" }
-"ui.menu.selected" = { fg = "bg2", bg = "blue1", modifiers = ["bold"] }
+"ui.menu.selected" = { bg = "bg3", modifiers = ["bold"] }
 "ui.virtual.whitespace" = "bg2"
 "ui.virtual.ruler" = { bg = "bg0.5" }
 "ui.virtual.indent-guide" = "bg0.5"
