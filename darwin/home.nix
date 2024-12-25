@@ -50,7 +50,7 @@ in
     ripgrep
     bat
     killall
-    nixfmt
+    nixfmt-rfc-style
     nix-prefetch-github
     fd
     tree-sitter
