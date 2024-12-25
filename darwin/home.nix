@@ -44,8 +44,6 @@ in
     neofetch
     jetbrains-mono
     file
-    aspell
-    aspellDicts.en
     git-crypt
     ripgrep
     bat
@@ -66,8 +64,6 @@ in
     podman
     qemu
   ];
-
-  home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
 
   programs.ssh = {
     enable = true;
