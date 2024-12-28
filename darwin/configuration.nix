@@ -8,7 +8,6 @@
     home = "/Users/michaeld2";
     shell = pkgs.fish;
   };
-  users.defaultUserShell = pkgs.fish;
   nix.settings.trusted-users = ["root" "michaeld2"];
   nix.extraOptions = ''
     auto-optimise-store = true
