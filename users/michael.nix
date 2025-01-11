@@ -369,6 +369,10 @@ in
     package = pkgs.unstable.kitty;
   } // configs.kitty;
 
+  # xdg.configFile."kitty/light-theme.auto.conf".source = (dirs.colorschemes + /kitty/grv_light.conf);
+  xdg.configFile."kitty/dark-theme.auto.conf".source = (dirs.colorschemes + /kitty/grv.conf);
+  xdg.configFile."kitty/no-preference-theme.auto.conf".source = (dirs.colorschemes + /kitty/grv.conf);
+
   programs.firefox = {
     enable = true;
   } // configs.firefox;
@@ -405,4 +409,24 @@ in
     enable = true;
     enableFishIntegration = true;
   };
+
+  # programs.darkman = {
+  #   enable = true;
+  #   settings = {
+  #     # Manhattan
+  #     lat = 40.78;
+  #     lng = -73.97;
+  #     usegeoclue = false;
+  #   };
+  #   darkModeScripts = {
+  #     gtk-theme = ''
+  #       ${pkgs.dconf}/bin/dconf write /org/gnome/desktop/interface/color-scheme "'prefer-dark'"
+  #     '';
+  #   };
+  #   lightModeScripts = {
+  #     gtk-theme = ''
+  #       ${pkgs.dconf}/bin/dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
+  #     '';
+  #   };
+  # };
 }
