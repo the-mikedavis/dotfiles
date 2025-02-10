@@ -410,6 +410,11 @@ in
     enableFishIntegration = true;
   };
 
+  programs.thefuck = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
   # programs.darkman = {
   #   enable = true;
   #   settings = {
