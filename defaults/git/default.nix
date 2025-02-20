@@ -41,6 +41,7 @@ in
   extraConfig = {
     core.editor = "hx";
     hub.protocol = "ssh";
+    fetch.prune = true;
     pull.rebase = "false";
     init.defaultBranch = "main";
     push.default = "simple";

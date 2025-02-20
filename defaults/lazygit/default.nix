@@ -24,14 +24,6 @@
         loadingText = "Checking out PR...";
         description = "check out a pull request by number";
       }
-      # Prune remote branches (delete branches that have been deleted on the remote).
-      {
-        key = "<c-p>";
-        command = "git remote prune {{.SelectedRemote.Name}}";
-        context = "remotes";
-        loadingText = "Pruning...";
-        description = "prune deleted remote branches";
-      }
       # Uses git-absorb to create fixup commits that automatically target the right commit.
       # Use 'S' from the commits context to apply the fixup commits.
       {
