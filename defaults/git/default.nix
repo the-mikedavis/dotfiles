@@ -23,16 +23,11 @@ in
     ci = "commit";
     cia = "commit -a";
     co = "checkout";
-    count = "rev-list --all --count";
-    unstage = "reset HEAD --";
     ph = "push";
     pl = "pull";
     d = "difftool";
     f = "fetch";
     ff = "merge --ff-only";
-    branch-name = "rev-parse --abbrev-ref HEAD";
-    pub = "!git push -u origin $(git branch-name)";
-    lt = "!git tag --sort=version:refname | tail -n 1";
     # Garbage-collect the repository to save on space and make git
     # snappier. Good for large repositories with many thousands of
     # commits.
