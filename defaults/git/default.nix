@@ -53,6 +53,11 @@ in
     "difftool \"difftastic\"".cmd = ''difft "$LOCAL" "$REMOTE"'';
     difftool.prompt = false;
     pager.difftool = true;
+
+    # <https://blog.gitbutler.com/how-git-core-devs-configure-git/>
+    diff.algorithm = "histogram";
+    diff.colorMoved = "plain";
+    diff.mnemonicPrefix = true;
   };
   ignores = [
     "*.swp"
