@@ -410,14 +410,14 @@ in
         bg ${nixos-logo-gruvbox-wallpaper}/png/gruvbox-dark-rainbow.png fill
       }
 
-      # LG 4K HDMI connected to mango2
+      # Lenovo 4K HDMI connected to mango2
       output HDMI-A-1 {
         # when this monitor is to the right of the other:
         pos 3840 0
         # when this monitor is to the left:
         # pos 0 0
 
-        transform 270
+        transform 90
         bg ${nixos-logo-gruvbox-wallpaper}/png/gruvbox-dark-rainbow.png fill
       }
     '';
