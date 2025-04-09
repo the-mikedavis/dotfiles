@@ -80,7 +80,9 @@ in
 
   environment.systemPackages = with pkgs; [
     kakoune
+    # Audio control
     pavucontrol
+    pamixer
     cryptsetup
     ncdu
     qt5.qtwayland
