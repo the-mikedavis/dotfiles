@@ -155,6 +155,8 @@ in
     unstable.signal-desktop
     # Basic calculator
     bc
+    # Mainly pretty printing JSON. Maybe I'll learn the language at some point.
+    jq
   ];
 
   # Unused since I switched from Kakoune. (And developed Spellbook too, ofc :P)
