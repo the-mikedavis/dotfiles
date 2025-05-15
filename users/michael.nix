@@ -319,6 +319,8 @@ in
       ".tool-versions"
       # Personal dictionary in Helix (HACK)
       ".local/state/helix/personal-dictionary.txt"
+      # Cargo registry token
+      ".cargo/credentials.toml"
     ];
     # > allows other users, such as `root`, to access files through the bind
     # > mounted directories listed in `directories`.
