@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }:
@@ -71,6 +70,11 @@
     device = "/dev/disk/by-uuid/9761-3855";
     fsType = "vfat";
   };
+
+  fileSystems."/src" =
+    { device = "/dev/disk/by-uuid/96467b41-4046-4071-b8bd-f6d9f0d42cae";
+      fsType = "xfs";
+    };
 
   swapDevices = [ { device = "/dev/vg/swap"; } ];
 
