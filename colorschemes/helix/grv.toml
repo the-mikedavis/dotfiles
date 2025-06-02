@@ -35,6 +35,7 @@
 "text.reference" = "purple1"
 "type" = "aqua1"
 "type.builtin" = { fg = "aqua1", modifiers = ["bold"] }
+"type.enum.variant.builtin" = { fg = "aqua1", modifiers = ["bold"] }
 "variable.builtin" = "orange1"
 "variable" = { fg = "fg0", modifiers = ["italic"] }
 "variable.parameter" = { fg = "fg0", modifiers = ["underlined"] }
