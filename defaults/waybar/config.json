@@ -48,6 +48,9 @@
 		"disk#2",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
+		"disk#3",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
 		"tray"
 	],
 	"custom/left-arrow-dark": {
@@ -131,12 +134,17 @@
 	},
 	"disk#1": {
 		"interval": 5,
-		"format": "Tmpfs {percentage_used:2}%",
+		"format": "/ {percentage_used:2}%",
 		"path": "/"
 	},
 	"disk#2": {
 		"interval": 5,
-		"format": "Disk {percentage_used:2}%",
+		"format": "/src {percentage_used:2}%",
+		"path": "/src"
+	},
+	"disk#3": {
+		"interval": 5,
+		"format": "/nix {percentage_used:2}%",
 		"path": "/nix"
 	},
 	"tray": {
