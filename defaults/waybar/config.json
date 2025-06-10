@@ -15,6 +15,9 @@
 		"custom/right-arrow-dark",
 		"custom/right-arrow-light",
 		"clock#7",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"pulseaudio",
 		"custom/right-arrow-dark"
 	],
 	"modules-center": [
@@ -29,9 +32,6 @@
 		"custom/right-arrow-dark"
 	],
 	"modules-right": [
-		"custom/left-arrow-dark",
-		"pulseaudio",
-		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"memory",
 		"custom/left-arrow-light",
@@ -49,6 +49,9 @@
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"disk#3",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"disk#4",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"tray"
@@ -146,6 +149,11 @@
 		"interval": 5,
 		"format": "/nix {percentage_used:2}%",
 		"path": "/nix"
+	},
+	"disk#4": {
+		"interval": 5,
+		"format": "/tmp {percentage_used:2}%",
+		"path": "/tmp"
 	},
 	"tray": {
 		"icon-size": 20
