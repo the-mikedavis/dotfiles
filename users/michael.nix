@@ -361,10 +361,10 @@ in
     anchor = "top-right";
     font = "JetBrains Mono 11";
     padding = "15,20";
-    backgroundColor = "#282828F0";
+    backgroundColor = "#3c3836F0";
     textColor = "#ebdbb2";
     borderSize = 2;
-    borderColor = "#504945";
+    borderColor = "#ebdbb2";
     defaultTimeout = 10000;
     markup = true;
     format = "<b>%s</b>\\n\\n%b";
