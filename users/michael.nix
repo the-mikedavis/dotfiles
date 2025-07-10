@@ -152,7 +152,7 @@ in
     unzip
     nixfmt-rfc-style
     vlc
-    unstable.signal-desktop
+    pkgs.edge.signal-desktop
     # Basic calculator
     bc
     # Mainly pretty printing JSON. Maybe I'll learn the language at some point.
