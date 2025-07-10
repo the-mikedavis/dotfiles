@@ -1,6 +1,6 @@
 {
   "parser-directories": [
-    "/home/michael/src/trees"
+    "/src/trees"
   ],
   "theme": {
     "constant": 94,
