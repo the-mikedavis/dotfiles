@@ -95,7 +95,7 @@
 "ui.menu" = { fg = "fg1", bg = "bg2" }
 "ui.menu.selected" = { bg = "bg3", modifiers = ["bold"] }
 "ui.virtual.whitespace" = "bg2"
-"ui.virtual.ruler" = { bg = "bg0.5" }
+"ui.virtual.ruler" = "bg2"
 "ui.virtual.indent-guide" = "bg0.5"
 "ui.virtual.wrap" = "bg3"
 "ui.virtual.inlay-hint" = { fg = "bg3", modifiers = ["italic"] }
