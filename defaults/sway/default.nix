@@ -309,7 +309,7 @@ in
       set $bar_hl_color #C6643D
 
       bar {
-        swaybar_command ${pkgs.waybar}/bin/waybar
+        swaybar_command ${pkgs.unstable.waybar}/bin/waybar
       }
 
       # Theme colors
