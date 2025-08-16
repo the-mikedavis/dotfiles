@@ -159,6 +159,8 @@ in
     jq
     # Watching Rabbit cluster logs
     multitail
+    # `ps` replacement
+    procs
   ];
 
   # Unused since I switched from Kakoune. (And developed Spellbook too, ofc :P)
