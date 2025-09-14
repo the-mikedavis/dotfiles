@@ -37,7 +37,6 @@ if you're interested in using flakes to manage all configuration.
 * `machines/` contains directories for each NixOS machine I have with an overall
   machine-specific `configuration.nix` module and a hardware-specific
   `hardware-configuration.nix` module
-    * `mango` and `mango2` are custom-built desktop machines
 * `colorschemes/` has program-specific color schemes setup as nix attribute
   sets
 * `darwin/` darwin (MacOS) home-manager configuration
