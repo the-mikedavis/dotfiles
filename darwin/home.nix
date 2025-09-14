@@ -1,6 +1,5 @@
-# This is the configuration of a darwin machine
-# (work-provided MacBook Pro, 2021 14-inch).
-{ config, pkgs, ... }:
+# Home-manager configuration for a macbook
+{ pkgs, ... }:
 
 let
   dirs = {
@@ -11,7 +10,6 @@ let
 
   configs = {
     fish = import (dirs.defaults + /fish) { inherit pkgs; };
-    kakoune = import (dirs.defaults + /kakoune) { inherit pkgs; };
     git = import (dirs.defaults + /git) { inherit pkgs; } "mbp";
     sway = import (dirs.defaults + /sway) { inherit pkgs; };
     kitty = import (dirs.defaults + /kitty);
@@ -50,7 +48,7 @@ in
     nixfmt-rfc-style
     nix-prefetch-github
     fd
-    tree-sitter
+    # tree-sitter
     fastmod
     hexyl
     # cachix
@@ -66,6 +64,8 @@ in
 
   programs.ssh = {
     enable = true;
+    # TODO: move this into the ssh config dir.
+    enableDefaultConfig = false;
   };
 
   programs.git = {
@@ -75,16 +75,11 @@ in
 
   xdg.configFile."helix/config.toml".source = (dirs.defaults + /helix/config.toml);
   xdg.configFile."helix/themes/grv.toml".source = (dirs.colorschemes + /helix/grv.toml);
-
-  xdg.configFile."erlang_ls/erlang_ls.config".text = ''
-    apps_dirs:
-      - "_build/default/lib/*"
-    include_dirs:
-      - "_build/default/lib/*/include"
-      - "include"
-  '';
-
   xdg.configFile."tree-sitter/config.json".source = (dirs.defaults + /tree-sitter/config.json);
+  xdg.configFile."kitty/dark-theme.auto.conf".source = (dirs.colorschemes + /kitty/grv.conf);
+  # Commented out and created manually while I figure out a light theme.
+  # xdg.configFile."kitty/light-theme.auto.conf".source = (dirs.colorschemes + /kitty/grv_light.conf);
+  xdg.configFile."kitty/no-preference-theme.auto.conf".source = (dirs.colorschemes + /kitty/grv.conf);
 
   programs.kitty = {
     enable = true;
