@@ -10,6 +10,7 @@ let
   allowed_signers = pkgs.writeText "allowed_signers" ''
     ${identity} ${ssh-key-id}
   '';
+  misc-data = import ../data.nix;
 in
 {
   aliases = {
@@ -63,8 +64,22 @@ in
     "erlang_ls.config"
     "/worktrees/"
   ];
+  includes = [
+    # From `man git-config`
+    # > If the pattern ends with /, ** will be automatically added.
+    # > For example, the pattern foo/ becomes foo/**.
+    # > In other words, it matches "foo" and everything inside, recursively.
+    {
+      condition = "gitdir:~/src/rabbitmq/";
+      contents.user.email = misc-data.work-email;
+    }
+    {
+      condition = "gitdir:/src/rabbitmq/";
+      contents.user.email = misc-data.work-email;
+    }
+  ];
   userName = "Michael Davis";
-  userEmail = "mcarsondavis@gmail.com";
+  userEmail = misc-data.personal-email;
   signing = {
     key = ssh-key-id;
     signByDefault = true;
