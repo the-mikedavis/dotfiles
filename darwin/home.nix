@@ -10,6 +10,7 @@ let
 
   configs = {
     fish = import (dirs.defaults + /fish) { inherit pkgs; };
+    ssh = import (dirs.defaults + /ssh);
     git = import (dirs.defaults + /git) { inherit pkgs; } "mbp";
     sway = import (dirs.defaults + /sway) { inherit pkgs; };
     kitty = import (dirs.defaults + /kitty);
@@ -64,9 +65,7 @@ in
 
   programs.ssh = {
     enable = true;
-    # TODO: move this into the ssh config dir.
-    enableDefaultConfig = false;
-  };
+  } // configs.ssh;
 
   programs.git = {
     package = pkgs.git;
