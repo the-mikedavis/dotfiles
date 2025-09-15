@@ -233,6 +233,12 @@ in
         ".local/share/fish"
         # nix profile and any other data Nix wants to store there.
         ".local/state/nix"
+        # Fish uses renames for atomic updates to the fish_variables file
+        # and renaming does not work on cross-link devices (from the tmpfs to the
+        # fish_variables file on the persistence device). So we link the entire
+        # directory. This also persists the fish_variables file so that universal
+        # variables survive reboots.
+        ".config/fish"
       ]
       ++ (builtins.map
         (d: {
@@ -300,8 +306,6 @@ in
     files = [
       # Lazygit repository history
       # ".config/lazygit/state.yml"
-      # Fish universal variables
-      ".config/fish/fish_variables"
       # Auth config for Hex.pm (Erlang)
       ".config/rebar3/hex.config"
       # Nix cache config
