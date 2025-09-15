@@ -162,6 +162,7 @@ in
     multitail
     # `ps` replacement
     procs
+    pay-respects
   ];
 
   # Unused since I switched from Kakoune. (And developed Spellbook too, ofc :P)
@@ -411,11 +412,6 @@ in
   };
 
   programs.zoxide = {
-    enable = true;
-    enableFishIntegration = true;
-  };
-
-  programs.thefuck = {
     enable = true;
     enableFishIntegration = true;
   };
