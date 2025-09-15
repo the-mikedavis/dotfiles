@@ -136,7 +136,8 @@ in
     # Occasionally useful for recordings (commented out most of the time):
     # unstable.audacity
     unstable.eza
-    unstable.linuxPackages-libre.perf
+    # Performance sampling recorder. Use hotspot to view a flamegraph of a report.
+    unstable.perf
     # Nix language server.
     unstable.nil
     # System monitor / colorful `top`.
@@ -354,16 +355,18 @@ in
   # adapted from <https://github.com/archseer/snowflake/blob/352fbbe1fe30d717b0d16eba4c13cd86d42aca34/profiles/graphical/sway/default.nix#L82-L104>
   services.mako = {
     enable = true;
-    anchor = "top-right";
-    font = "JetBrains Mono 11";
-    padding = "15,20";
-    backgroundColor = "#3c3836F0";
-    textColor = "#ebdbb2";
-    borderSize = 2;
-    borderColor = "#ebdbb2";
-    defaultTimeout = 10000;
-    markup = true;
-    format = "<b>%s</b>\\n\\n%b";
+    settings = {
+      anchor = "top-right";
+      font = "JetBrains Mono 11";
+      padding = "15,20";
+      backgroundColor = "#3c3836F0";
+      textColor = "#ebdbb2";
+      borderSize = 2;
+      borderColor = "#ebdbb2";
+      defaultTimeout = 10000;
+      markup = true;
+      format = "<b>%s</b>\\n\\n%b";
+    };
   };
 
   programs.kitty = {
