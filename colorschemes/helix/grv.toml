@@ -85,7 +85,7 @@
 "ui.text" = "fg1"
 "ui.text.inactive" = "gray1"
 "ui.text.info" = "fg1"
-"ui.text.focus" = { fg = "fg1", modifiers = ["bold"] }
+"ui.text.focus" = { modifiers = ["bold"] }
 "ui.text.directory" = "blue1"
 "ui.selection.primary" = { modifiers = ["reversed"] }
 "ui.selection" = { bg = "bg3" }
