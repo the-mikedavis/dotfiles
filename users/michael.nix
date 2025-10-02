@@ -163,6 +163,8 @@ in
     # `ps` replacement
     procs
     pay-respects
+    # Who can bother to remember how to use `tar` correctly
+    dtrx
   ];
 
   # Unused since I switched from Kakoune. (And developed Spellbook too, ofc :P)
