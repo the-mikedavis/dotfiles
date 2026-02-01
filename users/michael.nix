@@ -165,14 +165,16 @@ in
     pay-respects
     # Who can bother to remember how to use `tar` correctly
     dtrx
+    # programs.ssh creates the `~/.ssh/config`. I want to control that file myself.
+    openssh
   ];
 
   # Unused since I switched from Kakoune. (And developed Spellbook too, ofc :P)
   # home.file.".aspell.conf".text = "data-dir ${pkgs.aspell}/lib/aspell";
 
-  programs.ssh = {
-    enable = true;
-  } // configs.ssh;
+  # programs.ssh = {
+  #   enable = true;
+  # } // configs.ssh;
 
   programs.kakoune = {
     enable = true;
