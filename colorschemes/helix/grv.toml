@@ -87,6 +87,7 @@
 "ui.text.info" = "fg1"
 "ui.text.focus" = { modifiers = ["bold"] }
 "ui.text.directory" = "blue1"
+"ui.text.symlink" = "aqua1"
 "ui.selection.primary" = { modifiers = ["reversed"] }
 "ui.selection" = { bg = "bg3" }
 "ui.cursorline.primary" = { bg = "bg1" }
