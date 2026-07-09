@@ -39,5 +39,8 @@
     # get in your way if you use git+ssh for remotes and password-protect
     # your SSH keys.
     git.autoFetch = false;
+    # Allow lazygit to use GPG features non-interactively. This helps when
+    # ammending signed commits and a bunch of other edge cases.
+    git.overrideGpg = true;
   };
 }
