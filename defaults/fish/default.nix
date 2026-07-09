@@ -38,5 +38,6 @@
     ch = "check";
     ts = "tree-sitter";
     pr = "gh pr checkout";
+    kssh = "kitty +kitten ssh";
   };
 }
