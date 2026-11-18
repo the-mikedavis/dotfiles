@@ -5,10 +5,10 @@ impermanence:
 
   programs.git = {
     enable = true;
-    extraConfig.safe.directory = "*";
+    settings.safe.directory = "*";
   };
 
-  home.persistence."/nix/persist/home/root" = { };
+  home.persistence."/nix/persist" = { };
 
   home.stateVersion = "21.05";
 }

@@ -13,28 +13,32 @@ let
   misc-data = import ../data.nix;
 in
 {
-  aliases = {
-    git = "!exec git";
-    g = "!exec git";
-    t = "tag --sort=version:refname";
-    sha = "rev-parse HEAD";
-    st = "status";
-    b = "branch";
-    sw = "switch";
-    ci = "commit";
-    cia = "commit -a";
-    co = "checkout";
-    ph = "push";
-    pl = "pull";
-    d = "difftool";
-    f = "fetch";
-    ff = "merge --ff-only";
-    # Garbage-collect the repository to save on space and make git
-    # snappier. Good for large repositories with many thousands of
-    # commits.
-    pack = "gc --aggressive --prune=now";
-  };
-  extraConfig = {
+  settings = {
+    user = {
+      name = "Michael Davis";
+      email = misc-data.personal-email;
+    };
+    alias = {
+      git = "!exec git";
+      g = "!exec git";
+      t = "tag --sort=version:refname";
+      sha = "rev-parse HEAD";
+      st = "status";
+      b = "branch";
+      sw = "switch";
+      ci = "commit";
+      cia = "commit -a";
+      co = "checkout";
+      ph = "push";
+      pl = "pull";
+      d = "difftool";
+      f = "fetch";
+      ff = "merge --ff-only";
+      # Garbage-collect the repository to save on space and make git
+      # snappier. Good for large repositories with many thousands of
+      # commits.
+      pack = "gc --aggressive --prune=now";
+    };
     core.editor = "hx";
     hub.protocol = "ssh";
     fetch.prune = true;
@@ -78,8 +82,6 @@ in
       contents.user.email = misc-data.work-email;
     }
   ];
-  userName = "Michael Davis";
-  userEmail = misc-data.personal-email;
   signing = {
     key = ssh-key-id;
     signByDefault = true;

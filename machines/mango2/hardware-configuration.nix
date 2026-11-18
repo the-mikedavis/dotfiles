@@ -37,7 +37,6 @@
   boot.initrd.luks.devices.main = {
     name = "main";
     device = "/dev/disk/by-uuid/fd502fd5-2310-4229-98dd-12b2f33ef127";
-    preLVM = true;
     allowDiscards = true;
   };
 

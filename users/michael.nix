@@ -62,7 +62,7 @@ in
     tree
     curl
     # Hello r/unixporn.
-    neofetch
+    fastfetch
     # ?
     dnsutils
     traceroute
@@ -151,7 +151,7 @@ in
     # Faster and more automatic auto-squash.
     git-absorb
     unzip
-    nixfmt-rfc-style
+    nixfmt
     vlc
     pkgs.edge.signal-desktop
     # Basic calculator
@@ -224,7 +224,7 @@ in
   # wiped on reboot. So we need to explicitly declare what to persist across
   # reboots. These files/directories are mounted from non-volatile memory.
   # In modules/common.nix we declare the system-level persisted directories.
-  home.persistence."/nix/persist/home/michael" = {
+  home.persistence."/nix/persist" = {
     directories =
       [
         # GPG keys and metadata.
@@ -247,7 +247,9 @@ in
       ++ (builtins.map
         (d: {
           directory = d;
-          method = "symlink";
+          # NOTE: deprecated. Impermanence uses a better system now so this
+          # is probably not necessary anymore anyways.
+          # method = "symlink";
         })
         [
           # Misc docs.
@@ -330,9 +332,6 @@ in
       # Cargo registry token
       ".cargo/credentials.toml"
     ];
-    # > allows other users, such as `root`, to access files through the bind
-    # > mounted directories listed in `directories`.
-    allowOther = true;
   };
 
   xdg.mimeApps = {
@@ -389,6 +388,8 @@ in
 
   programs.firefox = {
     enable = true;
+    # Keep the legacy location: ~/.mozilla is persisted above.
+    configPath = ".mozilla/firefox";
   } // configs.firefox;
 
   services.gpg-agent = {

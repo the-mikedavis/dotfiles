@@ -1,6 +1,5 @@
 { pkgs }:
 {
-  package = pkgs.firefox-wayland;
   profiles = {
     default = {
       id = 0;

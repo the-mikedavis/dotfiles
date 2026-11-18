@@ -39,14 +39,14 @@ in
   home.packages = with pkgs; [
     tree
     curl
-    neofetch
+    fastfetch
     jetbrains-mono
     file
     git-crypt
     ripgrep
     bat
     killall
-    nixfmt-rfc-style
+    nixfmt
     nix-prefetch-github
     fd
     # tree-sitter

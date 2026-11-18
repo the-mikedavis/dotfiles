@@ -66,7 +66,10 @@
                   "root"
                   "michael"
                 ];
-                settings.experimental-features = "nix-command flakes";
+                settings.experimental-features = [
+                  "nix-command"
+                  "flakes"
+                ];
                 gc = {
                   automatic = true;
                   randomizedDelaySec = "15m";
